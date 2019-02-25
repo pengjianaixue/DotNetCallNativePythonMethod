@@ -3,10 +3,21 @@
 int main()
 {
 	CCallPython a;
-	a.Runfunction("main", "printf", "1");
+	try
+	{
+		a.Runfunction("main", "main", " ");
+
+	}
+	catch (const std::exception& e)
+	{
+		printf(e.what());
+
+	}
 	
 	system("pause");
 	return 0;
+
+	
 	
 
 

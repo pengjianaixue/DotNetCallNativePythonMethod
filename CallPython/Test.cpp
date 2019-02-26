@@ -1,11 +1,19 @@
 #include "stdafx.h"
 #include "CallPython.h"
-int main()
+void run()
 {
+
 	CCallPython a;
 	try
-	{
-		a.Runfunction("main", "main", " ");
+	{	
+		
+		PARAMLIST paramlist;
+		PARAMPAIR param;
+		param.first = "s";
+		param.second = "117";
+		paramlist.push_back(param);
+		std::string res = a.Runfunction("main", "main", paramlist);
+		printf(res.c_str());
 
 	}
 	catch (const std::exception& e)
@@ -13,8 +21,14 @@ int main()
 		printf(e.what());
 
 	}
-	
+
 	system("pause");
+}
+int main()
+{
+	//_CrtSetBreakAlloc(158);
+	run();
+	_CrtDumpMemoryLeaks();
 	return 0;
 
 	

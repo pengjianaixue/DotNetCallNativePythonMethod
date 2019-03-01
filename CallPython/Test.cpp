@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CallPython.h"
+#pragma execution_character_set("utf-8")
 void run()
 {
 	
@@ -15,18 +16,15 @@ void run()
 		param1.first = "s";
 		param1.second = "18800000";
 		paramlist.push_back(param);
-		paramlist.push_back(param1);
+		//paramlist.push_back(param1);
 		std::string res = a.Runfunction("main", "main", paramlist);
 		printf(res.c_str());
 
 	}
 	catch (const std::exception& e)
 	{
-
 		printf(e.what());
-
 	}
-
 	system("pause");
 }
 int main()
@@ -35,12 +33,4 @@ int main()
 	run();
 	_CrtDumpMemoryLeaks();
 	return 0;
-
-	
-	
-
-
-
-
-
 }

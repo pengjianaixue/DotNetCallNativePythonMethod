@@ -16,9 +16,13 @@ void run()
 		param1.first = "s";
 		param1.second = "18800000";
 		paramlist.push_back(param);
-		//paramlist.push_back(param1);
-		std::string res = a.Runfunction("main", "main", paramlist);
+		paramlist.push_back(param1);
+		std::string res = a.Runfunction(std::string("main"), std::string("main"), paramlist);
+		//CreateProcess()
 		printf(res.c_str());
+		//std::hash<int> int_hash;
+		//int j = int_hash(2);
+		//printf("hash vaule is %d",j);
 
 	}
 	catch (const std::exception& e)

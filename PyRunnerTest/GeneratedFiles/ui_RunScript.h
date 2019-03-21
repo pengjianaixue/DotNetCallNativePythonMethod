@@ -1,37 +1,33 @@
 /********************************************************************************
-** Form generated from reading UI file 'PyRunner.ui'
+** Form generated from reading UI file 'RunScript.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.7
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_PYRUNNER_H
-#define UI_PYRUNNER_H
+#ifndef UI_RUNSCRIPT_H
+#define UI_RUNSCRIPT_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSplitter>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_PyRunnerTestClass
+class Ui_RunScript
 {
 public:
-    QWidget *centralWidget;
     QSplitter *splitter;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
@@ -41,20 +37,15 @@ public:
     QPushButton *pushButton_run;
     QPushButton *pushButton_stop;
     QPushButton *pushButton_reset;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *PyRunnerTestClass)
+    void setupUi(QDialog *RunScript)
     {
-        if (PyRunnerTestClass->objectName().isEmpty())
-            PyRunnerTestClass->setObjectName(QStringLiteral("PyRunnerTestClass"));
-        PyRunnerTestClass->resize(600, 400);
-        centralWidget = new QWidget(PyRunnerTestClass);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        splitter = new QSplitter(centralWidget);
+        if (RunScript->objectName().isEmpty())
+            RunScript->setObjectName(QStringLiteral("RunScript"));
+        RunScript->resize(621, 375);
+        splitter = new QSplitter(RunScript);
         splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(10, 10, 571, 331));
+        splitter->setGeometry(QRect(10, 20, 571, 331));
         splitter->setOrientation(Qt::Horizontal);
         layoutWidget = new QWidget(splitter);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
@@ -84,55 +75,69 @@ public:
         groupBox->setMinimumSize(QSize(131, 61));
         pushButton_run = new QPushButton(groupBox);
         pushButton_run->setObjectName(QStringLiteral("pushButton_run"));
-        pushButton_run->setGeometry(QRect(10, 20, 31, 31));
+        pushButton_run->setGeometry(QRect(12, 25, 31, 31));
         sizePolicy.setHeightForWidth(pushButton_run->sizePolicy().hasHeightForWidth());
         pushButton_run->setSizePolicy(sizePolicy);
-        pushButton_run->setStyleSheet(QStringLiteral("border-image: url(:/RTA/PyRunner/Resources/start.png);"));
+        pushButton_run->setStyleSheet(QLatin1String("border-image: url(:/RTA/PyRunner/Resources/start.png);\n"
+"QpushButton:{\n"
+"							width:20px;\n"
+"							height:20px\n"
+"						}\n"
+""));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/RTA/PyRunner/Resources/start.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_run->setIcon(icon);
+        pushButton_run->setIconSize(QSize(32, 32));
         pushButton_stop = new QPushButton(groupBox);
         pushButton_stop->setObjectName(QStringLiteral("pushButton_stop"));
-        pushButton_stop->setGeometry(QRect(50, 20, 31, 31));
+        pushButton_stop->setGeometry(QRect(54, 21, 44, 40));
         sizePolicy.setHeightForWidth(pushButton_stop->sizePolicy().hasHeightForWidth());
         pushButton_stop->setSizePolicy(sizePolicy);
-        pushButton_stop->setStyleSheet(QStringLiteral("border-image: url(:/RTA/PyRunner/Resources/stop.png);"));
+        pushButton_stop->setStyleSheet(QStringLiteral(""));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/RTA/PyRunner/Resources/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_stop->setIcon(icon1);
+        pushButton_stop->setIconSize(QSize(32, 32));
+        pushButton_stop->setAutoRepeat(true);
+        pushButton_stop->setFlat(true);
         pushButton_reset = new QPushButton(groupBox);
         pushButton_reset->setObjectName(QStringLiteral("pushButton_reset"));
-        pushButton_reset->setGeometry(QRect(90, 20, 31, 31));
-        sizePolicy.setHeightForWidth(pushButton_reset->sizePolicy().hasHeightForWidth());
-        pushButton_reset->setSizePolicy(sizePolicy);
+        pushButton_reset->setGeometry(QRect(100, 30, 75, 23));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(pushButton_reset->sizePolicy().hasHeightForWidth());
+        pushButton_reset->setSizePolicy(sizePolicy1);
+        pushButton_reset->setStyleSheet(QStringLiteral(""));
         splitter->addWidget(groupBox);
-        PyRunnerTestClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(PyRunnerTestClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 21));
-        PyRunnerTestClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(PyRunnerTestClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        PyRunnerTestClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(PyRunnerTestClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        PyRunnerTestClass->setStatusBar(statusBar);
 
-        retranslateUi(PyRunnerTestClass);
+        retranslateUi(RunScript);
 
-        QMetaObject::connectSlotsByName(PyRunnerTestClass);
+        QMetaObject::connectSlotsByName(RunScript);
     } // setupUi
 
-    void retranslateUi(QMainWindow *PyRunnerTestClass)
+    void retranslateUi(QDialog *RunScript)
     {
-        PyRunnerTestClass->setWindowTitle(QApplication::translate("PyRunnerTestClass", "PyRunnerTest", Q_NULLPTR));
-        label_infodisp->setText(QApplication::translate("PyRunnerTestClass", "Runing info", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("PyRunnerTestClass", "Operation", Q_NULLPTR));
+        RunScript->setWindowTitle(QApplication::translate("RunScript", "RunScript", Q_NULLPTR));
+        label_infodisp->setText(QApplication::translate("RunScript", "Runing info", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("RunScript", "Operation", Q_NULLPTR));
         pushButton_run->setText(QString());
+#ifndef QT_NO_SHORTCUT
+        pushButton_run->setShortcut(QApplication::translate("RunScript", "F5", Q_NULLPTR));
+#endif // QT_NO_SHORTCUT
         pushButton_stop->setText(QString());
-        pushButton_reset->setText(QApplication::translate("PyRunnerTestClass", "reset", Q_NULLPTR));
+#ifndef QT_NO_SHORTCUT
+        pushButton_stop->setShortcut(QApplication::translate("RunScript", "Alt+F5", Q_NULLPTR));
+#endif // QT_NO_SHORTCUT
+        pushButton_reset->setText(QApplication::translate("RunScript", "reset", Q_NULLPTR));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class PyRunnerTestClass: public Ui_PyRunnerTestClass {};
+    class RunScript: public Ui_RunScript {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_PYRUNNER_H
+#endif // UI_RUNSCRIPT_H

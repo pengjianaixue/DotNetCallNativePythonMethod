@@ -36,7 +36,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PyRunner.cpp">
+    <ClCompile Include="MainWindows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RunScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,12 +52,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PyRunner.ui">
+    <QtUic Include="MainWindows.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="RunScript.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="PyRunner.h">
+    <QtMoc Include="MainWindows.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="RunScript.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -63,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="HomePage.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

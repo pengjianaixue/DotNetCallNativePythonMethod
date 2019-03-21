@@ -29,12 +29,16 @@ void run()
 	{
 		printf(e.what());
 	}
-	system("pause");
+	
 }
 int main()
 {
 	//_CrtSetBreakAlloc(158);
-	run();
+	for (size_t i = 0; i < 100; i++)
+	{
+		run();
+	}
 	_CrtDumpMemoryLeaks();
+	system("pause");
 	return 0;
 }

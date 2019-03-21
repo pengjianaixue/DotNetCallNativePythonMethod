@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PyRunnerTestClass</class>
- <widget class="QMainWindow" name="PyRunnerTestClass">
+ <class>MainWindows</class>
+ <widget class="QMainWindow" name="MainWindows">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>594</width>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PyRunnerTest</string>
-  </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>R.ico</normaloff>R.ico</iconset>
+   <string>RTA</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -23,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>594</width>
      <height>21</height>
     </rect>
    </property>
@@ -35,12 +31,25 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="ScirptRun"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="ScirptRun">
+   <property name="icon">
+    <iconset resource="HomePage.qrc">
+     <normaloff>:/StartForm/Resources/startui.png</normaloff>:/StartForm/Resources/startui.png</iconset>
+   </property>
+   <property name="text">
+    <string>ScirptRun</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="Resource.qrc"/>
+  <include location="HomePage.qrc"/>
  </resources>
  <connections/>
 </ui>

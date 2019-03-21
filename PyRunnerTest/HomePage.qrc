@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="StartForm">
+    <file>Resources/startui.png</file>
+  </qresource>
+</RCC>

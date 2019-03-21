@@ -4,12 +4,12 @@
 #include "ui_PyRunner.h"
 #include "../CallPython/CallPython.h"
 
-class PyRunner : public QMainWindow
+class PyRunner : public QDialog
 {
 	Q_OBJECT
 
 public:
-	PyRunner(QWidget *parent = Q_NULLPTR);
+	PyRunner(QDialog *parent = Q_NULLPTR);
 	~PyRunner();
 public slots:
 	 int TestRun();
@@ -20,4 +20,5 @@ private:
 private:
 	std::string m_strRunres;
 	CCallPython m_cpycaller;
+	PARAMLIST   m_callpyparmlist;
 };

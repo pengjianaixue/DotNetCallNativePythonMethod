@@ -4,7 +4,7 @@
 CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 	: QDialog(parent)
 {
-
+	
 	ui.setupUi(this);
 	m_cpycaller.SetPyPath(R"(./Python/)");
 	if (!
@@ -27,7 +27,6 @@ int CaseScriptConfigure::TestRun()
 	QIcon iconPause;
 	iconPause.addFile(":/RTA/PyRunner/Resources/pause.png");
 	ui.pushButton_run->setIcon(iconPause);
-	//ui.pushButton_run->setStyleSheet(QStringLiteral("QPushButton{image:url(:/RTA/PyRunner/Resources/pause.png);border:none;}"));
 	ui.pushButton_run->update();
 	PARAMPAIR param, param1;
 	param.first = "i";
@@ -41,13 +40,12 @@ int CaseScriptConfigure::TestRun()
 	QIcon iconstart;
 	iconstart.addFile(":/RTA/PyRunner/Resources/start.png");
 	ui.pushButton_run->setIcon(iconstart);
-	//ui.pushButton_run->setStyleSheet(QStringLiteral("QPushButton{image:url(:/RTA/PyRunner/Resources/start.png);border:none;}"));
 	ui.pushButton_run->update();
 	m_callpyparmlist.clear();
 	return 0;
 }
 int CaseScriptConfigure::Reset()
-{
+{	
 
 	ui.TB_RunInfodisp->clear();
 	return 0;

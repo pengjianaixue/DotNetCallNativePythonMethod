@@ -1,17 +1,18 @@
 #pragma once
 
 #include <QDialog>
+#include <QtXml\qxml.h>
+#include <qxmlstream.h>
 #include "ui_RunScript.h"
 #include "../CallPython/CallPython.h"
 
-class RunScript : public QDialog
+class CaseScriptConfigure : public QDialog
 {
+
 	Q_OBJECT
-
 public:
-	RunScript(QWidget *parent = Q_NULLPTR);
-	~RunScript();
-
+	CaseScriptConfigure(QWidget *parent = Q_NULLPTR);
+	~CaseScriptConfigure();
 private:
 	Ui::RunScript ui;
 public slots:

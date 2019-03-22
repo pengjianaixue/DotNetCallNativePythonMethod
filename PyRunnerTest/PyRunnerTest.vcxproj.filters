@@ -78,4 +78,7 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\R.ico" />
+  </ItemGroup>
 </Project>

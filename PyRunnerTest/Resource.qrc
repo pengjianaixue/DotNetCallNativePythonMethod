@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/RTA/PyRunner">
-        <file>R.ico</file>
-        <file>R.png</file>
         <file>Resources/start.png</file>
         <file>Resources/stop.png</file>
         <file>Resources/pause.png</file>

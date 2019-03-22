@@ -1,16 +1,16 @@
 #include "stdafx.h"
 #include "RunScript.h"
 
-RunScript::RunScript(QWidget *parent)
+CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 	: QDialog(parent)
 {
+
 	ui.setupUi(this);
 	m_cpycaller.SetPyPath(R"(./Python/)");
-	if (!(
-		connect(this->ui.pushButton_run, &QPushButton::clicked, this, &RunScript::TestRun) &&
-		connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &RunScript::Reset)
-		)
-		)
+	if (!
+		(connect(this->ui.pushButton_run, &QPushButton::clicked, this, &CaseScriptConfigure::TestRun) &&
+		connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &CaseScriptConfigure::Reset))
+	   )
 	{
 		qDebug() << "connect is fail" << endl;
 	}
@@ -21,7 +21,7 @@ RunScript::RunScript(QWidget *parent)
 
 }
 
-int RunScript::TestRun()
+int CaseScriptConfigure::TestRun()
 {
 
 	QIcon iconPause;
@@ -46,14 +46,14 @@ int RunScript::TestRun()
 	m_callpyparmlist.clear();
 	return 0;
 }
-int RunScript::Reset()
+int CaseScriptConfigure::Reset()
 {
 
 	ui.TB_RunInfodisp->clear();
 	return 0;
 }
 
-RunScript::~RunScript()
+CaseScriptConfigure::~CaseScriptConfigure()
 {
 	FinalizePyIter();
 }

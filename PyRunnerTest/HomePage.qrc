@@ -1,5 +1,10 @@
 <RCC>
-  <qresource prefix="StartForm">
-    <file>Resources/startui.png</file>
-  </qresource>
+    <qresource prefix="/StartForm">
+        <file>Resources/startui.png</file>
+        <file>Resources/config_script.png</file>
+        <file>Resources/R.ico</file>
+        <file>Resources/test plan.png</file>
+        <file>Resources/instrment.png</file>
+        <file>Resources/rru.png</file>
+    </qresource>
 </RCC>

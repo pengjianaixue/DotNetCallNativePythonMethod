@@ -5,13 +5,14 @@
 
 int main(int argc, char *argv[])
 {
+
 	QApplication a(argc, argv);
 	QApplication::setStyle(QStyleFactory::create("Fusion"));
 	MainWindows mw;
 	QIcon icon;
-	icon.addFile(":/RTA/PyRunner/R.png");
+	icon.addFile(":/StartForm/Resources/R.ico");
 	a.setWindowIcon(icon);
-	mw.setWindowTitle("RATRunner");
+	mw.setWindowTitle("RAT");
 	mw.show();
 	return a.exec();
 }

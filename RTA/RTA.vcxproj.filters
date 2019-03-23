@@ -1,36 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="RunScript.cpp">
-      <Filter>Source File</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source File</Filter>
+    <ClCompile Include="CaseandEditorhome.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainWindows.cpp">
-      <Filter>Source File</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RunScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source File</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource1.h">
-      <Filter>Head File</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>Head File</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\R.ico" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="CaseandEditorhome.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="MainWindows.h">
-      <Filter>Head File</Filter>
+      <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="RunScript.h">
-      <Filter>Head File</Filter>
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -40,25 +46,34 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="CaseandEditorhome.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
     <QtUic Include="MainWindows.ui">
-      <Filter>Form</Filter>
+      <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="RunScript.ui">
-      <Filter>Form</Filter>
+      <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Form">
-      <UniqueIdentifier>{d2d566c1-69ff-4f8b-80e3-685205c33550}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource">
       <UniqueIdentifier>{aedf5574-d671-4059-a5ce-6a18de893174}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Head File">
-      <UniqueIdentifier>{d0167183-d850-4f1c-a272-5985159bb1e5}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
     </Filter>
-    <Filter Include="Source File">
-      <UniqueIdentifier>{2b77caf0-541c-49d0-a073-9e6c03c52a99}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>

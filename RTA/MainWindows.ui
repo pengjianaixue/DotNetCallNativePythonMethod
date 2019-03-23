@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>762</height>
+    <width>1197</width>
+    <height>863</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,13 +56,27 @@ QMainWindow::separator:vertical {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>969</width>
-     <height>21</height>
+     <width>1197</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
+   <widget class="QMenu" name="menuNew_Project_File">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Project_File"/>
+   </widget>
+   <widget class="QMenu" name="menuOption">
+    <property name="title">
+     <string>SetUp</string>
+    </property>
+    <addaction name="action_SetPythonFileHome"/>
+   </widget>
+   <addaction name="menuNew_Project_File"/>
+   <addaction name="menuOption"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="styleSheet">
@@ -90,6 +104,8 @@ QToolBar QToolButton{
    <addaction name="separator"/>
    <addaction name="Test_Instrument"/>
    <addaction name="TestProduct"/>
+   <addaction name="separator"/>
+   <addaction name="action_Script_Editor_Pycharm"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="DW_ToolDock">
@@ -190,8 +206,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>128</width>
-          <height>326</height>
+          <width>98</width>
+          <height>419</height>
          </rect>
         </property>
         <attribute name="label">
@@ -240,8 +256,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>128</width>
-          <height>326</height>
+          <width>98</width>
+          <height>419</height>
          </rect>
         </property>
         <attribute name="label">
@@ -514,6 +530,32 @@ QDockWidget::float-button:pressed {
    </property>
    <property name="text">
     <string>Test Product</string>
+   </property>
+  </action>
+  <action name="action_Script_Editor_Pycharm">
+   <property name="icon">
+    <iconset resource="HomePage.qrc">
+     <normaloff>:/StartForm/Resources/Pycharmicon.png</normaloff>:/StartForm/Resources/Pycharmicon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Script Editor(Pycharm)</string>
+   </property>
+  </action>
+  <action name="action_SetPythonFileHome">
+   <property name="icon">
+    <iconset resource="HomePage.qrc">
+     <normaloff>:/StartForm/Resources/Path.png</normaloff>:/StartForm/Resources/Path.png</iconset>
+   </property>
+   <property name="text">
+    <string>SetPythonFileHome</string>
+   </property>
+   <property name="toolTip">
+    <string>select  the python  file path which you want to choose  </string>
+   </property>
+  </action>
+  <action name="actionNew_Project_File">
+   <property name="text">
+    <string>New Project File</string>
    </property>
   </action>
  </widget>

@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -35,6 +36,9 @@ public:
     QAction *TestPlan;
     QAction *Test_Instrument;
     QAction *TestProduct;
+    QAction *action_Script_Editor_Pycharm;
+    QAction *action_SetPythonFileHome;
+    QAction *actionNew_Project_File;
     QWidget *centralWidget;
     QGridLayout *gridLayout_4;
     QGridLayout *gridLayout_3;
@@ -42,6 +46,8 @@ public:
     QWidget *tab;
     QWidget *tab_2;
     QMenuBar *menuBar;
+    QMenu *menuNew_Project_File;
+    QMenu *menuOption;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QDockWidget *DW_ToolDock;
@@ -78,7 +84,7 @@ public:
     {
         if (MainWindows->objectName().isEmpty())
             MainWindows->setObjectName(QString::fromUtf8("MainWindows"));
-        MainWindows->resize(969, 762);
+        MainWindows->resize(1197, 863);
         MainWindows->setStyleSheet(QString::fromUtf8("QMainWindow::separator:horizontal {\n"
 "    width: 3px;\n"
 "    margin-top: 3px;\n"
@@ -115,6 +121,18 @@ public:
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/StartForm/Resources/rru.png"), QSize(), QIcon::Normal, QIcon::Off);
         TestProduct->setIcon(icon4);
+        action_Script_Editor_Pycharm = new QAction(MainWindows);
+        action_Script_Editor_Pycharm->setObjectName(QString::fromUtf8("action_Script_Editor_Pycharm"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/StartForm/Resources/Pycharmicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_Script_Editor_Pycharm->setIcon(icon5);
+        action_SetPythonFileHome = new QAction(MainWindows);
+        action_SetPythonFileHome->setObjectName(QString::fromUtf8("action_SetPythonFileHome"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/StartForm/Resources/Path.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_SetPythonFileHome->setIcon(icon6);
+        actionNew_Project_File = new QAction(MainWindows);
+        actionNew_Project_File->setObjectName(QString::fromUtf8("actionNew_Project_File"));
         centralWidget = new QWidget(MainWindows);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_4 = new QGridLayout(centralWidget);
@@ -141,8 +159,12 @@ public:
         MainWindows->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindows);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 969, 21));
+        menuBar->setGeometry(QRect(0, 0, 1197, 23));
         menuBar->setStyleSheet(QString::fromUtf8(""));
+        menuNew_Project_File = new QMenu(menuBar);
+        menuNew_Project_File->setObjectName(QString::fromUtf8("menuNew_Project_File"));
+        menuOption = new QMenu(menuBar);
+        menuOption->setObjectName(QString::fromUtf8("menuOption"));
         MainWindows->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindows);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -240,7 +262,7 @@ public:
         toolBox->setMidLineWidth(3);
         TB_Routerpage = new QWidget();
         TB_Routerpage->setObjectName(QString::fromUtf8("TB_Routerpage"));
-        TB_Routerpage->setGeometry(QRect(0, 0, 128, 326));
+        TB_Routerpage->setGeometry(QRect(0, 0, 98, 419));
         gridLayout_6 = new QGridLayout(TB_Routerpage);
         gridLayout_6->setSpacing(6);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -273,7 +295,7 @@ public:
         toolBox->addItem(TB_Routerpage, QString::fromUtf8("Router Tool"));
         TB_ConfigurePage = new QWidget();
         TB_ConfigurePage->setObjectName(QString::fromUtf8("TB_ConfigurePage"));
-        TB_ConfigurePage->setGeometry(QRect(0, 0, 128, 326));
+        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 419));
         toolBox->addItem(TB_ConfigurePage, QString::fromUtf8("Configure Tool"));
 
         gridLayout_5->addWidget(toolBox, 0, 0, 1, 1);
@@ -454,12 +476,18 @@ public:
         DW_Opeartioninfodisp->setWidget(dockWidgetContents_7);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(8), DW_Opeartioninfodisp);
 
+        menuBar->addAction(menuNew_Project_File->menuAction());
+        menuBar->addAction(menuOption->menuAction());
+        menuNew_Project_File->addAction(actionNew_Project_File);
+        menuOption->addAction(action_SetPythonFileHome);
         mainToolBar->addAction(ScirptRun);
         mainToolBar->addAction(ScriptConfigure);
         mainToolBar->addAction(TestPlan);
         mainToolBar->addSeparator();
         mainToolBar->addAction(Test_Instrument);
         mainToolBar->addAction(TestProduct);
+        mainToolBar->addSeparator();
+        mainToolBar->addAction(action_Script_Editor_Pycharm);
 
         retranslateUi(MainWindows);
 
@@ -491,8 +519,16 @@ public:
         Test_Instrument->setShortcut(QApplication::translate("MainWindows", "Ctrl+I", nullptr));
 #endif // QT_NO_SHORTCUT
         TestProduct->setText(QApplication::translate("MainWindows", "Test Product", nullptr));
+        action_Script_Editor_Pycharm->setText(QApplication::translate("MainWindows", "Script Editor(Pycharm)", nullptr));
+        action_SetPythonFileHome->setText(QApplication::translate("MainWindows", "SetPythonFileHome", nullptr));
+#ifndef QT_NO_TOOLTIP
+        action_SetPythonFileHome->setToolTip(QApplication::translate("MainWindows", "select  the python  file path which you want to choose  ", nullptr));
+#endif // QT_NO_TOOLTIP
+        actionNew_Project_File->setText(QApplication::translate("MainWindows", "New Project File", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindows", "Tab 1", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Tab 2", nullptr));
+        menuNew_Project_File->setTitle(QApplication::translate("MainWindows", "File", nullptr));
+        menuOption->setTitle(QApplication::translate("MainWindows", "SetUp", nullptr));
         pushButton_3->setText(QString());
         pushButton_5->setText(QApplication::translate("MainWindows", "PushButton", nullptr));
         pushButton_6->setText(QApplication::translate("MainWindows", "PushButton", nullptr));

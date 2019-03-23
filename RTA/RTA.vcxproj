@@ -124,6 +124,7 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CaseandEditorhome.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindows.cpp" />
     <ClCompile Include="RunScript.cpp" />
@@ -134,11 +135,16 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWindows.h" />
+    <QtMoc Include="CaseandEditorhome.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
+    </QtMoc>
     <ClInclude Include="resource1.h" />
     <QtMoc Include="RunScript.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="CaseandEditorhome.ui" />
     <QtUic Include="MainWindows.ui">
       <SubType>Designer</SubType>
     </QtUic>

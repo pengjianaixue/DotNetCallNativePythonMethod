@@ -31,7 +31,7 @@ int CaseScriptConfigure::TestRun()
 	PARAMPAIR param, param1;
 	param.first = "i";
 	param.second = "117";
-	param1.first = "s";
+	param1.first = "i";
 	param1.second = "18800000";
 	m_callpyparmlist.push_back(param);
 	m_callpyparmlist.push_back(param1);

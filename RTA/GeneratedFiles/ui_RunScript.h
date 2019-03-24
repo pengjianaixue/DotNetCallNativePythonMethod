@@ -44,7 +44,7 @@ public:
     QLabel *label;
     QComboBox *comboBox;
     QTreeView *treeView;
-    QWidget *widget;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_2;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout_6;
@@ -52,6 +52,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QPushButton *pushButton_run;
     QPushButton *pushButton_stop;
+    QPushButton *pushButton_reload;
     QSpacerItem *horizontalSpacer_3;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_3;
@@ -139,14 +140,14 @@ public:
         verticalLayout_3->addWidget(treeView);
 
         splitter->addWidget(layoutWidget);
-        widget = new QWidget(splitter);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget2 = new QWidget(splitter);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget2);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBox = new QGroupBox(widget);
+        groupBox = new QGroupBox(layoutWidget2);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
@@ -200,12 +201,26 @@ public:
 
         horizontalLayout_4->addWidget(pushButton_stop);
 
+        pushButton_reload = new QPushButton(groupBox);
+        pushButton_reload->setObjectName(QString::fromUtf8("pushButton_reload"));
+        sizePolicy5.setHeightForWidth(pushButton_reload->sizePolicy().hasHeightForWidth());
+        pushButton_reload->setSizePolicy(sizePolicy5);
+        pushButton_reload->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_reload->setIcon(icon2);
+        pushButton_reload->setIconSize(QSize(32, 32));
+        pushButton_reload->setAutoRepeat(false);
+        pushButton_reload->setFlat(true);
 
-        horizontalLayout_5->addLayout(horizontalLayout_4);
+        horizontalLayout_4->addWidget(pushButton_reload);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_5->addItem(horizontalSpacer_3);
+        horizontalLayout_4->addItem(horizontalSpacer_3);
+
+
+        horizontalLayout_5->addLayout(horizontalLayout_4);
 
 
         horizontalLayout_6->addLayout(horizontalLayout_5);
@@ -219,7 +234,7 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_infodisp = new QLabel(widget);
+        label_infodisp = new QLabel(layoutWidget2);
         label_infodisp->setObjectName(QString::fromUtf8("label_infodisp"));
         label_infodisp->setFont(font);
         label_infodisp->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 240, 240);"));
@@ -230,7 +245,7 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        pushButton_reset = new QPushButton(widget);
+        pushButton_reset = new QPushButton(layoutWidget2);
         pushButton_reset->setObjectName(QString::fromUtf8("pushButton_reset"));
         QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy6.setHorizontalStretch(0);
@@ -238,16 +253,16 @@ public:
         sizePolicy6.setHeightForWidth(pushButton_reset->sizePolicy().hasHeightForWidth());
         pushButton_reset->setSizePolicy(sizePolicy6);
         pushButton_reset->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/clean up.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_reset->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/clean up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_reset->setIcon(icon3);
 
         horizontalLayout_3->addWidget(pushButton_reset);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        TB_RunInfodisp = new QTextBrowser(widget);
+        TB_RunInfodisp = new QTextBrowser(layoutWidget2);
         TB_RunInfodisp->setObjectName(QString::fromUtf8("TB_RunInfodisp"));
         TB_RunInfodisp->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 240);"));
 
@@ -256,7 +271,7 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        splitter->addWidget(widget);
+        splitter->addWidget(layoutWidget2);
 
         verticalLayout_4->addWidget(splitter);
 
@@ -301,6 +316,7 @@ public:
 #ifndef QT_NO_SHORTCUT
         pushButton_stop->setShortcut(QApplication::translate("RunScript", "Alt+F5", nullptr));
 #endif // QT_NO_SHORTCUT
+        pushButton_reload->setText(QString());
         label_infodisp->setText(QApplication::translate("RunScript", "Runing info ", nullptr));
         pushButton_reset->setText(QString());
     } // retranslateUi

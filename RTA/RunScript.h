@@ -18,8 +18,11 @@ private:
 public slots:
 	int TestRun();
 	int Reset();
+	bool ReSetPyFilePath(const QString &path);
+	bool ReLoadPyFilePath();
 private:
 	std::string m_strRunres;
 	CCallPython m_cpycaller;
 	PARAMLIST   m_callpyparmlist;
+	QString     m_strpythonfilehome;
 };

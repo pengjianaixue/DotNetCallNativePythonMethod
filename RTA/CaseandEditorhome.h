@@ -9,12 +9,16 @@ class CaseandEditorhome : public QDialog
 public:
 	CaseandEditorhome(QWidget *parent = Q_NULLPTR);
 	~CaseandEditorhome();
+	bool connectslots();
 signals:
-	void EmitPythonFileHome(QString);
-	void EmitPycharmHome(QString);
+	void Signal_eimtPythonFileHome(const QString &);
+	void Signal_eimtPycharmHome(const QString &);
 public slots:
 	bool SelectPythonFileHome();
 	bool SelectPycharmHome();
+	//bool ChoosePythonFileHome();
+	//bool ChoosePycharmHome();
+	bool Accpet();
 private:
 	Ui::CaseandEditorhome ui;
 };

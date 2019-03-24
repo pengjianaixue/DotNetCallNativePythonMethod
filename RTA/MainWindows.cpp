@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "MainWindows.h"
-
 MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
 	  PythonHomeSet(new CaseandEditorhome(this))
 {
+	m_hPycharmProcessid = 0;
 	ui.setupUi(this);
 	ConnectSlots();
-
 	
 }
 bool MainWindows::openconfigform(int i)
@@ -24,22 +23,23 @@ bool MainWindows::openpycharmIDE()
 {
 
 	QDir pycasedir;
-	if (m_strpycasefilehomepath.isEmpty())
+	if (m_strpycasefilehomepath.isEmpty()|| m_strpycharmbinpath.isEmpty())
 	{
 		QMessageBox::critical(this, "File path error ", "Please Set Python case home ");
 		return false;
 	}
-	if (m_pyeditorprocess->isOpen())
+	if (m_pyeditorprocess->pid()!=nullptr && m_hPycharmProcessid == m_pyeditorprocess->pid()->dwProcessId)
 	{
 		QMessageBox::warning(this, "Warning", "the  python editor  pycharm have existing!");
 	}
 	QString pypath =   m_strpycasefilehomepath;
-	QString program = R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
+	QString program = m_strpycharmbinpath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
 	QStringList arguments;
 	arguments << pypath;
 	qDebug() << program << "\n" << arguments;
 	m_pyeditorprocess->start(program, arguments);
 	m_pyeditorprocess->waitForStarted();
+	m_hPycharmProcessid = m_pyeditorprocess->pid()->dwProcessId;
 	this->ui.action_Script_Editor_Pycharm->setChecked(true);
 	return true;
 }
@@ -48,16 +48,21 @@ bool MainWindows::SetPycaseFilehome()
 {
 
 	PythonHomeSet->show();
-	//QFileDialog pycasefile(nullptr);
-	//pycasefile.setWindowTitle(tr("Set Python  case home "));//
-	//pycasefile.setAcceptMode(QFileDialog::AcceptMode::AcceptOpen);//
-	//pycasefile.setFileMode(QFileDialog::FileMode::Directory);//
-	//pycasefile.setViewMode(QFileDialog::Detail);//
-	//if (pycasefile.exec() == QFileDialog::Accepted)
-	//{
-	//	m_strpycasefilehomepath = pycasefile.selectedFiles()[0];
-	//}
-	//return true;
+	return true;
+}
+
+bool MainWindows::Recvipycasefilehomepath(const QString & pycasefilehomepath)
+{
+
+	m_strpycasefilehomepath = pycasefilehomepath;
+
+	return true;
+}
+
+bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
+{
+
+	m_strpycharmbinpath = Pycharmhomepath;
 	return true;
 }
 
@@ -66,9 +71,12 @@ bool MainWindows::ConnectSlots()
 
 	if (!
 		(
-			connect(this->ui.ScriptConfigure, &QAction::triggered, this, &MainWindows::openconfigform)&&
-			connect(this->ui.action_SetPythonFileHome,&QAction::triggered,this,&MainWindows::SetPycaseFilehome)&&
-			connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE)
+			connect(this->ui.ScriptConfigure, &QAction::triggered, this, &MainWindows::openconfigform) &&
+			connect(this->ui.action_SetPythonFileHome, &QAction::triggered, this, &MainWindows::SetPycaseFilehome) &&
+			connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE) &&
+			connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPythonFileHome, this, &MainWindows::Recvipycasefilehomepath) &&
+			connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) &&
+			connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::ReSetPyFilePath)
 		)
 		)
 	{

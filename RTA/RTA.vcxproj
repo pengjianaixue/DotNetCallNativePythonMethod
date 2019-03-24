@@ -64,6 +64,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -87,6 +88,9 @@
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
     </QtRcc>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -125,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CaseandEditorhome.cpp" />
+    <ClCompile Include="InitConfigLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindows.cpp" />
     <ClCompile Include="RunScript.cpp" />
@@ -136,6 +141,10 @@
   <ItemGroup>
     <QtMoc Include="MainWindows.h" />
     <QtMoc Include="CaseandEditorhome.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
+    </QtMoc>
+    <QtMoc Include="InitConfigLoader.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport</IncludePath>
     </QtMoc>

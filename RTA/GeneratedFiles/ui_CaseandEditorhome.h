@@ -13,52 +13,64 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_CaseandEditorhome
 {
 public:
-    QWidget *widget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_4;
+    QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QLabel *label_2;
     QVBoxLayout *verticalLayout_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *LE_ProjectPath;
+    QLineEdit *LE_PycharmPath;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *PB_ProjectPath;
+    QPushButton *PB_PycharmPath;
+    QSpacerItem *verticalSpacer_2;
+    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *CaseandEditorhome)
     {
         if (CaseandEditorhome->objectName().isEmpty())
             CaseandEditorhome->setObjectName(QString::fromUtf8("CaseandEditorhome"));
-        CaseandEditorhome->resize(410, 179);
-        widget = new QWidget(CaseandEditorhome);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(60, 50, 283, 58));
-        horizontalLayout = new QHBoxLayout(widget);
+        CaseandEditorhome->resize(410, 181);
+        gridLayout = new QGridLayout(CaseandEditorhome);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalSpacer = new QSpacerItem(20, 28, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(CaseandEditorhome);
         label->setObjectName(QString::fromUtf8("label"));
 
         verticalLayout->addWidget(label);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(CaseandEditorhome);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout->addWidget(label_2);
@@ -69,15 +81,15 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        LE_ProjectPath = new QLineEdit(CaseandEditorhome);
+        LE_ProjectPath->setObjectName(QString::fromUtf8("LE_ProjectPath"));
 
-        verticalLayout_2->addWidget(lineEdit);
+        verticalLayout_2->addWidget(LE_ProjectPath);
 
-        lineEdit_2 = new QLineEdit(widget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        LE_PycharmPath = new QLineEdit(CaseandEditorhome);
+        LE_PycharmPath->setObjectName(QString::fromUtf8("LE_PycharmPath"));
 
-        verticalLayout_2->addWidget(lineEdit_2);
+        verticalLayout_2->addWidget(LE_PycharmPath);
 
 
         horizontalLayout->addLayout(verticalLayout_2);
@@ -85,38 +97,55 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setStyleSheet(QString::fromUtf8(""));
+        PB_ProjectPath = new QPushButton(CaseandEditorhome);
+        PB_ProjectPath->setObjectName(QString::fromUtf8("PB_ProjectPath"));
+        PB_ProjectPath->setStyleSheet(QString::fromUtf8(""));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/StartForm/Resources/opendir.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon);
+        PB_ProjectPath->setIcon(icon);
 
-        verticalLayout_3->addWidget(pushButton);
+        verticalLayout_3->addWidget(PB_ProjectPath);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setStyleSheet(QString::fromUtf8(""));
-        pushButton_2->setIcon(icon);
+        PB_PycharmPath = new QPushButton(CaseandEditorhome);
+        PB_PycharmPath->setObjectName(QString::fromUtf8("PB_PycharmPath"));
+        PB_PycharmPath->setStyleSheet(QString::fromUtf8(""));
+        PB_PycharmPath->setIcon(icon);
 
-        verticalLayout_3->addWidget(pushButton_2);
+        verticalLayout_3->addWidget(PB_PycharmPath);
 
 
         horizontalLayout->addLayout(verticalLayout_3);
 
 
+        verticalLayout_4->addLayout(horizontalLayout);
+
+        verticalSpacer_2 = new QSpacerItem(20, 28, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer_2);
+
+
+        gridLayout->addLayout(verticalLayout_4, 0, 0, 1, 1);
+
+        buttonBox = new QDialogButtonBox(CaseandEditorhome);
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+
+        gridLayout->addWidget(buttonBox, 1, 0, 1, 1);
+
+
         retranslateUi(CaseandEditorhome);
+        QObject::connect(buttonBox, SIGNAL(rejected()), CaseandEditorhome, SLOT(close()));
 
         QMetaObject::connectSlotsByName(CaseandEditorhome);
     } // setupUi
 
     void retranslateUi(QDialog *CaseandEditorhome)
     {
-        CaseandEditorhome->setWindowTitle(QApplication::translate("CaseandEditorhome", "CaseandEditorhome", nullptr));
+        CaseandEditorhome->setWindowTitle(QApplication::translate("CaseandEditorhome", "Case Enviroment Configure", nullptr));
         label->setText(QApplication::translate("CaseandEditorhome", "Case Project Path", nullptr));
         label_2->setText(QApplication::translate("CaseandEditorhome", "Pycharm  Path", nullptr));
-        pushButton->setText(QString());
-        pushButton_2->setText(QString());
+        PB_ProjectPath->setText(QString());
+        PB_PycharmPath->setText(QString());
     } // retranslateUi
 
 };

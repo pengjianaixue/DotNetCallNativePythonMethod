@@ -6,10 +6,15 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 {
 	
 	ui.setupUi(this);
+	m_strpythonfilehome = "./CaseProject";
+	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	m_cpycaller.SetPyPath(R"(./Python/)");
 	if (!
-		(connect(this->ui.pushButton_run, &QPushButton::clicked, this, &CaseScriptConfigure::TestRun) &&
-		connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &CaseScriptConfigure::Reset))
+		(
+			connect(this->ui.pushButton_run, &QPushButton::clicked, this, &CaseScriptConfigure::TestRun) &&
+			connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &CaseScriptConfigure::Reset) &&
+			connect(this->ui.pushButton_reload, &QPushButton::clicked, this, &CaseScriptConfigure::ReLoadPyFilePath)
+		)
 	   )
 	{
 		qDebug() << "connect is fail" << endl;
@@ -49,6 +54,19 @@ int CaseScriptConfigure::Reset()
 
 	ui.TB_RunInfodisp->clear();
 	return 0;
+}
+
+bool CaseScriptConfigure::ReSetPyFilePath(const QString &path)
+{
+
+	m_strpythonfilehome = path;
+	return true;
+}
+
+bool CaseScriptConfigure::ReLoadPyFilePath()
+{
+	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
+	return true;
 }
 
 CaseScriptConfigure::~CaseScriptConfigure()

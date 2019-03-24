@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 @3 @11 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="-509.33205668358,-157.892213058763,101.72,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @11 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="CodeSchema_Method" Bounds="-609.012053835273,-102.652207565599,105.356666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacast" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @11 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="-827.752050783515,-47.4122211459209,137.436666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_static_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @11 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="CodeSchema_Method" Bounds="-609.012053631822,-157.892213058763,69.6800000000001,25.24" DelayedCrossGroupLinksState="Fetched" Label="trUtf8" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @11 Member=metaObject)" Category="CodeSchema_Method" Bounds="-377.61205648013,-157.892213058763,103.103333333333,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="metaObject" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="23.043843920472,-313.868696838254,101.72,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="CodeSchema_Method" Bounds="-156.636151323872,-258.6286760863,105.356666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacast" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="-156.636154223042,-203.388678222531,137.436666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_static_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=(Name=tr OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="CodeSchema_Method" Bounds="-156.636151273009,-313.868696838254,50,25.24" DelayedCrossGroupLinksState="Fetched" Label="tr" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="CodeSchema_Method" Bounds="-76.6361549351189,-313.868696838254,69.68,25.24" DelayedCrossGroupLinksState="Fetched" Label="trUtf8" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=ReLoadPyFilePath)" Category="CodeSchema_Method" Bounds="10.800509569886,-203.388678222531,137.84,25.24" DelayedCrossGroupLinksState="Fetched" Label="ReLoadPyFilePath" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @13 Member=metaObject)" Category="CodeSchema_Method" Bounds="154.763842216574,-313.868696838254,103.103333333333,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="metaObject" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="-361.190120213,-686.350625183589,101.72,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="CodeSchema_Method" Bounds="-96.3667868796668,-686.350625183589,105.356666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_metacast" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="CodeSchema_Method" Bounds="192.119879787,-686.350625183589,137.436666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="qt_static_metacall" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=(Name=tr OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="CodeSchema_Method" Bounds="-540.870120213,-686.350625183589,50,25.24" DelayedCrossGroupLinksState="Fetched" Label="tr" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="CodeSchema_Method" Bounds="-460.870120213,-686.350625183589,69.6800000000001,25.24" DelayedCrossGroupLinksState="Fetched" Label="trUtf8" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 @15 Member=metaObject)" Category="CodeSchema_Method" Bounds="-229.470120213,-686.350625183589,103.103333333333,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="metaObject" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 Member=(Name=__empty_global_delete OverloadingParameters=[(Type=&quot;void *&quot;),(Type=&quot;unsigned __int64&quot;)]))" Category="CodeSchema_Method" Bounds="-83.6675813925577,-127.040838911325,165.816666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="__empty_global_delete" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 Member=(Name=__empty_global_delete OverloadingParameters=[(Type=&quot;void *&quot;)]))" Category="CodeSchema_Method" Bounds="-425.485954118998,27.8279980755023,165.816666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="__empty_global_delete" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 Type=(Name=QPrivateSignal ParentType=CaseScriptConfigure))" Category="CodeSchema_Struct" Bounds="-21.2794879887078,-258.6286760863,123.13,25.24" DelayedCrossGroupLinksState="Fetched" Label="QPrivateSignal" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 Type=(Name=QPrivateSignal ParentType=CaseandEditorhome))" Category="CodeSchema_Struct" Bounds="-473.65538859276,-102.652207565599,123.13,25.24" DelayedCrossGroupLinksState="Fetched" Label="QPrivateSignal" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @3 Type=(Name=QPrivateSignal ParentType=MainWindows))" Category="CodeSchema_Struct" Bounds="38.989879787,-686.350625183589,123.13,25.24" DelayedCrossGroupLinksState="Fetched" Label="QPrivateSignal" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=&quot;_MakeTToUnitFunc&lt;std::pair&lt;unsigned char,Concurrency::details::_CancellationTokenState * __ptr64&gt; &gt;&quot;)" Category="CodeSchema_Method" Bounds="-272.336662394206,419.027798937222,630.44,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeTToUnitFunc‎&lt;std‎::pair‎&lt;unsigned char‎,Concurrency‎::details‎::_CancellationTokenState * __ptr64‎&gt; ‎&gt;" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;Concurrency::task&lt;bool&gt; &gt;&quot; @9))" Category="CodeSchema_Method" Bounds="-272.336657104492,363.787808702847,312.096666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeTToUnitFunc‎&lt;Concurrency‎::task‎&lt;bool‎&gt; ‎&gt;" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;Concurrency::task&lt;void&gt; &gt;&quot; @9))" Category="CodeSchema_Method" Bounds="-272.33666422526,308.547787950894,310.78,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeTToUnitFunc‎&lt;Concurrency‎::task‎&lt;void‎&gt; ‎&gt;" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;unsigned char&gt;&quot; @9))" Category="CodeSchema_Method" Bounds="-76.9366531372071,253.307805345913,244.726666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeTToUnitFunc‎&lt;unsigned char‎&gt;" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=_JoinAllTokens_Add OverloadingParameters=[(Type=&quot;Concurrency::cancellation_token_source const &amp;&quot;),(Type=&quot;Concurrency::details::_CancellationTokenState *&quot;)]))" Category="CodeSchema_Method" Bounds="-155.589992370606,198.067815111538,149.156666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="_JoinAllTokens_Add" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=_MakeUnitToUnitFunc @9))" Category="CodeSchema_Method" Bounds="23.5666744359334,198.067815111538,162.8,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeUnitToUnitFunc" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=_MakeVoidToUnitFunc @9))" Category="CodeSchema_Method" Bounds="-272.336666666667,253.307805345913,165.4,25.24" DelayedCrossGroupLinksState="Fetched" Label="_MakeVoidToUnitFunc" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Member=(Name=do_while OverloadingParameters=[(Type=&quot;std::function&lt;Concurrency::task&lt;bool&gt; &gt;&quot;)]))" Category="CodeSchema_Method" Bounds="-272.33666015625,198.067815111538,86.7466666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="do_while" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Type=&quot;_ResultHolder&lt;std::pair&lt;unsigned char,Concurrency::details::_CancellationTokenState * __ptr64&gt; &gt;&quot;)" Category="CodeSchema_Struct" Bounds="-272.336660359701,529.267808425845,623.583333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="_ResultHolder‎&lt;std‎::pair‎&lt;unsigned char‎,Concurrency‎::details‎::_CancellationTokenState * __ptr64‎&gt; ‎&gt;" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 @6 Type=_Task_impl_base)" Category="CodeSchema_Struct" Bounds="-272.336660359701,474.267808425845,152.693333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="_Task_impl_base" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@1 Namespace=Concurrency Type=cancellation_token_source)" Category="CodeSchema_Class" Bounds="466.844951969486,-42.6052968230189,211.16,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="cancellation_token_source" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@10" Category="CodeSchema_Method" Bounds="-223.860789773388,-947.310625183589,64.4633333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="main" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="-847.752050783515,-418.852801924498,593.243327636719,416.6808" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="16" Group="Expanded" Label="CaseandEditorhome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@14" Category="CodeSchema_Class" Bounds="-176.636154223042,-464.349268766733,481.278346862793,306.2006" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="14" Group="Expanded" Label="CaseScriptConfigure" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@16" Category="CodeSchema_Class" Bounds="-779.610120213,-892.070625183589,1176.455,306.2" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="17" Group="Expanded" Label="MainWindows" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@18" Category="CodeSchema_Method" Bounds="-759.610120213,-741.590625183589,129.183333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="openconfigform" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-887.752050783515,-1027.31062518359,1605.757002753,1621.57957325909" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="NotFetched" FetchedChildrenCount="4" FilePath="$(b12702ad-abfb-343a-a199-8e24837244a3.OutputPath)" Group="Expanded" Label="RATRunner.exe" UseManualLocation="True" />
+    <Node Id="@20" Category="CodeSchema_Method" Bounds="-258.901786879667,-741.590625183589,181.766666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="Recvipycasefilehomepath" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@21" Category="CodeSchema_Method" Bounds="-46.4901202130005,-741.590625183589,174.943333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="RecviPycharmhomepath" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@22" Category="CodeSchema_Method" Bounds="131.850518648866,-258.6286760863,127.95,25.24" DelayedCrossGroupLinksState="Fetched" Label="ReSetPyFilePath" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@23" Category="CodeSchema_Method" Bounds="-462.402030947089,-213.132210922532,186.636666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="Signal_eimtPycharmHome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@24" Category="CodeSchema_Method" Bounds="-689.695402427395,-213.132210922532,197.223333333333,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="Signal_eimtPythonFileHome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@25" Category="CodeSchema_Method" Bounds="159.118213120333,-741.590625183589,217.726666666667,25.24" CodeSchemaProperty_IsExternal="True" DelayedCrossGroupLinksState="Fetched" Label="Signal_emitpycasefilehomepath" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@26" Category="CodeSchema_Method" Bounds="-630.058674725572,-378.852212143235,151.95,25.24" DelayedCrossGroupLinksState="Fetched" Label="CaseandEditorhome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@27" Category="CodeSchema_Method" Bounds="131.898859306418,-424.348677307004,152.743333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="CaseScriptConfigure" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@28" Category="CodeSchema_Method" Bounds="-227.055120213,-852.070625183589,118.073333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="MainWindows" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@29" Category="CodeSchema_Method" Bounds="-827.7520450869,-157.892213058763,188.74,25.24" DelayedCrossGroupLinksState="Fetched" Label="`scalar deleting destructor'" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@30" Category="CodeSchema_Method" Bounds="-156.636148526427,-424.348677307004,188.74,25.24" DelayedCrossGroupLinksState="Fetched" Label="`scalar deleting destructor'" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@31" Category="CodeSchema_Method" Bounds="-759.610120213,-686.350625183589,188.74,25.24" DelayedCrossGroupLinksState="Fetched" Label="`scalar deleting destructor'" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@32" Category="CodeSchema_Method" Bounds="-770.08370524315,-213.132210922532,50,25.24" DelayedCrossGroupLinksState="Fetched" Label="tr" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@33" Category="CodeSchema_Method" Bounds="-813.8070450869,-102.652207565599,160.85,25.24" DelayedCrossGroupLinksState="Fetched" Label="~CaseandEditorhome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@34" Category="CodeSchema_Method" Bounds="-143.087822822489,-369.108687072629,161.643333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="~CaseScriptConfigure" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@35" Category="CodeSchema_Method" Bounds="-728.726786879667,-631.110625183589,126.973333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="~MainWindows" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@36" Category="CodeSchema_Method" Bounds="-445.793689984361,-268.372201156907,75.42,25.24" DelayedCrossGroupLinksState="Fetched" Label="Accpet" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@37" Category="CodeSchema_Method" Bounds="-608.14870524315,-323.61222190886,108.13,25.24" DelayedCrossGroupLinksState="Fetched" Label="connectslots" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@38" Category="CodeSchema_Method" Bounds="-223.775120213,-796.830625183589,111.513333333333,25.24" DelayedCrossGroupLinksState="Fetched" Label="ConnectSlots" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@39" Category="CodeSchema_Method" Bounds="-600.338453546334,-741.590625183589,134.64,25.24" DelayedCrossGroupLinksState="Fetched" Label="openpycharmIDE" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="-867.752050783515,-987.310625183589,1284.59693057051,1060.37862325909" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="‎::" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@40" Category="CodeSchema_Method" Bounds="174.532177380962,-369.108687072629,67.4766666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="Reset" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@41" Category="CodeSchema_Method" Bounds="-631.45870524315,-268.372201156907,154.75,25.24" DelayedCrossGroupLinksState="Fetched" Label="SelectPycharmHome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@42" Category="CodeSchema_Method" Bounds="-827.752038576484,-268.372201156907,165.336666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="SelectPythonFileHome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@43" Category="CodeSchema_Method" Bounds="-434.796786879667,-741.590625183589,145.556666666667,25.24" DelayedCrossGroupLinksState="Fetched" Label="SetPycaseFilehome" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@44" Category="CodeSchema_Method" Bounds="62.1038478623258,-369.108687072629,82.3333333333334,25.24" DelayedCrossGroupLinksState="Fetched" Label="TestRun" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@5" Category="CodeSchema_Namespace" Bounds="446.844951969486,-82.6053968230189,251.16,85.0002" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="Concurrency" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="-292.336666666667,158.068148075503,670.440004272461,416.2008" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="10" Group="Expanded" Label="Concurrency‎::details" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@8" Category="CodeSchema_Namespace" Bounds="-262.803581971383,103.067998075503,74.7,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="std" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="@28" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@10" Target="@35" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@12" Target="(@1 @3 @11 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @3 @11 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @3 @11 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @3 @11 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @3 @11 Member=metaObject)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @3 Type=(Name=QPrivateSignal ParentType=CaseandEditorhome))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@23" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@24" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@26" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@29" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@32" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@33" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@36" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@37" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@41" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@42" Category="Contains" FetchingParent="@12" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=(Name=tr OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=ReLoadPyFilePath)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 @13 Member=metaObject)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @3 Type=(Name=QPrivateSignal ParentType=CaseScriptConfigure))" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@22" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@27" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@30" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@34" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@40" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@44" Category="Contains" FetchingParent="@14" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=(Name=qt_metacall OverloadingParameters=[(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=(Name=qt_metacast OverloadingParameters=[(Type=&quot;char const *&quot;)]))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=(Name=qt_static_metacall OverloadingParameters=[(Type=&quot;QObject *&quot;),(Type=QMetaObject::Call),@17,(Type=&quot;void * *&quot;)]))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=(Name=tr OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=(Name=trUtf8 OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 @15 Member=metaObject)" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @3 Type=(Name=QPrivateSignal ParentType=MainWindows))" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@18" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@20" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@21" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@25" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@28" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@31" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@35" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@38" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@39" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@43" Category="Contains" FetchingParent="@16" />
+    <Link Source="@2" Target="@4" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@5" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@7" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@8" Category="Contains" FetchingParent="@2" />
+    <Link Source="@26" Target="@37" Category="CodeSchema_Calls" Bounds="-554.083679199219,-353.612213134766,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@27" Target="@40" Category="CodeSchema_Calls" Bounds="208.2705078125,-399.108673095703,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@27" Target="@44" Category="CodeSchema_Calls" Bounds="135.223556518555,-399.108673095703,49.0588989257813,25.8096618652344" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@28" Target="@12" Category="References" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@28" Target="@26" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@28" Target="@27" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@28" Target="@34" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@28" Target="@38" Category="CodeSchema_Calls" Bounds="-168.018447875977,-826.830627441406,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@29" Target="@33" Category="CodeSchema_Calls" Bounds="-733.382019042969,-132.652206420898,0,20.9999923706055" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@30" Target="@34" Category="CodeSchema_Calls" Bounds="-62.2661552429199,-399.108673095703,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@31" Target="@35" Category="CodeSchema_Calls" Bounds="-665.240112304688,-661.110595703125,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@35" Target="@34" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@36" Target="@23" Category="CodeSchema_Calls" Bounds="-399.173858642578,-243.132217407227,15.9895324707031,22.6477355957031" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@36" Target="@24" Category="CodeSchema_Calls" Bounds="-540.659912109375,-244.512481689453,95.3410339355469,28.7794494628906" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@37" Target="@36" Category="CodeSchema_Calls" Bounds="-520.728881835938,-298.372222900391,70.8727111816406,26.8151550292969" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@37" Target="@41" Category="CodeSchema_Calls" Bounds="-554.083679199219,-298.372222900391,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@37" Target="@42" Category="CodeSchema_Calls" Bounds="-692.802612304688,-298.372222900391,95.08349609375,27.4995422363281" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@18" Category="CodeSchema_Calls" Bounds="-622.075927734375,-779.328918457031,398.300811767578,37.7647094726563" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@20" Category="CodeSchema_Calls" Bounds="-168.018447875977,-771.590637207031,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@21" Category="CodeSchema_Calls" Bounds="-120.270805358887,-771.590637207031,104.803498268127,27.7002563476563" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@22" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@23" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@24" Category="CodeSchema_Calls" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@25" Category="CodeSchema_Calls" Bounds="-112.261787414551,-777.146423339844,271.707176208496,34.424560546875" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@39" Category="CodeSchema_Calls" Bounds="-456.852600097656,-775.772277832031,233.077484130859,35.2745361328125" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@38" Target="@43" Category="CodeSchema_Calls" Bounds="-309.041748046875,-771.590637207031,96.7025146484375,27.5352783203125" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@4" Target="(@1 @3 Member=(Name=__empty_global_delete OverloadingParameters=[(Type=&quot;void *&quot;),(Type=&quot;unsigned __int64&quot;)]))" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Member=(Name=__empty_global_delete OverloadingParameters=[(Type=&quot;void *&quot;)]))" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="@10" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="@12" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="@14" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="@16" Category="Contains" FetchingParent="@4" />
+    <Link Source="@41" Target="@32" Category="CodeSchema_Calls" Bounds="-711.438049316406,-243.132217407227,113.718933105469,32.8891754150391" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@42" Target="@32" Category="CodeSchema_Calls" Bounds="-745.083679199219,-243.132217407227,0,21" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@44" Target="@8" Category="References" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="(@1 Namespace=Concurrency Type=cancellation_token_source)" Category="Contains" FetchingParent="@5" />
+    <Link Source="@7" Target="(@1 @6 Member=&quot;_MakeTToUnitFunc&lt;std::pair&lt;unsigned char,Concurrency::details::_CancellationTokenState * __ptr64&gt; &gt;&quot;)" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;Concurrency::task&lt;bool&gt; &gt;&quot; @9))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;Concurrency::task&lt;void&gt; &gt;&quot; @9))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=&quot;_MakeTToUnitFunc&lt;unsigned char&gt;&quot; @9))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=_JoinAllTokens_Add OverloadingParameters=[(Type=&quot;Concurrency::cancellation_token_source const &amp;&quot;),(Type=&quot;Concurrency::details::_CancellationTokenState *&quot;)]))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=_MakeUnitToUnitFunc @9))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=_MakeVoidToUnitFunc @9))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Member=(Name=do_while OverloadingParameters=[(Type=&quot;std::function&lt;Concurrency::task&lt;bool&gt; &gt;&quot;)]))" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Type=&quot;_ResultHolder&lt;std::pair&lt;unsigned char,Concurrency::details::_CancellationTokenState * __ptr64&gt; &gt;&quot;)" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="(@1 @6 Type=_Task_impl_base)" Category="Contains" FetchingParent="@7" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Assembly" Label="程序集" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="程序集" />
+    <Category Id="CodeSchema_Calls" Label="调用" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="调用者" OutgoingActionLabel="调用" />
+    <Category Id="CodeSchema_Class" Label="类" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="类" />
+    <Category Id="CodeSchema_Member" Label="编号" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="成员" />
+    <Category Id="CodeSchema_Method" Label="方法" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="方法" />
+    <Category Id="CodeSchema_Namespace" Label="命名空间" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="命名空间" />
+    <Category Id="CodeSchema_Struct" Label="结构" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Struct" NavigationActionLabel="结构" />
+    <Category Id="CodeSchema_Type" Label="类型" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="类型" />
+    <Category Id="Contains" Label="包含" Description="链接的源是否包含目标对象" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="包含者" IsContainment="True" OutgoingActionLabel="包含" />
+    <Category Id="File" Label="文件" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="文件" />
+    <Category Id="References" Label="引用" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsExternal" Label="是外部的" Description="一个标志，用于指示此节点是否被认为是外部的" DataType="System.Boolean" />
+    <Property Id="DataVirtualized" Label="已虚拟化数据" Description="如果为 true，则图中可以包含表示虚拟化节点/链接(即，不在图中实际创建)的数据的节点和链接。" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="延迟的子节点状态" Description="如果未指定延迟的子节点状态，则为 Unspecified。如果尚未将组包含的子节点提取到关系图中，则为 NotFetched。如果已提取组内的所有延迟的子节点，则为 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="延迟的跨组链接状态" Description="如果未指定延迟的跨组链接状态，则为 Unspecified。如果尚未将此节点上延迟的跨组链接提取到关系图中，则为 NotFetched。如果已提取所有延迟的跨组链接，则为 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchedChildrenCount" DataType="System.Int32" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
+    <Property Id="FilePath" Label="文件路径" Description="文件路径" DataType="System.String" />
+    <Property Id="Group" Label="组" Description="将节点显示为组" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="图标" Description="图标" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="已虚拟化链接目标" Description="如果为 true，则链接目标端包含虚拟化节点/链接(即，不在图中实际创建)的数据。" DataType="System.Boolean" />
+    <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
+    <Property Id="Language" Label="语言" Description="语言" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="可见性" Description="定义关系图中的节点是否可见" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="粗细" Description="粗细" DataType="System.Double" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="程序集" ValueType="Uri" />
+    <Name Id="Member" Label="编号" ValueType="System.Object" />
+    <Name Id="Name" Label="名称" ValueType="System.String" />
+    <Name Id="Namespace" Label="命名空间" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="参数" ValueType="Microsoft.VisualStudio.GraphModel.GraphNodeIdCollection" Formatter="NameValueNoEscape" />
+    <Name Id="ParentType" Label="父类型" ValueType="System.Object" />
+    <Name Id="Type" Label="类型" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(b12702ad-abfb-343a-a199-8e24837244a3.OutputPathUri)" />
+    <Alias n="2" Id="(@1)" />
+    <Alias n="3" Id="Namespace=::" />
+    <Alias n="4" Id="(@1 @3)" />
+    <Alias n="5" Id="(@1 Namespace=Concurrency)" />
+    <Alias n="6" Id="Namespace=Concurrency::details" />
+    <Alias n="7" Id="(@1 @6)" />
+    <Alias n="8" Id="(@1 Namespace=std)" />
+    <Alias n="9" Id="OverloadingParameters=[(Type=&quot;std::function&lt;void &gt; const &amp;&quot;)]" />
+    <Alias n="10" Id="(@1 @3 Member=main)" />
+    <Alias n="11" Id="Type=CaseandEditorhome" />
+    <Alias n="12" Id="(@1 @3 @11)" />
+    <Alias n="13" Id="Type=CaseScriptConfigure" />
+    <Alias n="14" Id="(@1 @3 @13)" />
+    <Alias n="15" Id="Type=MainWindows" />
+    <Alias n="16" Id="(@1 @3 @15)" />
+    <Alias n="17" Id="(Type=int)" />
+    <Alias n="18" Id="(@1 @3 @15 Member=(Name=openconfigform OverloadingParameters=[@17]))" />
+    <Alias n="19" Id="OverloadingParameters=[(Type=&quot;QString const &amp;&quot;)]" />
+    <Alias n="20" Id="(@1 @3 @15 Member=(Name=Recvipycasefilehomepath @19))" />
+    <Alias n="21" Id="(@1 @3 @15 Member=(Name=RecviPycharmhomepath @19))" />
+    <Alias n="22" Id="(@1 @3 @13 Member=(Name=ReSetPyFilePath @19))" />
+    <Alias n="23" Id="(@1 @3 @11 Member=(Name=Signal_eimtPycharmHome @19))" />
+    <Alias n="24" Id="(@1 @3 @11 Member=(Name=Signal_eimtPythonFileHome @19))" />
+    <Alias n="25" Id="(@1 @3 @15 Member=(Name=Signal_emitpycasefilehomepath @19))" />
+    <Alias n="26" Id="(@1 @3 @11 Member=(Name=CaseandEditorhome OverloadingParameters=[(Type=&quot;QWidget *&quot;)]))" />
+    <Alias n="27" Id="(@1 @3 @13 Member=(Name=CaseScriptConfigure OverloadingParameters=[(Type=&quot;QWidget *&quot;)]))" />
+    <Alias n="28" Id="(@1 @3 @15 Member=(Name=MainWindows OverloadingParameters=[(Type=&quot;QWidget *&quot;)]))" />
+    <Alias n="29" Id="(@1 @3 @11 Member=(Name=&quot;`scalar deleting destructor'&quot; OverloadingParameters=[(Type=&quot;unsigned int&quot;)]))" />
+    <Alias n="30" Id="(@1 @3 @13 Member=(Name=&quot;`scalar deleting destructor'&quot; OverloadingParameters=[(Type=&quot;unsigned int&quot;)]))" />
+    <Alias n="31" Id="(@1 @3 @15 Member=(Name=&quot;`scalar deleting destructor'&quot; OverloadingParameters=[(Type=&quot;unsigned int&quot;)]))" />
+    <Alias n="32" Id="(@1 @3 @11 Member=(Name=tr OverloadingParameters=[(Type=&quot;char const *&quot;),(Type=&quot;char const *&quot;),@17]))" />
+    <Alias n="33" Id="(@1 @3 @11 Member=~CaseandEditorhome)" />
+    <Alias n="34" Id="(@1 @3 @13 Member=~CaseScriptConfigure)" />
+    <Alias n="35" Id="(@1 @3 @15 Member=~MainWindows)" />
+    <Alias n="36" Id="(@1 @3 @11 Member=Accpet)" />
+    <Alias n="37" Id="(@1 @3 @11 Member=connectslots)" />
+    <Alias n="38" Id="(@1 @3 @15 Member=ConnectSlots)" />
+    <Alias n="39" Id="(@1 @3 @15 Member=openpycharmIDE)" />
+    <Alias n="40" Id="(@1 @3 @13 Member=Reset)" />
+    <Alias n="41" Id="(@1 @3 @11 Member=SelectPycharmHome)" />
+    <Alias n="42" Id="(@1 @3 @11 Member=SelectPythonFileHome)" />
+    <Alias n="43" Id="(@1 @3 @15 Member=SetPycaseFilehome)" />
+    <Alias n="44" Id="(@1 @3 @13 Member=TestRun)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="结果" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="测试项目" ValueLabel="测试项目">
+      <Condition Expression="HasCategory('CodeMap_TestProject')" />
+      <Setter Property="Icon" Value="CodeMap_TestProject" />
+      <Setter Property="Background" Value="#FF307A69" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Web 项目" ValueLabel="Web 项目">
+      <Condition Expression="HasCategory('CodeMap_WebProject')" />
+      <Setter Property="Icon" Value="CodeMap_WebProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Windows 应用商店项目" ValueLabel="Windows 应用商店项目">
+      <Condition Expression="HasCategory('CodeMap_WindowsStoreProject')" />
+      <Setter Property="Icon" Value="CodeMap_WindowsStoreProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="电话项目" ValueLabel="电话项目">
+      <Condition Expression="HasCategory('CodeMap_PhoneProject')" />
+      <Setter Property="Icon" Value="CodeMap_PhoneProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="可移植库" ValueLabel="可移植库">
+      <Condition Expression="HasCategory('CodeMap_PortableLibraryProject')" />
+      <Setter Property="Icon" Value="CodeMap_PortableLibraryProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="WPF 项目" ValueLabel="WPF 项目">
+      <Condition Expression="HasCategory('CodeMap_WpfProject')" />
+      <Setter Property="Icon" Value="CodeMap_WpfProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VSIX 项目" ValueLabel="VSIX 项目">
+      <Condition Expression="HasCategory('CodeMap_VsixProject')" />
+      <Setter Property="Icon" Value="CodeMap_VsixProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="建模项目" ValueLabel="建模项目">
+      <Condition Expression="HasCategory('CodeMap_ModelingProject')" />
+      <Setter Property="Icon" Value="CodeMap_ModelingProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="程序集" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="命名空间" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="接口" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="结构" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="枚举" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="委托" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="属性" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="方法" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="事件" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="字段" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out 参数" ValueLabel="具有类别">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="参数" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="局部变量" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="外部" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="继承自" ValueLabel="True">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="实现" ValueLabel="True">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="调用" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="函数指针" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段读取" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段写入" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldWrite')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+      <Setter Property="IsHidden" Value="false" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="返回" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="引用" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('References')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="使用特性" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="解决方案文件夹" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeMap_SolutionFolder')" />
+      <Setter Property="Background" Value="#FFDEBA83" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="项目引用" ValueLabel="项目引用">
+      <Condition Expression="HasCategory('CodeMap_ProjectReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="外部引用" ValueLabel="外部引用">
+      <Condition Expression="HasCategory('CodeMap_ExternalReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="b12702ad-abfb-343a-a199-8e24837244a3.OutputPath" Value="C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\RATRunner.exe" />
+    <Path Id="b12702ad-abfb-343a-a199-8e24837244a3.OutputPathUri" Value="file:///C:/Users/pengjian/Documents/GitHub/RTA/x64/Debug/RATRunner.exe" />
+  </Paths>
+</DirectedGraph>

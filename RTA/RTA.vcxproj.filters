@@ -16,6 +16,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InitConfigLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource1.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="RunScript.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="InitConfigLoader.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

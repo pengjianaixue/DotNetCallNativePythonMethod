@@ -1,20 +1,30 @@
 #pragma once
 
 #include <QObject>
+#include <QtWidgets\QWidget>
+#include <QtWidgets\QMessageBox>
 #include <QtCore\QXmlStreamReader>
 #include <QtCore\QXmlStreamWriter>
 
-class XmlConfigureLoader : public QObject
+class CXmlConfigureFileOperation : public QObject
 {
 	Q_OBJECT
 	
 public:
-	XmlConfigureLoader(QObject *parent);
-	~XmlConfigureLoader();
+	CXmlConfigureFileOperation(QObject *parent,const QString& InitFilePath);
+	~CXmlConfigureFileOperation();
 public:
-	bool CreateAndCheckInitXml();
+	bool WirteInitXml(const QString &Prefix, const QString &vaule);
+	bool ReadInitXml(const QString &Prefix,  QString &vaule);
+	bool ForamtEndEleAndSave();
+private:
+	
+	
 	
 private:
-	QXmlStreamWriter m_XmlWriter;
-	QXmlStreamReader m_XmlReader;
+	QFile			 *m_initXmlFile;
+	QXmlStreamWriter *m_XmlWriter;
+	QXmlStreamReader *m_XmlReader;
+	bool			  m_bLoadFlag;
+				  
 };

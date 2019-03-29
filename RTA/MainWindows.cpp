@@ -22,7 +22,7 @@ MainWindows::~MainWindows()
 bool MainWindows::openpycharmIDE()
 {
 
-	QDir pycasedir;
+	
 	if (m_strpycasefilehomepath.isEmpty()|| m_strpycharmbinpath.isEmpty())
 	{
 		QMessageBox::critical(this, "File path error ", "Please Set Python case home ");
@@ -34,6 +34,11 @@ bool MainWindows::openpycharmIDE()
 	}
 	QString pypath =   m_strpycasefilehomepath;
 	QString program = m_strpycharmbinpath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
+	QFileInfo  pycasedir(program);
+	if (!pycasedir.isExecutable())
+	{
+		QMessageBox::critical(this, "File path error", "the pycharm path have no pycharm64.exe file!");
+	}
 	QStringList arguments;
 	arguments << pypath;
 	qDebug() << program << "\n" << arguments;

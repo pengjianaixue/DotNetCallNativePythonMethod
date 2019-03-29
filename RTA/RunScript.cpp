@@ -6,9 +6,9 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 {
 	
 	ui.setupUi(this);
-	m_strpythonfilehome = "./CaseProject";
+	m_strpythonfilehome = R"(./CaseProject/)";
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
-	m_cpycaller.SetPyPath(R"(./Python/)");
+	/*m_cpycaller.SetPyPath(R"(./Python/)");*/
 	if (!
 		(
 			connect(this->ui.pushButton_run, &QPushButton::clicked, this, &CaseScriptConfigure::TestRun) &&

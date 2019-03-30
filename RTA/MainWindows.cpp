@@ -4,9 +4,13 @@ MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
 	  PythonHomeSet(new CaseandEditorhome(this))
 {
+
+	m_strInitXmlFilePath = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\Initloadfile\InitParam.xml)";
 	m_hPycharmProcessid = 0;
 	ui.setupUi(this);
 	ConnectSlots();
+	LoadInitXmlConfigure();
+
 	
 }
 bool MainWindows::openconfigform(int i)
@@ -18,12 +22,49 @@ MainWindows::~MainWindows()
 {
 	delete m_pyeditorprocess;
 }
+bool MainWindows::LoadInitXmlConfigure()
+{
+	CXmlConfigureFileOperation Reader(this, m_strInitXmlFilePath.toStdString(), CXmlConfigureFileOperation::OPERATIONTYPE::READ);
+	QString Pycharmpath;
+	QString PycasePath;
+	if (Reader.ReadInitXml("Pycharmpath", Pycharmpath)&&!Pycharmpath.isEmpty())
+	{
+		TRACE(Pycharmpath);
+		m_strPycharmBinPath = Pycharmpath;
+	}
+	if (Reader.ReadInitXml("PyCasePath", PycasePath)&&!PycasePath.isEmpty())
+	{
+		TRACE(PycasePath);
+		m_strPyCaseFileHomePath = PycasePath;
+		emit Signal_emitpycasefilehomepath(m_strPyCaseFileHomePath);
+	}
+	PythonHomeSet->SetPypathExtra(m_strPyCaseFileHomePath, m_strPycharmBinPath);
+	return true;
+}
+
+void MainWindows::closeEvent(QCloseEvent * event)
+{
+	QMessageBox::StandardButton rb = QMessageBox::information(this,"exit info","Are you sure to close RTA ?",QMessageBox::StandardButton::Cancel, QMessageBox::StandardButton::Apply);
+	if (rb == QMessageBox::StandardButton::Cancel)
+	{
+		event->ignore();
+	}
+	else
+	{
+		CXmlConfigureFileOperation Wirter(this, m_strInitXmlFilePath.toStdString(), CXmlConfigureFileOperation::OPERATIONTYPE::WRITE);
+		Wirter.WirteInitXml("Pycharmpath", m_strPycharmBinPath);
+		Wirter.WirteInitXml("PyCasePath", m_strPyCaseFileHomePath);
+		Wirter.ForamtEndEleAndSave();
+	}
+	
+
+}
 
 bool MainWindows::openpycharmIDE()
 {
 
 	
-	if (m_strpycasefilehomepath.isEmpty()|| m_strpycharmbinpath.isEmpty())
+	if (m_strPyCaseFileHomePath.isEmpty()|| m_strPycharmBinPath.isEmpty())
 	{
 		QMessageBox::critical(this, "File path error ", "Please Set Python case home ");
 		return false;
@@ -32,8 +73,8 @@ bool MainWindows::openpycharmIDE()
 	{
 		QMessageBox::warning(this, "Warning", "the  python editor  pycharm have existing!");
 	}
-	QString pypath =   m_strpycasefilehomepath;
-	QString program = m_strpycharmbinpath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
+	QString pypath =   m_strPyCaseFileHomePath;
+	QString program = m_strPycharmBinPath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
 	QFileInfo  pycasedir(program);
 	if (!pycasedir.isExecutable())
 	{
@@ -59,7 +100,7 @@ bool MainWindows::SetPycaseFilehome()
 bool MainWindows::Recvipycasefilehomepath(const QString & pycasefilehomepath)
 {
 
-	m_strpycasefilehomepath = pycasefilehomepath;
+	m_strPyCaseFileHomePath = pycasefilehomepath;
 
 	return true;
 }
@@ -67,7 +108,7 @@ bool MainWindows::Recvipycasefilehomepath(const QString & pycasefilehomepath)
 bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 {
 
-	m_strpycharmbinpath = Pycharmhomepath;
+	m_strPycharmBinPath = Pycharmhomepath;
 	return true;
 }
 

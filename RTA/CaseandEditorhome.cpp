@@ -14,6 +14,21 @@ CaseandEditorhome::~CaseandEditorhome()
 	
 }
 
+bool CaseandEditorhome::SetPypathExtra(const QString & pycasepath, const QString & pycharmbinpath)
+{
+	if (!pycasepath.isEmpty())
+	{
+		m_strpycasefilehomepath = pycasepath;
+		ui.LE_ProjectPath->setText(m_strpycasefilehomepath);
+	}
+	if (!pycharmbinpath.isEmpty())
+	{
+		m_strpycharmbinpath = pycharmbinpath;
+		ui.LE_PycharmPath->setText(m_strpycharmbinpath);
+	}
+	return true;
+}
+
 bool CaseandEditorhome::connectslots()
 {
 	if (!
@@ -42,9 +57,9 @@ bool CaseandEditorhome::SelectPycharmHome()
 	pycasefile.setViewMode(QFileDialog::Detail);//
 	if (pycasefile.exec() == QFileDialog::Accepted)
 	{
-		QString m_strpycharmbinpath;
-		m_strpycharmbinpath = pycasefile.selectedFiles()[0];
-		ui.LE_PycharmPath->setText(m_strpycharmbinpath);
+		QString strpycharmbinpath;
+		strpycharmbinpath = pycasefile.selectedFiles()[0];
+		ui.LE_PycharmPath->setText(strpycharmbinpath);
 		
 	}
 	return true;
@@ -65,11 +80,14 @@ bool CaseandEditorhome::Accpet()
 
 	if (!this->ui.LE_PycharmPath->text().isEmpty())
 	{
-		emit Signal_eimtPycharmHome(this->ui.LE_PycharmPath->text());
+		
+		m_strpycharmbinpath = this->ui.LE_PycharmPath->text();
+		emit Signal_eimtPycharmHome(m_strpycharmbinpath);
 	}
 	if (!this->ui.LE_ProjectPath->text().isEmpty())
 	{
-		emit Signal_eimtPythonFileHome(this->ui.LE_ProjectPath->text());
+		m_strpycasefilehomepath = this->ui.LE_ProjectPath->text();
+		emit Signal_eimtPythonFileHome(m_strpycasefilehomepath);
 	}
 	this->close();
 	return true;
@@ -83,9 +101,9 @@ bool CaseandEditorhome::SelectPythonFileHome()
 	pycasefile.setViewMode(QFileDialog::Detail);//
 	if (pycasefile.exec() == QFileDialog::Accepted)
 	{
-		QString m_strpycasefilehomepath;
-		m_strpycasefilehomepath = pycasefile.selectedFiles()[0];
-		ui.LE_ProjectPath->setText(m_strpycasefilehomepath);
+		QString strpycasefilehomepath;
+		strpycasefilehomepath = pycasefile.selectedFiles()[0];
+		ui.LE_ProjectPath->setText(strpycasefilehomepath);
 		
 	}
 	return true;

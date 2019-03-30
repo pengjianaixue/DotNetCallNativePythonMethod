@@ -9,7 +9,10 @@ class CaseandEditorhome : public QDialog
 public:
 	CaseandEditorhome(QWidget *parent = Q_NULLPTR);
 	~CaseandEditorhome();
+	bool SetPypathExtra(const QString& pycasepath,const QString& pycharmbinpath);
+private:
 	bool connectslots();
+	
 signals:
 	void Signal_eimtPythonFileHome(const QString &);
 	void Signal_eimtPycharmHome(const QString &);
@@ -21,4 +24,6 @@ public slots:
 	bool Accpet();
 private:
 	Ui::CaseandEditorhome ui;
+	QString m_strpycasefilehomepath;
+	QString m_strpycharmbinpath;
 };

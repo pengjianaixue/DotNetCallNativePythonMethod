@@ -6,6 +6,8 @@
 #include "RunScript.h"
 #include "ui_MainWindows.h"
 #include "CaseandEditorhome.h"
+#include "InitConfigLoader.h"
+#include "Trace.h"
 #ifdef WIN32
 	#include <Windows.h>
 #endif // WIN32
@@ -16,7 +18,9 @@ class MainWindows : public QMainWindow
 public:
 	MainWindows(QWidget *parent = Q_NULLPTR);
 	~MainWindows();
-
+	bool LoadInitXmlConfigure();
+protected:
+	void closeEvent(QCloseEvent* event);
 public slots:
 	bool openconfigform(int i);
 	bool openpycharmIDE();
@@ -25,7 +29,7 @@ public slots:
 	bool RecviPycharmhomepath(const QString &Pycharmhomepath);
 signals:
 	void Signal_emitpycasefilehomepath(const QString &pycasefilehomepath);
-private:
+private://ui vars
 	Ui::MainWindows ui;
 	CaseandEditorhome *PythonHomeSet;
 private:
@@ -37,8 +41,9 @@ private:
 
 	CaseScriptConfigure m_uirunscript;
 	QProcess *m_pyeditorprocess;
-	QString m_strpycasefilehomepath;
-	QString m_strpycharmbinpath;
+	QString m_strPyCaseFileHomePath;
+	QString m_strPycharmBinPath;
+	QString m_strInitXmlFilePath;
 	 
 private:
 	bool ConnectSlots();

@@ -44,6 +44,18 @@ QMainWindow::separator:vertical {
          <attribute name="title">
           <string>Tab 2</string>
          </attribute>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QFrame" name="frame">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
       </item>
@@ -199,7 +211,7 @@ QToolBox QScrollArea QWidget QWidget {
         <number>3</number>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="TB_Routerpage">
         <property name="geometry">
@@ -207,7 +219,7 @@ QToolBox QScrollArea QWidget QWidget {
           <x>0</x>
           <y>0</y>
           <width>98</width>
-          <height>419</height>
+          <height>324</height>
          </rect>
         </property>
         <attribute name="label">
@@ -257,7 +269,7 @@ QToolBox QScrollArea QWidget QWidget {
           <x>0</x>
           <y>0</y>
           <width>98</width>
-          <height>419</height>
+          <height>324</height>
          </rect>
         </property>
         <attribute name="label">
@@ -435,7 +447,7 @@ QDockWidget::float-button:pressed {
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <property name="movable">
           <bool>true</bool>
@@ -450,6 +462,10 @@ QDockWidget::float-button:pressed {
           <property name="styleSheet">
            <string notr="true">background-color: rgb(246, 255, 240);</string>
           </property>
+          <attribute name="icon">
+           <iconset resource="HomePage.qrc">
+            <normaloff>:/StartForm/Resources/operation.png</normaloff>:/StartForm/Resources/operation.png</iconset>
+          </attribute>
           <attribute name="title">
            <string>Opeartion Info</string>
           </attribute>
@@ -464,9 +480,37 @@ QDockWidget::float-button:pressed {
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 246, 222);</string>
           </property>
+          <attribute name="icon">
+           <iconset resource="HomePage.qrc">
+            <normaloff>:/StartForm/Resources/Error.png</normaloff>:/StartForm/Resources/Error.png</iconset>
+          </attribute>
           <attribute name="title">
            <string>Error Info</string>
           </attribute>
+         </widget>
+         <widget class="QWidget" name="tw_Terminal">
+          <attribute name="icon">
+           <iconset resource="HomePage.qrc">
+            <normaloff>:/StartForm/Resources/terminal.png</normaloff>:/StartForm/Resources/terminal.png</iconset>
+          </attribute>
+          <attribute name="title">
+           <string>Terminal</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="PTE_TerimnalDisplayArea">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(65, 65, 65);
+font: 75 12pt &quot;Consolas&quot;;
+color: rgb(255, 255, 255);
+</string>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>

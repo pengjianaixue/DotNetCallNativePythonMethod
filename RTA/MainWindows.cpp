@@ -2,7 +2,7 @@
 #include "MainWindows.h"
 MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
-	  PythonHomeSet(new CaseandEditorhome(this))
+	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess())
 {
 
 	m_strInitXmlFilePath = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\Initloadfile\InitParam.xml)";
@@ -10,6 +10,7 @@ MainWindows::MainWindows(QWidget *parent)
 	ui.setupUi(this);
 	ConnectSlots();
 	LoadInitXmlConfigure();
+	UiInitOption();
 
 	
 }
@@ -20,6 +21,8 @@ bool MainWindows::openconfigform(int i)
 }
 MainWindows::~MainWindows()
 {
+	m_RunPythonCaseprocess->terminate();
+	delete m_RunPythonCaseprocess;
 	delete m_pyeditorprocess;
 }
 bool MainWindows::LoadInitXmlConfigure()
@@ -42,6 +45,12 @@ bool MainWindows::LoadInitXmlConfigure()
 	return true;
 }
 
+bool MainWindows::UiInitOption()
+{
+	this->ui.PTE_TerimnalDisplayArea->setReadOnly(true);
+	return true;
+}
+
 void MainWindows::closeEvent(QCloseEvent * event)
 {
 	QMessageBox::StandardButton rb = QMessageBox::information(this,"exit info","Are you sure to close RTA ?",QMessageBox::StandardButton::Cancel, QMessageBox::StandardButton::Apply);
@@ -51,6 +60,7 @@ void MainWindows::closeEvent(QCloseEvent * event)
 	}
 	else
 	{
+
 		CXmlConfigureFileOperation Wirter(this, m_strInitXmlFilePath.toStdString(), CXmlConfigureFileOperation::OPERATIONTYPE::WRITE);
 		Wirter.WirteInitXml("Pycharmpath", m_strPycharmBinPath);
 		Wirter.WirteInitXml("PyCasePath", m_strPyCaseFileHomePath);
@@ -112,6 +122,27 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 	return true;
 }
 
+bool MainWindows::RunPyFileInTerminal()
+{
+	m_RunPythonCaseprocess->setProcessChannelMode(QProcess::MergedChannels);
+	m_RunPythonCaseprocess->start(R"(python C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\main.py)");
+	m_RunPythonCaseprocess->waitForFinished();
+	QByteArray qbt = m_RunPythonCaseprocess->readAllStandardOutput();
+	QString msg = QString::fromLocal8Bit(qbt);
+#ifdef _DEBUG
+	std::string smsg = msg.toStdString();
+#endif // _DEBUG
+
+	this->ui.PTE_TerimnalDisplayArea->appendPlainText(msg);
+	this->ui.PTE_TerimnalDisplayArea->update();
+	/*this.ui
+	this.ui->PTE_TerimnalDisplayArea->;
+	this.ui->PTE_TerimnalDisplayArea->update();*/
+
+	
+	return true;
+}
+
 bool MainWindows::ConnectSlots()
 {
 
@@ -122,7 +153,8 @@ bool MainWindows::ConnectSlots()
 			connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE) &&
 			connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPythonFileHome, this, &MainWindows::Recvipycasefilehomepath) &&
 			connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) &&
-			connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::ReSetPyFilePath)
+			connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::ReSetPyFilePath) &&
+			connect(this->ui.ScirptRun, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal)
 		)
 		)
 	{

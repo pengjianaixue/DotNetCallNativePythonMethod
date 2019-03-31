@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/StartForm">
+    <file>Resources/python.png</file>
+    <file>Resources/Error.png</file>
+    <file>Resources/operation.png</file>
+    <file>Resources/terminal.png</file>
     <file>Resources/opendir.png</file>
     <file>Resources/Path.png</file>
     <file>Resources/startui.png</file>

@@ -13,12 +13,14 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDockWidget>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
@@ -45,6 +47,8 @@ public:
     QTabWidget *tabWidget_2;
     QWidget *tab;
     QWidget *tab_2;
+    QGridLayout *gridLayout;
+    QFrame *frame;
     QMenuBar *menuBar;
     QMenu *menuNew_Project_File;
     QMenu *menuOption;
@@ -79,6 +83,9 @@ public:
     QTabWidget *TW_OpeationDisp;
     QWidget *tw_opeartioninfo;
     QWidget *tw_errorinfo;
+    QWidget *tw_Terminal;
+    QGridLayout *gridLayout_2;
+    QPlainTextEdit *PTE_TerimnalDisplayArea;
 
     void setupUi(QMainWindow *MainWindows)
     {
@@ -149,6 +156,17 @@ public:
         tabWidget_2->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        gridLayout = new QGridLayout(tab_2);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        frame = new QFrame(tab_2);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+
+        gridLayout->addWidget(frame, 0, 0, 1, 1);
+
         tabWidget_2->addTab(tab_2, QString());
 
         gridLayout_3->addWidget(tabWidget_2, 0, 0, 1, 1);
@@ -262,7 +280,7 @@ public:
         toolBox->setMidLineWidth(3);
         TB_Routerpage = new QWidget();
         TB_Routerpage->setObjectName(QString::fromUtf8("TB_Routerpage"));
-        TB_Routerpage->setGeometry(QRect(0, 0, 98, 419));
+        TB_Routerpage->setGeometry(QRect(0, 0, 98, 324));
         gridLayout_6 = new QGridLayout(TB_Routerpage);
         gridLayout_6->setSpacing(6);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -295,7 +313,7 @@ public:
         toolBox->addItem(TB_Routerpage, QString::fromUtf8("Router Tool"));
         TB_ConfigurePage = new QWidget();
         TB_ConfigurePage->setObjectName(QString::fromUtf8("TB_ConfigurePage"));
-        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 419));
+        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 324));
         toolBox->addItem(TB_ConfigurePage, QString::fromUtf8("Configure Tool"));
 
         gridLayout_5->addWidget(toolBox, 0, 0, 1, 1);
@@ -461,12 +479,35 @@ public:
         tw_opeartioninfo->setObjectName(QString::fromUtf8("tw_opeartioninfo"));
         tw_opeartioninfo->setFont(font);
         tw_opeartioninfo->setStyleSheet(QString::fromUtf8("background-color: rgb(246, 255, 240);"));
-        TW_OpeationDisp->addTab(tw_opeartioninfo, QString());
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/StartForm/Resources/operation.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TW_OpeationDisp->addTab(tw_opeartioninfo, icon7, QString());
         tw_errorinfo = new QWidget();
         tw_errorinfo->setObjectName(QString::fromUtf8("tw_errorinfo"));
         tw_errorinfo->setFont(font);
         tw_errorinfo->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 246, 222);"));
-        TW_OpeationDisp->addTab(tw_errorinfo, QString());
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/StartForm/Resources/Error.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TW_OpeationDisp->addTab(tw_errorinfo, icon8, QString());
+        tw_Terminal = new QWidget();
+        tw_Terminal->setObjectName(QString::fromUtf8("tw_Terminal"));
+        gridLayout_2 = new QGridLayout(tw_Terminal);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        PTE_TerimnalDisplayArea = new QPlainTextEdit(tw_Terminal);
+        PTE_TerimnalDisplayArea->setObjectName(QString::fromUtf8("PTE_TerimnalDisplayArea"));
+        PTE_TerimnalDisplayArea->setStyleSheet(QString::fromUtf8("background-color: rgb(65, 65, 65);\n"
+"font: 75 12pt \"Consolas\";\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        PTE_TerimnalDisplayArea->setReadOnly(false);
+
+        gridLayout_2->addWidget(PTE_TerimnalDisplayArea, 0, 0, 1, 1);
+
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/StartForm/Resources/terminal.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TW_OpeationDisp->addTab(tw_Terminal, icon9, QString());
 
         gridLayout_12->addWidget(TW_OpeationDisp, 0, 0, 1, 1);
 
@@ -492,8 +533,8 @@ public:
         retranslateUi(MainWindows);
 
         tabWidget_2->setCurrentIndex(0);
-        toolBox->setCurrentIndex(1);
-        TW_OpeationDisp->setCurrentIndex(1);
+        toolBox->setCurrentIndex(0);
+        TW_OpeationDisp->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindows);
@@ -539,6 +580,7 @@ public:
         label->setText(QApplication::translate("MainWindows", "Property", nullptr));
         TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_opeartioninfo), QApplication::translate("MainWindows", "Opeartion Info", nullptr));
         TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_errorinfo), QApplication::translate("MainWindows", "Error Info", nullptr));
+        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_Terminal), QApplication::translate("MainWindows", "Terminal", nullptr));
     } // retranslateUi
 
 };

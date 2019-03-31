@@ -11,6 +11,9 @@
 #ifdef WIN32
 	#include <Windows.h>
 #endif // WIN32
+//TODO 
+//This is  Py Terminal test only
+//#include "../CallPython/CallPython.h"
 class MainWindows : public QMainWindow
 {
 	Q_OBJECT
@@ -19,6 +22,7 @@ public:
 	MainWindows(QWidget *parent = Q_NULLPTR);
 	~MainWindows();
 	bool LoadInitXmlConfigure();
+	bool UiInitOption();
 protected:
 	void closeEvent(QCloseEvent* event);
 public slots:
@@ -27,6 +31,8 @@ public slots:
 	bool SetPycaseFilehome();
 	bool Recvipycasefilehomepath(const QString &pycasefilehomepath);
 	bool RecviPycharmhomepath(const QString &Pycharmhomepath);
+	//This is  Py Terminal test only
+	bool RunPyFileInTerminal();
 signals:
 	void Signal_emitpycasefilehomepath(const QString &pycasefilehomepath);
 private://ui vars
@@ -39,11 +45,13 @@ private:
 	long m_hPycharmProcesshandle;
 #endif // WIN32
 
-	CaseScriptConfigure m_uirunscript;
-	QProcess *m_pyeditorprocess;
-	QString m_strPyCaseFileHomePath;
-	QString m_strPycharmBinPath;
-	QString m_strInitXmlFilePath;
+	CaseScriptConfigure		m_uirunscript;
+	QProcess				*m_pyeditorprocess;
+	QString					m_strPyCaseFileHomePath;
+	QString					m_strPycharmBinPath;
+	QString					m_strInitXmlFilePath;
+	//This is  Py Terminal test only
+	QProcess				*m_RunPythonCaseprocess;
 	 
 private:
 	bool ConnectSlots();

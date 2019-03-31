@@ -6,7 +6,13 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 {
 	
 	ui.setupUi(this);
-	m_strpythonfilehome = R"(./CaseProject/)";
+	//Set the Stretch rate
+	ui.top_splitter->setStretchFactor(0, 4);
+	ui.top_splitter->setStretchFactor(1, 6);
+	//TODO 
+	// reamind to  recover the relative path
+	//m_strpythonfilehome = R"(./CaseProject/)";
+	m_strpythonfilehome = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\)";
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	/*m_cpycaller.SetPyPath(R"(./Python/)");*/
 	if (!
@@ -33,6 +39,7 @@ int CaseScriptConfigure::TestRun()
 	iconPause.addFile(":/RTA/PyRunner/Resources/pause.png");
 	ui.pushButton_run->setIcon(iconPause);
 	ui.pushButton_run->update();
+	//Call Python function 
 	PARAMPAIR param, param1;
 	param.first = "i";
 	param.second = "117";
@@ -41,6 +48,7 @@ int CaseScriptConfigure::TestRun()
 	m_callpyparmlist.push_back(param);
 	m_callpyparmlist.push_back(param1);
 	m_strRunres = m_cpycaller.Runfunction(std::string("main"), std::string("main"), m_callpyparmlist);
+
 	ui.TB_RunInfodisp->append(QString(m_strRunres.c_str()));
 	QIcon iconstart;
 	iconstart.addFile(":/RTA/PyRunner/Resources/start.png");

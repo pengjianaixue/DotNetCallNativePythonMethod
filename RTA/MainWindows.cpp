@@ -2,10 +2,15 @@
 #include "MainWindows.h"
 MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
-	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess())
+	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess()),
+	  m_QthreadPythonCaseprocess(nullptr)
 {
 
-	m_strInitXmlFilePath = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\Initloadfile\InitParam.xml)";
+	m_TheCurrentPath = QDir::currentPath();
+	//TODO 
+	//this absolutely path is only for  local test 
+	m_strInitXmlFilePath = m_TheCurrentPath + R"(\Initloadfile\InitParam.xml)"; 
+	//m_strInitXmlFilePath = R"(./Initloadfile/InitParam.xml)";
 	m_hPycharmProcessid = 0;
 	ui.setupUi(this);
 	ConnectSlots();
@@ -27,7 +32,7 @@ MainWindows::~MainWindows()
 }
 bool MainWindows::LoadInitXmlConfigure()
 {
-	CXmlConfigureFileOperation Reader(this, m_strInitXmlFilePath.toStdString(), CXmlConfigureFileOperation::OPERATIONTYPE::READ);
+	CXmlConfigureFileOperation Reader(this, m_strInitXmlFilePath, CXmlConfigureFileOperation::OPERATIONTYPE::READ);
 	QString Pycharmpath;
 	QString PycasePath;
 	if (Reader.ReadInitXml("Pycharmpath", Pycharmpath)&&!Pycharmpath.isEmpty())
@@ -60,13 +65,11 @@ void MainWindows::closeEvent(QCloseEvent * event)
 	}
 	else
 	{
-
-		CXmlConfigureFileOperation Wirter(this, m_strInitXmlFilePath.toStdString(), CXmlConfigureFileOperation::OPERATIONTYPE::WRITE);
+		CXmlConfigureFileOperation Wirter(this, m_strInitXmlFilePath, CXmlConfigureFileOperation::OPERATIONTYPE::WRITE);
 		Wirter.WirteInitXml("Pycharmpath", m_strPycharmBinPath);
 		Wirter.WirteInitXml("PyCasePath", m_strPyCaseFileHomePath);
 		Wirter.ForamtEndEleAndSave();
 	}
-	
 
 }
 
@@ -124,22 +127,19 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 
 bool MainWindows::RunPyFileInTerminal()
 {
+	this->ui.PTE_TerimnalDisplayArea->clear();
+	QString PyPath = m_TheCurrentPath + R"(\CaseProject\main.py)";
 	m_RunPythonCaseprocess->setProcessChannelMode(QProcess::MergedChannels);
-	m_RunPythonCaseprocess->start(R"(python C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\main.py)");
+	QString cmd = "python " + PyPath;
+	m_RunPythonCaseprocess->start(R"(python )" + PyPath);
 	m_RunPythonCaseprocess->waitForFinished();
 	QByteArray qbt = m_RunPythonCaseprocess->readAllStandardOutput();
 	QString msg = QString::fromLocal8Bit(qbt);
 #ifdef _DEBUG
 	std::string smsg = msg.toStdString();
 #endif // _DEBUG
-
 	this->ui.PTE_TerimnalDisplayArea->appendPlainText(msg);
 	this->ui.PTE_TerimnalDisplayArea->update();
-	/*this.ui
-	this.ui->PTE_TerimnalDisplayArea->;
-	this.ui->PTE_TerimnalDisplayArea->update();*/
-
-	
 	return true;
 }
 

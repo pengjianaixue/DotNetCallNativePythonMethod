@@ -55,8 +55,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_QUICK_LIB;QT_PRINTSUPPORT_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtPrintSupport;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_QUICK_LIB;QT_NETWORKAUTH_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -71,13 +71,13 @@
       <OutputFile>$(OutDir)\RATRunner.exe</OutputFile>
       <AdditionalLibraryDirectories>$(VLDPATH)\bin\x64\Debug-v140;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Locationd.lib;Qt5Networkd.lib;Qt5SerialPortd.lib;Qt5Sqld.lib;Qt5UiToolsd.lib;Qt5Widgetsd.lib;Qt5Xmld.lib;Qt5Qmld.lib;Qt5WinExtrasd.lib;Qt5XmlPatternsd.lib;Qt5Sensorsd.lib;Qt5Concurrentd.lib;Qt5Multimediad.lib;Qt5MultimediaWidgetsd.lib;Qt5Quickd.lib;Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Locationd.lib;Qt5Networkd.lib;Qt5SerialPortd.lib;Qt5Sqld.lib;Qt5UiToolsd.lib;Qt5Widgetsd.lib;Qt5Xmld.lib;Qt5Qmld.lib;Qt5WinExtrasd.lib;Qt5XmlPatternsd.lib;Qt5Sensorsd.lib;Qt5Concurrentd.lib;Qt5Quickd.lib;Qt5NetworkAuthd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtPrintSupport;%(AdditionalIncludeDirectories)</IncludePath>
-      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_QUICK_LIB;QT_PRINTSUPPORT_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_QUICK_LIB;QT_NETWORKAUTH_LIB;%(PreprocessorDefinitions)</Define>
       <ForceInclude>stdafx.h;../../%(Filename)%(Extension)</ForceInclude>
     </QtMoc>
     <QtUic>
@@ -95,8 +95,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_QUICK_LIB;QT_PRINTSUPPORT_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtPrintSupport;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_QUICK_LIB;QT_NETWORKAUTH_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -109,13 +109,13 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Location.lib;Qt5Network.lib;Qt5SerialPort.lib;Qt5Sql.lib;Qt5UiTools.lib;Qt5Widgets.lib;Qt5Xml.lib;Qt5Qml.lib;Qt5WinExtras.lib;Qt5XmlPatterns.lib;Qt5Sensors.lib;Qt5Concurrent.lib;Qt5Multimedia.lib;Qt5MultimediaWidgets.lib;Qt5Quick.lib;Qt5PrintSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Location.lib;Qt5Network.lib;Qt5SerialPort.lib;Qt5Sql.lib;Qt5UiTools.lib;Qt5Widgets.lib;Qt5Xml.lib;Qt5Qml.lib;Qt5WinExtras.lib;Qt5XmlPatterns.lib;Qt5Sensors.lib;Qt5Concurrent.lib;Qt5Quick.lib;Qt5NetworkAuth.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtPrintSupport;%(AdditionalIncludeDirectories)</IncludePath>
-      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_QUICK_LIB;QT_PRINTSUPPORT_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_LOCATION_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_SQL_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_QML_LIB;QT_WINEXTRAS_LIB;QT_XMLPATTERNS_LIB;QT_SENSORS_LIB;QT_CONCURRENT_LIB;QT_QUICK_LIB;QT_NETWORKAUTH_LIB;%(PreprocessorDefinitions)</Define>
       <ForceInclude>stdafx.h;../../%(Filename)%(Extension)</ForceInclude>
     </QtMoc>
     <QtUic>
@@ -129,22 +129,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CaseandEditorhome.cpp" />
+    <ClCompile Include="ConfigureBaseIf.cpp" />
     <ClCompile Include="InitConfigLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindows.cpp" />
-    <ClCompile Include="RunScript.cpp" />
+    <ClCompile Include="CaseScriptConfigure.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConfigureBaseIf.h" />
     <ClInclude Include="Trace.h" />
     <QtMoc Include="MainWindows.h" />
     <QtMoc Include="CaseandEditorhome.h" />
     <QtMoc Include="InitConfigLoader.h" />
     <ClInclude Include="resource1.h" />
-    <QtMoc Include="RunScript.h" />
+    <QtMoc Include="CaseScriptConfigure.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth</IncludePath>
+    </QtMoc>
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +157,7 @@
     <QtUic Include="MainWindows.ui">
       <SubType>Designer</SubType>
     </QtUic>
-    <QtUic Include="RunScript.ui" />
+    <QtUic Include="CaseScriptConfigure.ui" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CallPython\CallPython.vcxproj">
@@ -182,7 +187,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="1" lreleaseOptions="" Qt5Version_x0020_x64="5.12" MocOptions="" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="1" lreleaseOptions="" Qt5Version_x0020_x64="5.9.7" MocOptions="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

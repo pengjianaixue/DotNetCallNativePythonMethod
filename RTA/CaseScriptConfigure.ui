@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RunScript</class>
- <widget class="QDialog" name="RunScript">
+ <class>CaseScriptConfigure</class>
+ <widget class="QDialog" name="CaseScriptConfigure">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -27,7 +27,7 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,7">
          <item>
           <widget class="QGroupBox" name="groupBox_2">

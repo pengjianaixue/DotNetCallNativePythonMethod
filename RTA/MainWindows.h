@@ -3,11 +3,13 @@
 #include <QMainWindow>
 #include <QDir>
 #include <QProcess>
-#include "RunScript.h"
+#include "CaseScriptConfigure.h"
 #include "ui_MainWindows.h"
 #include "CaseandEditorhome.h"
 #include "InitConfigLoader.h"
 #include "Trace.h"
+#include <concurrent_unordered_map.h>
+#include <thread>
 #ifdef WIN32
 	#include <Windows.h>
 #endif // WIN32
@@ -50,8 +52,10 @@ private:
 	QString					m_strPyCaseFileHomePath;
 	QString					m_strPycharmBinPath;
 	QString					m_strInitXmlFilePath;
+	QString					m_TheCurrentPath;
 	//This is  Py Terminal test only
 	QProcess				*m_RunPythonCaseprocess;
+	QThread                 *m_QthreadPythonCaseprocess;
 	 
 private:
 	bool ConnectSlots();

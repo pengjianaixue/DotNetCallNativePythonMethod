@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'RunScript.ui'
+** Form generated from reading UI file 'CaseScriptConfigure.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.7
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_RUNSCRIPT_H
-#define UI_RUNSCRIPT_H
+#ifndef UI_CASESCRIPTCONFIGURE_H
+#define UI_CASESCRIPTCONFIGURE_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -32,13 +32,13 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_RunScript
+class Ui_CaseScriptConfigure
 {
 public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_5;
     QSplitter *top_splitter;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_4;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_2;
@@ -60,7 +60,7 @@ public:
     QPushButton *pushButton_4;
     QSpacerItem *verticalSpacer;
     QListView *listView;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_2;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout_6;
@@ -80,19 +80,19 @@ public:
     QSpacerItem *horizontalSpacer;
     QDialogButtonBox *buttonBox;
 
-    void setupUi(QDialog *RunScript)
+    void setupUi(QDialog *CaseScriptConfigure)
     {
-        if (RunScript->objectName().isEmpty())
-            RunScript->setObjectName(QStringLiteral("RunScript"));
-        RunScript->resize(1166, 644);
-        gridLayout = new QGridLayout(RunScript);
+        if (CaseScriptConfigure->objectName().isEmpty())
+            CaseScriptConfigure->setObjectName(QStringLiteral("CaseScriptConfigure"));
+        CaseScriptConfigure->resize(1166, 644);
+        gridLayout = new QGridLayout(CaseScriptConfigure);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        top_splitter = new QSplitter(RunScript);
+        top_splitter = new QSplitter(CaseScriptConfigure);
         top_splitter->setObjectName(QStringLiteral("top_splitter"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -100,14 +100,14 @@ public:
         sizePolicy.setHeightForWidth(top_splitter->sizePolicy().hasHeightForWidth());
         top_splitter->setSizePolicy(sizePolicy);
         top_splitter->setOrientation(Qt::Horizontal);
-        widget = new QWidget(top_splitter);
-        widget->setObjectName(QStringLiteral("widget"));
-        verticalLayout_4 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(top_splitter);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        verticalLayout_4 = new QVBoxLayout(layoutWidget);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        groupBox_2 = new QGroupBox(widget);
+        groupBox_2 = new QGroupBox(layoutWidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
@@ -171,7 +171,7 @@ public:
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        treeView = new QTreeView(widget);
+        treeView = new QTreeView(layoutWidget);
         treeView->setObjectName(QStringLiteral("treeView"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
@@ -191,7 +191,7 @@ public:
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/RTA/PyRunner/Resources/left.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -199,7 +199,7 @@ public:
 
         horizontalLayout_7->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
@@ -218,7 +218,7 @@ public:
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        pushButton_3 = new QPushButton(widget);
+        pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/RTA/PyRunner/Resources/left(3).png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -226,7 +226,7 @@ public:
 
         horizontalLayout_8->addWidget(pushButton_3);
 
-        pushButton_4 = new QPushButton(widget);
+        pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/RTA/PyRunner/Resources/right(6).png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -244,7 +244,7 @@ public:
 
         horizontalLayout_9->addLayout(verticalLayout_3);
 
-        listView = new QListView(widget);
+        listView = new QListView(layoutWidget);
         listView->setObjectName(QStringLiteral("listView"));
 
         horizontalLayout_9->addWidget(listView);
@@ -257,15 +257,15 @@ public:
 
         verticalLayout_4->setStretch(0, 1);
         verticalLayout_4->setStretch(1, 7);
-        top_splitter->addWidget(widget);
-        layoutWidget = new QWidget(top_splitter);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget);
+        top_splitter->addWidget(layoutWidget);
+        layoutWidget1 = new QWidget(top_splitter);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBox = new QGroupBox(layoutWidget);
+        groupBox = new QGroupBox(layoutWidget1);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
@@ -352,7 +352,7 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_infodisp = new QLabel(layoutWidget);
+        label_infodisp = new QLabel(layoutWidget1);
         label_infodisp->setObjectName(QStringLiteral("label_infodisp"));
         label_infodisp->setFont(font);
         label_infodisp->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
@@ -363,7 +363,7 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        pushButton_reset = new QPushButton(layoutWidget);
+        pushButton_reset = new QPushButton(layoutWidget1);
         pushButton_reset->setObjectName(QStringLiteral("pushButton_reset"));
         QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy6.setHorizontalStretch(0);
@@ -380,7 +380,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        TB_RunInfodisp = new QTextBrowser(layoutWidget);
+        TB_RunInfodisp = new QTextBrowser(layoutWidget1);
         TB_RunInfodisp->setObjectName(QStringLiteral("TB_RunInfodisp"));
         TB_RunInfodisp->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 240);"));
 
@@ -389,7 +389,7 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        top_splitter->addWidget(layoutWidget);
+        top_splitter->addWidget(layoutWidget1);
 
         verticalLayout_5->addWidget(top_splitter);
 
@@ -400,7 +400,7 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        buttonBox = new QDialogButtonBox(RunScript);
+        buttonBox = new QDialogButtonBox(CaseScriptConfigure);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         QSizePolicy sizePolicy7(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy7.setHorizontalStretch(0);
@@ -418,42 +418,42 @@ public:
         gridLayout->addLayout(verticalLayout_5, 0, 0, 1, 1);
 
 
-        retranslateUi(RunScript);
+        retranslateUi(CaseScriptConfigure);
 
-        QMetaObject::connectSlotsByName(RunScript);
+        QMetaObject::connectSlotsByName(CaseScriptConfigure);
     } // setupUi
 
-    void retranslateUi(QDialog *RunScript)
+    void retranslateUi(QDialog *CaseScriptConfigure)
     {
-        RunScript->setWindowTitle(QApplication::translate("RunScript", "Run Script Configure", Q_NULLPTR));
-        groupBox_2->setTitle(QApplication::translate("RunScript", "Script File Configure", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("RunScript", "function mode", Q_NULLPTR));
-        label->setText(QApplication::translate("RunScript", "Load Project Case", Q_NULLPTR));
+        CaseScriptConfigure->setWindowTitle(QApplication::translate("CaseScriptConfigure", "Run Script Configure", Q_NULLPTR));
+        groupBox_2->setTitle(QApplication::translate("CaseScriptConfigure", "Script File Configure", Q_NULLPTR));
+        checkBox->setText(QApplication::translate("CaseScriptConfigure", "function mode", Q_NULLPTR));
+        label->setText(QApplication::translate("CaseScriptConfigure", "Load Project Case", Q_NULLPTR));
         PB_LoadCaseList->setText(QString());
         pushButton->setText(QString());
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());
         pushButton_4->setText(QString());
-        groupBox->setTitle(QApplication::translate("RunScript", "Operation", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("CaseScriptConfigure", "Operation", Q_NULLPTR));
         pushButton_run->setText(QString());
 #ifndef QT_NO_SHORTCUT
-        pushButton_run->setShortcut(QApplication::translate("RunScript", "F5", Q_NULLPTR));
+        pushButton_run->setShortcut(QApplication::translate("CaseScriptConfigure", "F5", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
         pushButton_stop->setText(QString());
 #ifndef QT_NO_SHORTCUT
-        pushButton_stop->setShortcut(QApplication::translate("RunScript", "Alt+F5", Q_NULLPTR));
+        pushButton_stop->setShortcut(QApplication::translate("CaseScriptConfigure", "Alt+F5", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
         pushButton_reload->setText(QString());
-        label_infodisp->setText(QApplication::translate("RunScript", "Runing info ", Q_NULLPTR));
+        label_infodisp->setText(QApplication::translate("CaseScriptConfigure", "Runing info ", Q_NULLPTR));
         pushButton_reset->setText(QString());
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class RunScript: public Ui_RunScript {};
+    class CaseScriptConfigure: public Ui_CaseScriptConfigure {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_RUNSCRIPT_H
+#endif // UI_CASESCRIPTCONFIGURE_H

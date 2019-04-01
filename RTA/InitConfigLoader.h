@@ -6,6 +6,7 @@
 #include <QtCore\QXmlStreamReader>
 #include <QtCore\QXmlStreamWriter>
 #include <pugixml.hpp>
+#include <ConfigureBaseIf.h>
 #include "Trace.h"
 
 class CXmlConfigureFileOperation : public QObject
@@ -19,8 +20,9 @@ public:
 
 			}OPERATIONTYPE;
 public:
-	CXmlConfigureFileOperation(QObject *parent,const std::string& InitFilePath, OPERATIONTYPE optype);
-	~CXmlConfigureFileOperation();
+	//CXmlConfigureFileOperation(QObject *parent);
+	CXmlConfigureFileOperation(QObject *parent, const QString& InitFilePath, OPERATIONTYPE optype);
+	virtual ~CXmlConfigureFileOperation();
 	bool InitXmlOperationter();
 public:
 	bool WirteInitXml(const QString &Prefix, const QString &vaule);
@@ -37,5 +39,6 @@ private:
 	pugi::xml_document	*m_pugiXmlReader;
 	bool				m_bLoadFlag;
 	OPERATIONTYPE		m_enumclassmode;
+	bool				m_bInitFileExistsFlags;
 				  
 };

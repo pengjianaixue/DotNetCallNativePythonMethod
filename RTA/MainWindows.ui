@@ -69,7 +69,7 @@ QMainWindow::separator:vertical {
      <x>0</x>
      <y>0</y>
      <width>1197</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -83,7 +83,7 @@ QMainWindow::separator:vertical {
    </widget>
    <widget class="QMenu" name="menuOption">
     <property name="title">
-     <string>SetUp</string>
+     <string>Setup</string>
     </property>
     <addaction name="action_SetPythonFileHome"/>
    </widget>
@@ -219,7 +219,7 @@ QToolBox QScrollArea QWidget QWidget {
           <x>0</x>
           <y>0</y>
           <width>98</width>
-          <height>324</height>
+          <height>323</height>
          </rect>
         </property>
         <attribute name="label">
@@ -269,7 +269,7 @@ QToolBox QScrollArea QWidget QWidget {
           <x>0</x>
           <y>0</y>
           <width>98</width>
-          <height>324</height>
+          <height>323</height>
          </rect>
         </property>
         <attribute name="label">

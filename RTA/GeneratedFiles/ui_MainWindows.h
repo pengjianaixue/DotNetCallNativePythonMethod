@@ -179,7 +179,7 @@ public:
         MainWindows->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindows);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1197, 23));
+        menuBar->setGeometry(QRect(0, 0, 1197, 21));
         menuBar->setStyleSheet(QStringLiteral(""));
         menuNew_Project_File = new QMenu(menuBar);
         menuNew_Project_File->setObjectName(QStringLiteral("menuNew_Project_File"));
@@ -282,7 +282,7 @@ public:
         toolBox->setMidLineWidth(3);
         TB_Routerpage = new QWidget();
         TB_Routerpage->setObjectName(QStringLiteral("TB_Routerpage"));
-        TB_Routerpage->setGeometry(QRect(0, 0, 98, 324));
+        TB_Routerpage->setGeometry(QRect(0, 0, 98, 323));
         gridLayout_6 = new QGridLayout(TB_Routerpage);
         gridLayout_6->setSpacing(6);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -315,7 +315,7 @@ public:
         toolBox->addItem(TB_Routerpage, QStringLiteral("Router Tool"));
         TB_ConfigurePage = new QWidget();
         TB_ConfigurePage->setObjectName(QStringLiteral("TB_ConfigurePage"));
-        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 324));
+        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 323));
         toolBox->addItem(TB_ConfigurePage, QStringLiteral("Configure Tool"));
 
         gridLayout_5->addWidget(toolBox, 0, 0, 1, 1);
@@ -571,7 +571,7 @@ public:
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindows", "Tab 1", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Tab 2", Q_NULLPTR));
         menuNew_Project_File->setTitle(QApplication::translate("MainWindows", "File", Q_NULLPTR));
-        menuOption->setTitle(QApplication::translate("MainWindows", "SetUp", Q_NULLPTR));
+        menuOption->setTitle(QApplication::translate("MainWindows", "Setup", Q_NULLPTR));
         pushButton_3->setText(QString());
         pushButton_5->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));

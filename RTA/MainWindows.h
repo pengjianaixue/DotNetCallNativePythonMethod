@@ -24,7 +24,7 @@ public:
 	MainWindows(QWidget *parent = Q_NULLPTR);
 	~MainWindows();
 	bool LoadInitXmlConfigure();
-	bool UiInitOption();
+	bool InitOption();
 protected:
 	void closeEvent(QCloseEvent* event);
 public slots:
@@ -35,6 +35,7 @@ public slots:
 	bool RecviPycharmhomepath(const QString &Pycharmhomepath);
 	//This is  Py Terminal test only
 	bool RunPyFileInTerminal();
+	void DisplayToTerminal();
 signals:
 	void Signal_emitpycasefilehomepath(const QString &pycasefilehomepath);
 private://ui vars

@@ -46,10 +46,10 @@ public:
     QCheckBox *checkBox;
     QSpacerItem *horizontalSpacer_5;
     QLabel *label;
-    QPushButton *PB_LoadCaseList;
+    QPushButton *pushButton_LoadCaseList;
     QSpacerItem *horizontalSpacer_4;
     QHBoxLayout *horizontalLayout_9;
-    QTreeView *treeView;
+    QTreeView *CaseFile_treeView;
     QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_7;
@@ -143,20 +143,20 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        PB_LoadCaseList = new QPushButton(groupBox_2);
-        PB_LoadCaseList->setObjectName(QStringLiteral("PB_LoadCaseList"));
-        PB_LoadCaseList->setStyleSheet(QLatin1String("selection-color: rgb(255, 0, 127);\n"
+        pushButton_LoadCaseList = new QPushButton(groupBox_2);
+        pushButton_LoadCaseList->setObjectName(QStringLiteral("pushButton_LoadCaseList"));
+        pushButton_LoadCaseList->setStyleSheet(QLatin1String("selection-color: rgb(255, 0, 127);\n"
 "background-color: rgb(228, 246, 255);\n"
 "QPushButton{\n"
 "outline none\n"
 "}"));
         QIcon icon;
         icon.addFile(QStringLiteral(":/RTA/PyRunner/Resources/load.png"), QSize(), QIcon::Normal, QIcon::Off);
-        PB_LoadCaseList->setIcon(icon);
-        PB_LoadCaseList->setIconSize(QSize(32, 32));
-        PB_LoadCaseList->setFlat(true);
+        pushButton_LoadCaseList->setIcon(icon);
+        pushButton_LoadCaseList->setIconSize(QSize(32, 32));
+        pushButton_LoadCaseList->setFlat(true);
 
-        horizontalLayout->addWidget(PB_LoadCaseList);
+        horizontalLayout->addWidget(pushButton_LoadCaseList);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -171,15 +171,15 @@ public:
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        treeView = new QTreeView(layoutWidget);
-        treeView->setObjectName(QStringLiteral("treeView"));
+        CaseFile_treeView = new QTreeView(layoutWidget);
+        CaseFile_treeView->setObjectName(QStringLiteral("CaseFile_treeView"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(5);
-        sizePolicy2.setHeightForWidth(treeView->sizePolicy().hasHeightForWidth());
-        treeView->setSizePolicy(sizePolicy2);
+        sizePolicy2.setHeightForWidth(CaseFile_treeView->sizePolicy().hasHeightForWidth());
+        CaseFile_treeView->setSizePolicy(sizePolicy2);
 
-        horizontalLayout_9->addWidget(treeView);
+        horizontalLayout_9->addWidget(CaseFile_treeView);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
@@ -429,7 +429,7 @@ public:
         groupBox_2->setTitle(QApplication::translate("CaseScriptConfigure", "Script File Configure", Q_NULLPTR));
         checkBox->setText(QApplication::translate("CaseScriptConfigure", "function mode", Q_NULLPTR));
         label->setText(QApplication::translate("CaseScriptConfigure", "Load Project Case", Q_NULLPTR));
-        PB_LoadCaseList->setText(QString());
+        pushButton_LoadCaseList->setText(QString());
         pushButton->setText(QString());
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());

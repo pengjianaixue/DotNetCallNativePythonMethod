@@ -138,10 +138,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="treeitem.cpp" />
+    <ClCompile Include="treemodel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConfigureBaseIf.h" />
     <ClInclude Include="Trace.h" />
+    <ClInclude Include="treeitem.h" />
+    <QtMoc Include="treemodel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(VLDPATH);$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtNetworkAuth</IncludePath>
+    </QtMoc>
     <QtMoc Include="MainWindows.h" />
     <QtMoc Include="CaseandEditorhome.h" />
     <QtMoc Include="InitConfigLoader.h" />

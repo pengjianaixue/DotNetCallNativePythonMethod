@@ -58,7 +58,7 @@ bool MainWindows::InitOption()
 
 void MainWindows::closeEvent(QCloseEvent * event)
 {
-	QMessageBox::StandardButton rb = QMessageBox::information(this,"exit info","Are you sure to close RTA ?",QMessageBox::StandardButton::Cancel, QMessageBox::StandardButton::Apply);
+	QMessageBox::StandardButton rb = QMessageBox::information(this,"exit info","Are you sure to close RAT ?",QMessageBox::StandardButton::Cancel, QMessageBox::StandardButton::Apply);
 	if (rb == QMessageBox::StandardButton::Cancel)
 	{
 		event->ignore();

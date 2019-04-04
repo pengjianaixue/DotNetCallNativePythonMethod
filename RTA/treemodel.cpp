@@ -10,13 +10,14 @@ models.
 #include <QStringList>
 
 TreeModel::TreeModel(QObject *parent)
-	: QAbstractItemModel(parent)
+	: QAbstractItemModel(parent), rootItem(nullptr)
 {
 
 }
 
 TreeModel::~TreeModel()
 {
+	
 	delete rootItem;
 }
 
@@ -30,6 +31,7 @@ int TreeModel::columnCount(const QModelIndex &parent) const
 
 bool TreeModel::setModelData(const QCASEFILETREELIST &data,const QString &RootData)
 {
+
 	QList<QVariant> rootData;
 	rootData << RootData;
 	rootItem = new TreeItem(rootData);
@@ -39,16 +41,9 @@ bool TreeModel::setModelData(const QCASEFILETREELIST &data,const QString &RootDa
 
 bool TreeModel::ClearData()
 {
-
-	for (size_t i = 0; i < rootItem->childCount(); i++)
+	if (!rootItem)
 	{
-		if (rootItem->child(i)!=nullptr)
-		{
-			delete rootItem->child(i);
-			
-		}
-		
-		  
+		delete rootItem;
 	}
 	return true;
 }
@@ -87,21 +82,17 @@ QModelIndex TreeModel::index(int row, int column, const QModelIndex &parent) con
 {
 	if (!hasIndex(row, column, parent))
 		return QModelIndex();
-
 	TreeItem *parentItem;
-
 	if (!parent.isValid())
 		parentItem = rootItem;
 	else
 		parentItem = static_cast<TreeItem*>(parent.internalPointer());
-
 	TreeItem *childItem = parentItem->child(row);
 	if (childItem)
 		return createIndex(row, column, childItem);
 	else
 		return QModelIndex();
 }
-
 QModelIndex TreeModel::parent(const QModelIndex &index) const
 {
 	if (!index.isValid())
@@ -132,6 +123,7 @@ int TreeModel::rowCount(const QModelIndex &parent) const
 
 void TreeModel::setupModelData(const QCASEFILETREELIST &CaseTree, TreeItem * parent)
 {
+	
 	QList<TreeItem*> parents;
 	QList<int> indentations;
 	parents << parent;
@@ -139,62 +131,22 @@ void TreeModel::setupModelData(const QCASEFILETREELIST &CaseTree, TreeItem * par
 	while (number<CaseTree.count())
 	{
 
-		QList<QVariant> columnData;
+		QList<QVariant> NodeParentsData;		
+		NodeParentsData << CaseTree[number].first;
+		parents.last()->appendChild(new TreeItem(NodeParentsData, parents.last()));
+		if (parents.last()->childCount() > 0)
+		{
+			parents << parents.last()->child(parents.last()->childCount() - 1);
+		}
 		for (size_t i = 0; i < CaseTree[number].second.count(); i++)
 		{
+			QList<QVariant> columnData;
 			columnData << CaseTree[number].second[i];
+			parents.last()->appendChild(new TreeItem(columnData, parents.last()));
 		}
-		parents.last()->appendChild(new TreeItem(columnData, parents.last()));
-		++number;
+		parents.pop_back();
+		++number;	
 	}
+	return;
 	
-
 }
-
-//void TreeModel::setupModelData(const QStringList &lines, TreeItem *parent)
-//{
-//	QList<TreeItem*> parents;
-//	QList<int> indentations;
-//	parents << parent;
-//	indentations << 0;
-//
-//	int number = 0;
-//
-//	while (number < lines.count()) {
-//		int position = 0;
-//		while (position < lines[number].length()) {
-//			if (lines[number].at(position) == ' ')
-//				break;
-//			position++;
-//		}
-//		QString lineData = lines[number].mid(position).trimmed();
-//
-//		if (!lineData.isEmpty()) {
-//			// Read the column data from the rest of the line.
-//			QStringList columnStrings = lineData.split("\t", QString::SkipEmptyParts);
-//			QList<QVariant> columnData;
-//			for (int column = 0; column < columnStrings.count(); ++column)
-//				columnData << columnStrings[column];
-//
-//			if (position > indentations.last()) {
-//				// The last child of the current parent is now the new parent
-//				// unless the current parent has no children.
-//
-//				if (parents.last()->childCount() > 0) {
-//					parents << parents.last()->child(parents.last()->childCount() - 1);
-//					indentations << position;
-//				}
-//			}
-//			else {
-//				while (position < indentations.last() && parents.count() > 0) {
-//					parents.pop_back();
-//					indentations.pop_back();
-//				}
-//			}
-//			// Append a new item to the current parent's list of children.
-//			parents.last()->appendChild(new TreeItem(columnData, parents.last()));
-//		}
-//
-//		++number;
-//	}
-//}

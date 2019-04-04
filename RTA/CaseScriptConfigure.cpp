@@ -46,29 +46,44 @@ bool CaseScriptConfigure::SetPyFilePath(const QString &path)
 
 bool CaseScriptConfigure::ReLoadPyFilePath()
 {
-
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	return true;
 }
 
 bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
 {
+
+	m_CaseTreeModel->ClearData();
 	LoadCaseFileListInfo(m_strpythonfilehome);
+	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct, "PythonCaseList");
+	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel);
 	return true;
 }
 
 bool CaseScriptConfigure::LoadCaseFileListInfo(const QString  &filepath)
 {
+
 	//TODO need finish this function
-	m_CaseTreeModel->ClearData();
+	//m_CaseTreeModel->ClearData();
+	QString str_FilePathRecord;
+	bool   b_Dirpollflag;
+	QSTRINGLISTPAIR temppair;
 	QDir CaseHomePath(filepath);
 	QFileInfo CaseFileInfo;
+	temppair.first = filepath.split(R"(/)").last();
 	Q_FOREACH(QFileInfo CaseFileInfo, CaseHomePath.entryInfoList(QDir::Files|QDir::Dirs|QDir::NoDotAndDotDot))
 	{
+		b_Dirpollflag = false;
 		TRACE(CaseFileInfo.path());
 		TRACE(CaseFileInfo.fileName());
 		if (CaseFileInfo.isDir())
 		{
+
+			if (CaseFileInfo.fileName().endsWith("lib"))
+			{
+				continue;
+			}
+
 			bool checkignorepath = false;
 			Q_FOREACH(QString dirname, m_ignorePyDirNameList)
 			{
@@ -82,18 +97,15 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString  &filepath)
 			{
 				continue;
 			}
-			LoadCaseFileListInfo(CaseFileInfo.fileName());
+			LoadCaseFileListInfo(CaseFileInfo.path()+R"(/)"+CaseFileInfo.fileName());
 		}
 		else if (CaseFileInfo.isFile())
 		{
-			QSTRINGLISTPAIR temppair;
-			temppair.first = CaseFileInfo.filePath();
-			temppair.second.append(CaseFileInfo.fileName());
-			m_pycasetreeinfostruct.append(temppair);
-		}
+
+			temppair.second.append(CaseFileInfo.fileName().split(".").first());
+		}		
 	}
-	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct,"PythonCaseList");
-	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel);
+	m_pycasetreeinfostruct.append(temppair);
 	return true;
 }
 
@@ -107,7 +119,6 @@ CaseScriptConfigure::~CaseScriptConfigure()
 }
 void CaseScriptConfigure::ParamInit()
 {
-
 
 	this->ui.CaseFile_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
 	m_ignorePyDirNameList.append(".idea");
@@ -145,3 +156,4 @@ void CaseScriptConfigure::ConnectSlots()
 		throw " Slots Connect Error";
 	}
 }
+

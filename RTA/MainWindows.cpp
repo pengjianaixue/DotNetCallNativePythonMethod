@@ -150,17 +150,17 @@ void MainWindows::DisplayToTerminal()
 bool MainWindows::ConnectSlots()
 {
 
-	if (!
-		(
-			connect(this->ui.ScriptConfigure, &QAction::triggered, this, &MainWindows::openconfigform) 
-			&& connect(this->ui.action_SetPythonFileHome, &QAction::triggered, this, &MainWindows::SetPycaseFilehome) 
-			&& connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE) 
-			&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPythonFileHome, this, &MainWindows::Recvipycasefilehomepath) 
-			&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) 
-			&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::SetPyFilePath)
-			&& connect(this->ui.ScirptRun, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal) 
-			&& connect(this->m_RunPythonCaseprocess, &QProcess::readyReadStandardOutput,this,&MainWindows::DisplayToTerminal)
-		)
+	if (
+			!(
+				connect(this->ui.ScriptConfigure, &QAction::triggered, this, &MainWindows::openconfigform) 
+				&& connect(this->ui.action_SetPythonFileHome, &QAction::triggered, this, &MainWindows::SetPycaseFilehome) 
+				&& connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE) 
+				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPythonFileHome, this, &MainWindows::Recvipycasefilehomepath) 
+				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) 
+				&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::SetPyFilePath)
+				&& connect(this->ui.ScirptRun, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal) 
+				&& connect(this->m_RunPythonCaseprocess, &QProcess::readyReadStandardOutput,this,&MainWindows::DisplayToTerminal)
+			)
 		)
 	{
 

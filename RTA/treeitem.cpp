@@ -10,8 +10,9 @@ A container for items of data supplied by the simple tree model.
 
 TreeItem::TreeItem(const QList<QVariant> &data, TreeItem *parent)
 {
-	m_parentItem = parent;
+	
 	m_itemData = data;
+	m_parentItem = parent;
 }
 
 TreeItem::~TreeItem()

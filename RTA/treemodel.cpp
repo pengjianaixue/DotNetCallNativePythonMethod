@@ -12,7 +12,7 @@ models.
 TreeModel::TreeModel(QObject *parent)
 	: QAbstractItemModel(parent), rootItem(nullptr)
 {
-
+	endResetModel();
 }
 
 TreeModel::~TreeModel()

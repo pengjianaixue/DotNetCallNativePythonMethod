@@ -1,24 +1,17 @@
-import sysconfig
-import os
-import re
-import matplotlib.pyplot as mat
+import sys
 import numpy as np
-import time
-
-def main(x,y):
-    print("**************project start run**************\r\n")
-    x = np.arange(1,100,0.1)
+import matplotlib.pyplot as pt
+def main(a,b):
+    x = np.arange(0,5,0.1)
     y = np.sin(x)
-    mat.plot(x,y)
-    mat.ion()
-    mat.pause(5)
-    mat.close()
-    print("\r\n**************project End run****************")
-    #fdist.plot(30, cumulative=True)
-if __name__ =="__main__":
-    main(1,2)
+    pt.plot(x,y)
+    pt.ion()
+    pt.pause(3)
+    pt.close()
+    return str(a +b)
 
-
-
-
-
+if __name__ ==  '__main__':
+    print("this is test case demo ")
+    main(1, 2)
+    print("python run finish")
+    pass

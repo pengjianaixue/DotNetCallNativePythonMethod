@@ -38,5 +38,6 @@ private:
 	QStringList							m_pycasefilenamelist;
 	QList<QSTRINGLISTPAIR>				m_pycasetreeinfostruct;
 	QList<QString>						m_ignorePyDirNameList;
+	//std::shared_ptr<TreeModel>			m_CaseTreeModel;
 	TreeModel							*m_CaseTreeModel;
 };

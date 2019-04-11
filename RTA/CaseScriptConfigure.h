@@ -28,15 +28,18 @@ public slots:
 	bool ReLoadPyFilePath();
 	bool LoadCaseFileListInfo(const QString  &filepath);
 	bool GetPyCasePathAndLaodCaseFile();
+	void GetCaseListViewUserSelectItem(const QModelIndex &caseitem);
 private:
 	Ui::CaseScriptConfigure ui;
 	std::string							m_strRunres;
 	CCallPython							m_cpycaller;
-	PARAMLIST							m_callpyparmlist;
+	PYPARAMLIST							m_callpyparmlist;
 	QString								m_strpythonfilehome;
 	QSTRINGLISTPAIR						m_pycasefileanddirinfo;
 	QStringList							m_pycasefilenamelist;
 	QList<QSTRINGLISTPAIR>				m_pycasetreeinfostruct;
 	QList<QString>						m_ignorePyDirNameList;
 	TreeModel							*m_CaseTreeModel;
+	QMap<QString, QString>				m_CaseNameMaptoFullyPath; // the search map
+	
 };

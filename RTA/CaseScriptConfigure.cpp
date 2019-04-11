@@ -6,14 +6,11 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 {
 	
 	ui.setupUi(this);
-	//Set the Stretch rate
-	ui.top_splitter->setStretchFactor(0, 4);
-	ui.top_splitter->setStretchFactor(1, 6);
 	ParamInit();
 	//TODO reamind to  recover the relative path
-	// m_TheCurrentPath = QDir::currentPath() + R"(\CaseProject\)";
+	m_strpythonfilehome = QDir::currentPath() + R"(/CaseProject/)";
 	//m_strpythonfilehome = R"(./CaseProject/)";
-	m_strpythonfilehome = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\)";
+	//m_strpythonfilehome = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\)";
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	ConnectSlots();
 
@@ -50,17 +47,7 @@ bool CaseScriptConfigure::ReLoadPyFilePath()
 	return true;
 }
 
-bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
-{
-
-	m_CaseTreeModel->ClearData();
-	LoadCaseFileListInfo(m_strpythonfilehome);
-	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct, "PythonCaseList");
-	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel);
-	return true;
-}
-
-bool CaseScriptConfigure::LoadCaseFileListInfo(const QString  &filepath)
+bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 {
 
 	//TODO need finish this function
@@ -71,19 +58,18 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString  &filepath)
 	QDir CaseHomePath(filepath);
 	QFileInfo CaseFileInfo;
 	temppair.first = filepath.split(R"(/)").last();
-	Q_FOREACH(QFileInfo CaseFileInfo, CaseHomePath.entryInfoList(QDir::Files|QDir::Dirs|QDir::NoDotAndDotDot))
+	Q_FOREACH(QFileInfo CaseFileInfo, CaseHomePath.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot))
 	{
+		 
 		b_Dirpollflag = false;
 		TRACE(CaseFileInfo.path());
 		TRACE(CaseFileInfo.fileName());
 		if (CaseFileInfo.isDir())
 		{
-
 			if (CaseFileInfo.fileName().endsWith("lib"))
 			{
 				continue;
 			}
-
 			bool checkignorepath = false;
 			Q_FOREACH(QString dirname, m_ignorePyDirNameList)
 			{
@@ -97,16 +83,37 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString  &filepath)
 			{
 				continue;
 			}
-			LoadCaseFileListInfo(CaseFileInfo.path()+R"(/)"+CaseFileInfo.fileName());
+			LoadCaseFileListInfo(CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
 		}
 		else if (CaseFileInfo.isFile())
 		{
 
 			temppair.second.append(CaseFileInfo.fileName().split(".").first());
-		}		
+		}
 	}
 	m_pycasetreeinfostruct.append(temppair);
 	return true;
+}
+
+bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
+{
+
+	m_CaseTreeModel->ClearData();
+	LoadCaseFileListInfo(m_strpythonfilehome);
+	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct, "PythonCaseList");
+	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel);
+	return true;
+}
+
+void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & caseitem)
+{
+	//QModelIndex index = ui.CaseFile_treeView->currentIndex();
+	if (caseitem.isValid())
+	{
+		QVariant Caseitem = caseitem.data();
+		TRACE(Caseitem);
+	}
+	return;
 }
 
 CaseScriptConfigure::~CaseScriptConfigure()
@@ -119,8 +126,14 @@ CaseScriptConfigure::~CaseScriptConfigure()
 }
 void CaseScriptConfigure::ParamInit()
 {
-
+	//Set the Stretch rate
+	ui.top_splitter->setStretchFactor(0, 4);
+	ui.top_splitter->setStretchFactor(1, 6);
+	/*QPalette LoadPushbutton;
+	LoadPushbutton.setColor(QPalette::ColorRole::Highlight, QColor(31, 95, 95));*/
+	//ui.pushButton_LoadCaseList->setStyleSheet("QPushbutton:focus{border: 3px solid red;}");
 	this->ui.CaseFile_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+	this->ui.CaseFile_treeView->setDragEnabled(true);
 	m_ignorePyDirNameList.append(".idea");
 	m_ignorePyDirNameList.append("__pycache__");
 
@@ -130,7 +143,7 @@ bool CaseScriptConfigure::PyRun()
 {
 
 	//Call Python function 
-	PARAMPAIR param, param1;
+	PYPARAMPAIR param, param1;
 	param.first = "i";
 	param.second = "117";
 	param1.first = "i";
@@ -146,10 +159,13 @@ void CaseScriptConfigure::ConnectSlots()
 {
 	if (!
 			(
+
 				connect(this->ui.pushButton_run, &QPushButton::clicked, this, &CaseScriptConfigure::TestRun) 
 				&& connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &CaseScriptConfigure::Reset) 
 				&& connect(this->ui.pushButton_reload, &QPushButton::clicked, this, &CaseScriptConfigure::ReLoadPyFilePath)
 				&& connect(this->ui.pushButton_LoadCaseList,&QPushButton::clicked,this,&CaseScriptConfigure::GetPyCasePathAndLaodCaseFile)
+				/*&& connect(this->ui.CaseFile_treeView,&QTreeView::doubleClicked,this,&CaseScriptConfigure::GetCaseListViewUserSelectItem)*/
+			
 			)
 		)
 	{

@@ -14,9 +14,10 @@ MainWindows::MainWindows(QWidget *parent)
 	InitOption();
 	ConnectSlots();
 	LoadInitXmlConfigure();
-	
-
-	
+	if (!m_strPyCaseFileHomePath.isEmpty())
+	{
+		m_TheCurrentPath = m_strPyCaseFileHomePath;
+	}
 }
 bool MainWindows::openconfigform(int i)
 {
@@ -46,6 +47,7 @@ bool MainWindows::LoadInitXmlConfigure()
 		emit Signal_emitpycasefilehomepath(m_strPyCaseFileHomePath);
 	}
 	PythonHomeSet->SetPypathExtra(m_strPyCaseFileHomePath, m_strPycharmBinPath);
+	
 	return true;
 }
 
@@ -114,7 +116,10 @@ bool MainWindows::Recvipycasefilehomepath(const QString & pycasefilehomepath)
 {
 
 	m_strPyCaseFileHomePath = pycasefilehomepath;
-
+	if (!m_strPyCaseFileHomePath.isEmpty())
+	{
+		m_TheCurrentPath = m_strPyCaseFileHomePath;
+	}
 	return true;
 }
 
@@ -128,7 +133,7 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 bool MainWindows::RunPyFileInTerminal()
 {
 	this->ui.PTE_TerimnalDisplayArea->clear();
-	QString PyPath = m_TheCurrentPath + R"(\CaseProject\main.py)";
+	QString PyPath = m_TheCurrentPath + R"(/CaseProject/main.py)";
 	QString cmd = "python " + PyPath;
 	m_RunPythonCaseprocess->start(R"(python )" + PyPath);
 	m_RunPythonCaseprocess->waitForFinished();

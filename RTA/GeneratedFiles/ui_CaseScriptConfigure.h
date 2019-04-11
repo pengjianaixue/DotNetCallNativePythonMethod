@@ -35,6 +35,7 @@ QT_BEGIN_NAMESPACE
 class Ui_CaseScriptConfigure
 {
 public:
+    QAction *action_AddToExeCutionList;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_5;
     QSplitter *top_splitter;
@@ -48,7 +49,7 @@ public:
     QLabel *label;
     QPushButton *pushButton_LoadCaseList;
     QSpacerItem *horizontalSpacer_4;
-    QHBoxLayout *horizontalLayout_9;
+    QHBoxLayout *HLayout_Caselist;
     QTreeView *CaseFile_treeView;
     QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_2;
@@ -85,6 +86,8 @@ public:
         if (CaseScriptConfigure->objectName().isEmpty())
             CaseScriptConfigure->setObjectName(QStringLiteral("CaseScriptConfigure"));
         CaseScriptConfigure->resize(1166, 644);
+        action_AddToExeCutionList = new QAction(CaseScriptConfigure);
+        action_AddToExeCutionList->setObjectName(QStringLiteral("action_AddToExeCutionList"));
         gridLayout = new QGridLayout(CaseScriptConfigure);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -139,16 +142,22 @@ public:
 
         label = new QLabel(groupBox_2);
         label->setObjectName(QStringLiteral("label"));
-        label->setStyleSheet(QStringLiteral("font: 75 12pt \"Arial\";"));
+        label->setStyleSheet(QLatin1String("font: 75 12pt \"Arial\";\n"
+""));
 
         horizontalLayout->addWidget(label);
 
         pushButton_LoadCaseList = new QPushButton(groupBox_2);
         pushButton_LoadCaseList->setObjectName(QStringLiteral("pushButton_LoadCaseList"));
-        pushButton_LoadCaseList->setStyleSheet(QLatin1String("selection-color: rgb(255, 0, 127);\n"
+        pushButton_LoadCaseList->setStyleSheet(QLatin1String("selection-background-color: rgb(0, 170, 127);\n"
+"selection-color: rgb(31, 95, 95);\n"
 "background-color: rgb(228, 246, 255);\n"
 "QPushButton{\n"
-"outline none\n"
+"	outline none\n"
+"};\n"
+"focus {\n"
+"border-width:2px;\n"
+"border-color:rgb(170, 170, 255);\n"
 "}"));
         QIcon icon;
         icon.addFile(QStringLiteral(":/RTA/PyRunner/Resources/load.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -168,9 +177,9 @@ public:
 
         verticalLayout_4->addWidget(groupBox_2);
 
-        horizontalLayout_9 = new QHBoxLayout();
-        horizontalLayout_9->setSpacing(6);
-        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        HLayout_Caselist = new QHBoxLayout();
+        HLayout_Caselist->setSpacing(6);
+        HLayout_Caselist->setObjectName(QStringLiteral("HLayout_Caselist"));
         CaseFile_treeView = new QTreeView(layoutWidget);
         CaseFile_treeView->setObjectName(QStringLiteral("CaseFile_treeView"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -179,7 +188,7 @@ public:
         sizePolicy2.setHeightForWidth(CaseFile_treeView->sizePolicy().hasHeightForWidth());
         CaseFile_treeView->setSizePolicy(sizePolicy2);
 
-        horizontalLayout_9->addWidget(CaseFile_treeView);
+        HLayout_Caselist->addWidget(CaseFile_treeView);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
@@ -242,18 +251,17 @@ public:
         verticalLayout_3->addItem(verticalSpacer);
 
 
-        horizontalLayout_9->addLayout(verticalLayout_3);
+        HLayout_Caselist->addLayout(verticalLayout_3);
 
         listView = new QListView(layoutWidget);
         listView->setObjectName(QStringLiteral("listView"));
 
-        horizontalLayout_9->addWidget(listView);
+        HLayout_Caselist->addWidget(listView);
 
-        horizontalLayout_9->setStretch(0, 20);
-        horizontalLayout_9->setStretch(1, 1);
-        horizontalLayout_9->setStretch(2, 20);
+        HLayout_Caselist->setStretch(1, 1);
+        HLayout_Caselist->setStretch(2, 20);
 
-        verticalLayout_4->addLayout(horizontalLayout_9);
+        verticalLayout_4->addLayout(HLayout_Caselist);
 
         verticalLayout_4->setStretch(0, 1);
         verticalLayout_4->setStretch(1, 7);
@@ -426,6 +434,7 @@ public:
     void retranslateUi(QDialog *CaseScriptConfigure)
     {
         CaseScriptConfigure->setWindowTitle(QApplication::translate("CaseScriptConfigure", "Run Script Configure", Q_NULLPTR));
+        action_AddToExeCutionList->setText(QApplication::translate("CaseScriptConfigure", "AddToExeCutionList", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("CaseScriptConfigure", "Script File Configure", Q_NULLPTR));
         checkBox->setText(QApplication::translate("CaseScriptConfigure", "function mode", Q_NULLPTR));
         label->setText(QApplication::translate("CaseScriptConfigure", "Load Project Case", Q_NULLPTR));

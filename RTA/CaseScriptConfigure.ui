@@ -82,7 +82,8 @@
               <item>
                <widget class="QLabel" name="label">
                 <property name="styleSheet">
-                 <string notr="true">font: 75 12pt &quot;Arial&quot;;</string>
+                 <string notr="true">font: 75 12pt &quot;Arial&quot;;
+</string>
                 </property>
                 <property name="text">
                  <string>Load Project Case</string>
@@ -92,10 +93,15 @@
               <item>
                <widget class="QPushButton" name="pushButton_LoadCaseList">
                 <property name="styleSheet">
-                 <string notr="true">selection-color: rgb(255, 0, 127);
+                 <string notr="true">selection-background-color: rgb(0, 170, 127);
+selection-color: rgb(31, 95, 95);
 background-color: rgb(228, 246, 255);
 QPushButton{
-outline none
+	outline none
+};
+focus {
+border-width:2px;
+border-color:rgb(170, 170, 255);
 }</string>
                 </property>
                 <property name="text">
@@ -138,7 +144,7 @@ outline none
           </widget>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="20,1,20">
+          <layout class="QHBoxLayout" name="HLayout_Caselist" stretch="0,1,20">
            <item>
             <widget class="QTreeView" name="CaseFile_treeView">
              <property name="sizePolicy">
@@ -504,6 +510,11 @@ outline none
     </layout>
    </item>
   </layout>
+  <action name="action_AddToExeCutionList">
+   <property name="text">
+    <string>AddToExeCutionList</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

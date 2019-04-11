@@ -5,12 +5,11 @@ A container for items of data supplied by the simple tree model.
 */
 #include "stdafx.h"
 #include <QStringList>
-
 #include "treeitem.h"
 
 TreeItem::TreeItem(const QList<QVariant> &data, TreeItem *parent)
 {
-	
+
 	m_itemData = data;
 	m_parentItem = parent;
 }
@@ -52,8 +51,8 @@ TreeItem *TreeItem::parentItem()
 
 int TreeItem::row() const
 {
+
 	if (m_parentItem)
 		return m_parentItem->m_childItems.indexOf(const_cast<TreeItem*>(this));
-
 	return 0;
 }

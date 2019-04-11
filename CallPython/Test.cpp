@@ -9,8 +9,8 @@ void run()
 	try
 	{	
 		a.RunPyfile(R"(C:/Users/eijpnae/Desktop/main.py)");
-		/*PARAMLIST paramlist;
-		PARAMPAIR param,param1;
+		/*PYPARAMLIST paramlist;
+		PYPARAMPAIR param,param1;
 		param.first = "i"; 
 		param.second = "117";
 		param1.first = "s";

@@ -28,6 +28,9 @@
     <ClCompile Include="treemodel.cpp">
       <Filter>CaseTreeModel\Imple</Filter>
     </ClCompile>
+    <ClCompile Include="QCaseTreeView.cpp">
+      <Filter>Ui Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource1.h">
@@ -64,6 +67,9 @@
     </QtMoc>
     <QtMoc Include="treemodel.h">
       <Filter>CaseTreeModel\Headers</Filter>
+    </QtMoc>
+    <QtMoc Include="QCaseTreeView.h">
+      <Filter>Ui Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

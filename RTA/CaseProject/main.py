@@ -4,6 +4,7 @@ import re
 import matplotlib.pyplot as mat
 import numpy as np
 import time
+from numba import jit
 
 def main(x,y):
     print("**************project start run**************\r\n")

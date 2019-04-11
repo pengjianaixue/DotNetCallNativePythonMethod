@@ -7,10 +7,7 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 	
 	ui.setupUi(this);
 	ParamInit();
-	//TODO reamind to  recover the relative path
-	m_strpythonfilehome = QDir::currentPath() + R"(/CaseProject/)";
-	//m_strpythonfilehome = R"(./CaseProject/)";
-	//m_strpythonfilehome = R"(C:\Users\pengjian\Documents\GitHub\RTA\x64\Debug\CaseProject\)";
+	m_strpythonfilehome = QDir::currentPath() + R"(\CaseProject\)";
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	ConnectSlots();
 
@@ -51,7 +48,6 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 {
 
 	//TODO need finish this function
-	//m_CaseTreeModel->ClearData();
 	QString str_FilePathRecord;
 	bool   b_Dirpollflag;
 	QSTRINGLISTPAIR temppair;
@@ -85,7 +81,7 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 			}
 			LoadCaseFileListInfo(CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
 		}
-		else if (CaseFileInfo.isFile())
+		else if (CaseFileInfo.isFile() && CaseFileInfo.fileName().endsWith(".py"))
 		{
 
 			temppair.second.append(CaseFileInfo.fileName().split(".").first());

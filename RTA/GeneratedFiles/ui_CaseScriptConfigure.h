@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'CaseScriptConfigure.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.7
+** Created by: Qt User Interface Compiler version 5.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,8 @@
 #define UI_CASESCRIPTCONFIGURE_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
@@ -84,19 +83,19 @@ public:
     void setupUi(QDialog *CaseScriptConfigure)
     {
         if (CaseScriptConfigure->objectName().isEmpty())
-            CaseScriptConfigure->setObjectName(QStringLiteral("CaseScriptConfigure"));
+            CaseScriptConfigure->setObjectName(QString::fromUtf8("CaseScriptConfigure"));
         CaseScriptConfigure->resize(1166, 644);
         action_AddToExeCutionList = new QAction(CaseScriptConfigure);
         action_AddToExeCutionList->setObjectName(QStringLiteral("action_AddToExeCutionList"));
         gridLayout = new QGridLayout(CaseScriptConfigure);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         top_splitter = new QSplitter(CaseScriptConfigure);
-        top_splitter->setObjectName(QStringLiteral("top_splitter"));
+        top_splitter->setObjectName(QString::fromUtf8("top_splitter"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -104,14 +103,14 @@ public:
         top_splitter->setSizePolicy(sizePolicy);
         top_splitter->setOrientation(Qt::Horizontal);
         layoutWidget = new QWidget(top_splitter);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         verticalLayout_4 = new QVBoxLayout(layoutWidget);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
         groupBox_2 = new QGroupBox(layoutWidget);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(1);
@@ -122,17 +121,17 @@ public:
         font.setBold(true);
         font.setWeight(75);
         groupBox_2->setFont(font);
-        groupBox_2->setStyleSheet(QStringLiteral("background-color: rgb(228, 246, 255);"));
+        groupBox_2->setStyleSheet(QString::fromUtf8("background-color: rgb(228, 246, 255);"));
         gridLayout_2 = new QGridLayout(groupBox_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         checkBox = new QCheckBox(groupBox_2);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setStyleSheet(QStringLiteral("font: 75 12pt \"Arial\";"));
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setStyleSheet(QString::fromUtf8("font: 75 12pt \"Arial\";"));
 
         horizontalLayout->addWidget(checkBox);
 
@@ -160,7 +159,7 @@ public:
 "border-color:rgb(170, 170, 255);\n"
 "}"));
         QIcon icon;
-        icon.addFile(QStringLiteral(":/RTA/PyRunner/Resources/load.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/load.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_LoadCaseList->setIcon(icon);
         pushButton_LoadCaseList->setIconSize(QSize(32, 32));
         pushButton_LoadCaseList->setFlat(true);
@@ -181,7 +180,7 @@ public:
         HLayout_Caselist->setSpacing(6);
         HLayout_Caselist->setObjectName(QStringLiteral("HLayout_Caselist"));
         CaseFile_treeView = new QTreeView(layoutWidget);
-        CaseFile_treeView->setObjectName(QStringLiteral("CaseFile_treeView"));
+        CaseFile_treeView->setObjectName(QString::fromUtf8("CaseFile_treeView"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(5);
@@ -192,31 +191,31 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_3->addItem(verticalSpacer_2);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/RTA/PyRunner/Resources/left.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/left.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton->setIcon(icon1);
 
         horizontalLayout_7->addWidget(pushButton);
 
         pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
         pushButton_2->setSizePolicy(sizePolicy3);
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/RTA/PyRunner/Resources/right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/right.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_2->setIcon(icon2);
 
         horizontalLayout_7->addWidget(pushButton_2);
@@ -226,19 +225,19 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         pushButton_3 = new QPushButton(layoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/RTA/PyRunner/Resources/left(3).png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/left(3).png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_3->setIcon(icon3);
 
         horizontalLayout_8->addWidget(pushButton_3);
 
         pushButton_4 = new QPushButton(layoutWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         QIcon icon4;
-        icon4.addFile(QStringLiteral(":/RTA/PyRunner/Resources/right(6).png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/right(6).png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_4->setIcon(icon4);
 
         horizontalLayout_8->addWidget(pushButton_4);
@@ -254,7 +253,7 @@ public:
         HLayout_Caselist->addLayout(verticalLayout_3);
 
         listView = new QListView(layoutWidget);
-        listView->setObjectName(QStringLiteral("listView"));
+        listView->setObjectName(QString::fromUtf8("listView"));
 
         HLayout_Caselist->addWidget(listView);
 
@@ -267,14 +266,14 @@ public:
         verticalLayout_4->setStretch(1, 7);
         top_splitter->addWidget(layoutWidget);
         layoutWidget1 = new QWidget(top_splitter);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         verticalLayout_2 = new QVBoxLayout(layoutWidget1);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         groupBox = new QGroupBox(layoutWidget1);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -285,27 +284,27 @@ public:
         font1.setBold(true);
         font1.setWeight(75);
         groupBox->setFont(font1);
-        groupBox->setStyleSheet(QStringLiteral("background-color: rgb(228, 246, 255);"));
+        groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(228, 246, 255);"));
         horizontalLayout_6 = new QHBoxLayout(groupBox);
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         pushButton_run = new QPushButton(groupBox);
-        pushButton_run->setObjectName(QStringLiteral("pushButton_run"));
+        pushButton_run->setObjectName(QString::fromUtf8("pushButton_run"));
         QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy5.setHorizontalStretch(0);
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(pushButton_run->sizePolicy().hasHeightForWidth());
         pushButton_run->setSizePolicy(sizePolicy5);
-        pushButton_run->setStyleSheet(QStringLiteral("background-color: rgba(255, 255, 255, 0);"));
+        pushButton_run->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);"));
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/RTA/PyRunner/Resources/start.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/start.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_run->setIcon(icon5);
         pushButton_run->setIconSize(QSize(32, 32));
         pushButton_run->setAutoRepeat(false);
@@ -314,12 +313,12 @@ public:
         horizontalLayout_4->addWidget(pushButton_run);
 
         pushButton_stop = new QPushButton(groupBox);
-        pushButton_stop->setObjectName(QStringLiteral("pushButton_stop"));
+        pushButton_stop->setObjectName(QString::fromUtf8("pushButton_stop"));
         sizePolicy5.setHeightForWidth(pushButton_stop->sizePolicy().hasHeightForWidth());
         pushButton_stop->setSizePolicy(sizePolicy5);
-        pushButton_stop->setStyleSheet(QStringLiteral(""));
+        pushButton_stop->setStyleSheet(QString::fromUtf8(""));
         QIcon icon6;
-        icon6.addFile(QStringLiteral(":/RTA/PyRunner/Resources/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_stop->setIcon(icon6);
         pushButton_stop->setIconSize(QSize(32, 32));
         pushButton_stop->setAutoRepeat(false);
@@ -328,12 +327,12 @@ public:
         horizontalLayout_4->addWidget(pushButton_stop);
 
         pushButton_reload = new QPushButton(groupBox);
-        pushButton_reload->setObjectName(QStringLiteral("pushButton_reload"));
+        pushButton_reload->setObjectName(QString::fromUtf8("pushButton_reload"));
         sizePolicy5.setHeightForWidth(pushButton_reload->sizePolicy().hasHeightForWidth());
         pushButton_reload->setSizePolicy(sizePolicy5);
-        pushButton_reload->setStyleSheet(QStringLiteral(""));
+        pushButton_reload->setStyleSheet(QString::fromUtf8(""));
         QIcon icon7;
-        icon7.addFile(QStringLiteral(":/RTA/PyRunner/Resources/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_reload->setIcon(icon7);
         pushButton_reload->setIconSize(QSize(32, 32));
         pushButton_reload->setAutoRepeat(false);
@@ -356,14 +355,14 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label_infodisp = new QLabel(layoutWidget1);
-        label_infodisp->setObjectName(QStringLiteral("label_infodisp"));
+        label_infodisp->setObjectName(QString::fromUtf8("label_infodisp"));
         label_infodisp->setFont(font);
-        label_infodisp->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
+        label_infodisp->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 240, 240);"));
 
         horizontalLayout_3->addWidget(label_infodisp);
 
@@ -372,15 +371,15 @@ public:
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
         pushButton_reset = new QPushButton(layoutWidget1);
-        pushButton_reset->setObjectName(QStringLiteral("pushButton_reset"));
+        pushButton_reset->setObjectName(QString::fromUtf8("pushButton_reset"));
         QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy6.setHorizontalStretch(0);
         sizePolicy6.setVerticalStretch(0);
         sizePolicy6.setHeightForWidth(pushButton_reset->sizePolicy().hasHeightForWidth());
         pushButton_reset->setSizePolicy(sizePolicy6);
-        pushButton_reset->setStyleSheet(QStringLiteral(""));
+        pushButton_reset->setStyleSheet(QString::fromUtf8(""));
         QIcon icon8;
-        icon8.addFile(QStringLiteral(":/RTA/PyRunner/Resources/clean up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8(":/RTA/PyRunner/Resources/clean up.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_reset->setIcon(icon8);
 
         horizontalLayout_3->addWidget(pushButton_reset);
@@ -389,8 +388,8 @@ public:
         verticalLayout->addLayout(horizontalLayout_3);
 
         TB_RunInfodisp = new QTextBrowser(layoutWidget1);
-        TB_RunInfodisp->setObjectName(QStringLiteral("TB_RunInfodisp"));
-        TB_RunInfodisp->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 240);"));
+        TB_RunInfodisp->setObjectName(QString::fromUtf8("TB_RunInfodisp"));
+        TB_RunInfodisp->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 240);"));
 
         verticalLayout->addWidget(TB_RunInfodisp);
 
@@ -403,13 +402,13 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalSpacer = new QSpacerItem(328, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
         buttonBox = new QDialogButtonBox(CaseScriptConfigure);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         QSizePolicy sizePolicy7(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy7.setHorizontalStretch(0);
         sizePolicy7.setVerticalStretch(0);
@@ -443,17 +442,17 @@ public:
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());
         pushButton_4->setText(QString());
-        groupBox->setTitle(QApplication::translate("CaseScriptConfigure", "Operation", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("CaseScriptConfigure", "Operation", nullptr));
         pushButton_run->setText(QString());
 #ifndef QT_NO_SHORTCUT
-        pushButton_run->setShortcut(QApplication::translate("CaseScriptConfigure", "F5", Q_NULLPTR));
+        pushButton_run->setShortcut(QApplication::translate("CaseScriptConfigure", "F5", nullptr));
 #endif // QT_NO_SHORTCUT
         pushButton_stop->setText(QString());
 #ifndef QT_NO_SHORTCUT
-        pushButton_stop->setShortcut(QApplication::translate("CaseScriptConfigure", "Alt+F5", Q_NULLPTR));
+        pushButton_stop->setShortcut(QApplication::translate("CaseScriptConfigure", "Alt+F5", nullptr));
 #endif // QT_NO_SHORTCUT
         pushButton_reload->setText(QString());
-        label_infodisp->setText(QApplication::translate("CaseScriptConfigure", "Runing info ", Q_NULLPTR));
+        label_infodisp->setText(QApplication::translate("CaseScriptConfigure", "Runing info ", nullptr));
         pushButton_reset->setText(QString());
     } // retranslateUi
 

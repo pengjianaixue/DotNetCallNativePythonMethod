@@ -31,6 +31,9 @@
     <ClCompile Include="QCaseTreeView.cpp">
       <Filter>Ui Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CPyProcess.cpp">
+      <Filter>PythonRunProcess\Imple</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource1.h">
@@ -70,6 +73,9 @@
     </QtMoc>
     <QtMoc Include="QCaseTreeView.h">
       <Filter>Ui Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="CPyProcess.h">
+      <Filter>PythonRunProcess\headers</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,15 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
       <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="PythonRunProcess">
+      <UniqueIdentifier>{910e3e2a-1913-4f88-9d60-74c6c0569ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PythonRunProcess\headers">
+      <UniqueIdentifier>{cc73de3f-a492-4c09-a26f-10a1bc245501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PythonRunProcess\Imple">
+      <UniqueIdentifier>{a147a0c2-f614-4a14-a3e8-cbb15e00581e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

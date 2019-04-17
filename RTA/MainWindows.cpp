@@ -5,6 +5,8 @@ MainWindows::MainWindows(QWidget *parent)
 	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess()),
 	  m_QthreadPythonCaseprocess(nullptr)
 {
+
+
 	ui.setupUi(this);
 	m_TheCurrentPath = QDir::currentPath();
 	//TODO 
@@ -77,7 +79,6 @@ void MainWindows::closeEvent(QCloseEvent * event)
 
 bool MainWindows::openpycharmIDE()
 {
-
 	
 	if (m_strPyCaseFileHomePath.isEmpty()|| m_strPycharmBinPath.isEmpty())
 	{

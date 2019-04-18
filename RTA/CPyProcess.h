@@ -39,7 +39,7 @@ private:
 	void ThreadRunFunction(CPyProcess *Param);
 	void ReadProcessOutputinfo();
 private:
-	QProcessEnvironment						m_ProcessEnvir;
+	QProcessEnvironment						m_ProcessEnvir; //retention 
 	QProcess								m_Process;
 	std::atomic<bool>						m_RunFlags;
 	std::shared_ptr<std::thread>			m_pRunThread;

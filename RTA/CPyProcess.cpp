@@ -62,6 +62,7 @@ bool CPyProcess::Stop()
 	{
 		if (::TerminateThread(m_ThreadHandle, 1))
 		{
+			emit s_Processfinished(1);
 			return true;
 		}
 		return false;
@@ -86,6 +87,7 @@ void CPyProcess::ThreadRunFunction(CPyProcess *Param)
 	threadparam->m_Process.start(R"(python )" + threadparam->m_PyFileName);
 	threadparam->m_Process.waitForFinished();
 	threadparam->m_RunFlags = false;
+	emit s_Processfinished(0);
 
 }
 

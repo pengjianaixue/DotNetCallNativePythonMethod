@@ -34,6 +34,7 @@ public:
 	bool Pause();
 	bool Resume();
 	bool Stop();
+	bool IsRun() const;
 private:
 	void ThreadRunFunction(CPyProcess *Param);
 	void ReadProcessOutputinfo();

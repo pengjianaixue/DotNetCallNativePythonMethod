@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CPyProcess.h"
 
-CPyProcess::CPyProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr)
+CPyProcess::CPyProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr), m_RunFlags(false)
 {
 	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
 }
@@ -72,12 +72,21 @@ bool CPyProcess::Stop()
 	}
 }
 
+bool CPyProcess::IsRun() const
+{
+	return m_RunFlags;
+}
+
+
 void CPyProcess::ThreadRunFunction(CPyProcess *Param)
 {
 
 	CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
+	threadparam->m_RunFlags = true;
 	threadparam->m_Process.start(R"(python )" + threadparam->m_PyFileName);
 	threadparam->m_Process.waitForFinished();
+	threadparam->m_RunFlags = false;
+
 }
 
 void CPyProcess::ReadProcessOutputinfo()

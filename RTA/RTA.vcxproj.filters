@@ -32,7 +32,7 @@
       <Filter>Ui Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CPyProcess.cpp">
-      <Filter>PythonRunProcess\Imple</Filter>
+      <Filter>Python Run Process\Imple</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +75,7 @@
       <Filter>Ui Header Files</Filter>
     </QtMoc>
     <QtMoc Include="CPyProcess.h">
-      <Filter>PythonRunProcess\headers</Filter>
+      <Filter>Python Run Process\headers</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -132,14 +132,29 @@
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
-    <Filter Include="PythonRunProcess">
+    <Filter Include="Python Run Process">
       <UniqueIdentifier>{910e3e2a-1913-4f88-9d60-74c6c0569ef7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PythonRunProcess\headers">
+    <Filter Include="Python Run Process\headers">
       <UniqueIdentifier>{cc73de3f-a492-4c09-a26f-10a1bc245501}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PythonRunProcess\Imple">
+    <Filter Include="Python Run Process\Imple">
       <UniqueIdentifier>{a147a0c2-f614-4a14-a3e8-cbb15e00581e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument Driver">
+      <UniqueIdentifier>{3c7f52f3-18f2-44a7-9db7-e170ce2d1dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument Driver\Communication Base Drivce">
+      <UniqueIdentifier>{41d6bb8e-19c0-4dfb-8779-2403eb5689a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument Driver\Instrument  Driver">
+      <UniqueIdentifier>{229513e7-ff01-41a2-a628-3d8d3e75c70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument Driver\Instrument  Driver\VISA Driver">
+      <UniqueIdentifier>{0fbc8afd-5c8e-4572-9510-ca00d254b066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument Driver\Instrument  Driver\IVI Driver">
+      <UniqueIdentifier>{6efe06f6-b049-42a9-813c-b619106b769f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

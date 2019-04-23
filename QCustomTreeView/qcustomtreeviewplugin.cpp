@@ -51,12 +51,12 @@ QString QCustomTreeViewPlugin::toolTip() const
 
 QString QCustomTreeViewPlugin::whatsThis() const
 {
-    return QLatin1String("");
+    return QLatin1String("This is a Custmo Tree View");
 }
 
 bool QCustomTreeViewPlugin::isContainer() const
 {
-    return false;
+    return true;
 }
 
 QString QCustomTreeViewPlugin::domXml() const

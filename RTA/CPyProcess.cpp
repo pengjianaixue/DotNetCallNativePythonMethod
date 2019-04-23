@@ -14,7 +14,7 @@ CPyProcess::~CPyProcess()
 bool CPyProcess::Start(const QString & PyFileName, THREADPRIORITY ThreadPriority)
 {
 	m_PyFileName = PyFileName;
-	m_pRunThread = std::make_shared<std::thread>(&CPyProcess::ThreadRunFunction,this,this);
+	m_pRunThread = std::make_shared<std::thread>(&CPyProcess::ThreadRunFunction,this);
 	m_ThreadHandle = m_pRunThread->native_handle();
 	if (m_ThreadHandle)
 	{
@@ -79,14 +79,14 @@ bool CPyProcess::IsRun() const
 }
 
 
-void CPyProcess::ThreadRunFunction(CPyProcess *Param)
+void CPyProcess::ThreadRunFunction()
 {
 
-	CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
-	threadparam->m_RunFlags = true;
-	threadparam->m_Process.start(R"(python )" + threadparam->m_PyFileName);
-	threadparam->m_Process.waitForFinished();
-	threadparam->m_RunFlags = false;
+	//CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
+	this->m_RunFlags = true;
+	this->m_Process.start(R"(python )" + this->m_PyFileName);
+	this->m_Process.waitForFinished();
+	this->m_RunFlags = false;
 	emit s_Processfinished(0);
 
 }

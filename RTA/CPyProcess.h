@@ -36,7 +36,7 @@ public:
 	bool Stop();
 	bool IsRun() const;
 private:
-	void ThreadRunFunction(CPyProcess *Param);
+	void ThreadRunFunction();
 	void ReadProcessOutputinfo();
 private:
 	QProcessEnvironment						m_ProcessEnvir; //retention 

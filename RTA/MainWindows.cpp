@@ -133,6 +133,7 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 
 bool MainWindows::RunPyFileInTerminal()
 {
+
 	this->ui.PTE_TerimnalDisplayArea->clear();
 	QString PyPath = m_TheCurrentPath + R"(/CaseProject/main.py)";
 	QString cmd = "python " + PyPath;

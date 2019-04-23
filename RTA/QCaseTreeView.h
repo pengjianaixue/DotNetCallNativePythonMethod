@@ -5,7 +5,7 @@
 class QCaseTreeView : public QTreeView
 {
 	Q_OBJECT
-
+	
 public:
 	QCaseTreeView(QWidget *parent);
 	~QCaseTreeView();

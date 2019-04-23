@@ -93,9 +93,7 @@ CXmlConfigureFileOperation::~CXmlConfigureFileOperation()
 		delete m_pugiXmlReader;
 		m_pugiXmlReader = nullptr;
 	}
-	
 }
-
 bool CXmlConfigureFileOperation::InitXmlOperationter()
 {
 

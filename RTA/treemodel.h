@@ -29,6 +29,8 @@ public:
 	// Self need function
 	bool setModelData(const QCASEFILETREELIST &data, const QString &RootData);
 	bool ClearData();
+	//bool setItemData(const QModelIndex &index, const QMap<int, QVariant> &roles);
+	
 
 
 private:

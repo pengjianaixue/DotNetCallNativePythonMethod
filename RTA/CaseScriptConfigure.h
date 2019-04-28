@@ -5,6 +5,7 @@
 #include <qxmlstream.h>
 #include "Trace.h"
 #include "treemodel.h"
+#include "treeitem.h"
 #include "ui_CaseScriptConfigure.h"
 #include "../CallPython/CallPython.h"
 
@@ -15,20 +16,26 @@ class CaseScriptConfigure : public QDialog
 public:
 	CaseScriptConfigure(QWidget *parent = Q_NULLPTR);
 	~CaseScriptConfigure();
-	void ParamInit();
+	const QMap<QString, QString> &GetCaseNameMapToPath() const;
 	typedef QPair<QString, QStringList> QSTRINGLISTPAIR;
 private:
 	bool PyRun();
 	void ConnectSlots();
-	
+	void ParamInit();
+
+signals:
+	void s_emitSelectCaseItemToExceList(const QString &SelectCaseItem);
 public slots:
 	int  TestRun();
 	int  Reset();
 	bool SetPyFilePath(const QString &path);
 	bool ReLoadPyFilePath();
-	bool LoadCaseFileListInfo(const QString  &filepath);
 	bool GetPyCasePathAndLaodCaseFile();
 	void GetCaseListViewUserSelectItem(const QModelIndex &caseitem);
+	bool LoadCaseFileListInfo(const QString  &filepath);
+	void AddSelectCaseToExceList(const QString &SelectCaseItem);
+
+
 private:
 	Ui::CaseScriptConfigure ui;
 	std::string							m_strRunres;
@@ -42,5 +49,7 @@ private:
 	//std::shared_ptr<TreeModel>			m_CaseTreeModel;
 	TreeModel							*m_CaseTreeModel;
 	QMap<QString, QString>				m_CaseNameMaptoFullyPath; // the search map
+	QStringListModel					*m_CaseExecListModel;
+	QStringList							m_CaseExecList;
 	
 };

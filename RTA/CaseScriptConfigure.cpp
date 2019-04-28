@@ -2,7 +2,8 @@
 #include "CaseScriptConfigure.h"
 
 CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
-	: QDialog(parent), m_CaseTreeModel( new TreeModel)
+	: QDialog(parent), m_CaseTreeModel( new TreeModel), 
+	m_CaseExecListModel(new QStringListModel(this))
 {
 	
 	ui.setupUi(this);
@@ -85,6 +86,10 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 		{
 
 			temppair.second.append(CaseFileInfo.fileName().split(".").first());
+			//TODO  Just for Test 
+			std::string FileName = CaseFileInfo.fileName().split(".").first().toStdString();
+			std::string FilePath = (CaseFileInfo.path() + R"(/)"+ CaseFileInfo.fileName()).toStdString();
+			m_CaseNameMaptoFullyPath.insert(CaseFileInfo.fileName().split(".").first(), CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
 		}
 	}
 	m_pycasetreeinfostruct.append(temppair);
@@ -103,15 +108,55 @@ bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
 
 void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & caseitem)
 {
-	//QModelIndex index = ui.CaseFile_treeView->currentIndex();
+
+	QModelIndex index = ui.CaseFile_treeView->currentIndex();	
 	if (caseitem.isValid())
 	{
+		/*TreeItem *parentItem;*/
+		TreeItem *Selectitem = nullptr;
+		Selectitem = static_cast<TreeItem*>(index.internalPointer());
+		if (Selectitem)
+		{
+
+			if (Selectitem->childCount() == 0)
+			{
+
+				QVariant Caseitem = caseitem.data();
+				emit s_emitSelectCaseItemToExceList(Caseitem.toString());
+				TRACE(Caseitem);
+
+			}
+			else
+			{
+				for (size_t i = 0; i < Selectitem->childCount(); i++)
+				{
+					QVariant Caseitem = Selectitem->child(i)->data(0);
+					emit s_emitSelectCaseItemToExceList(Caseitem.toString());
+
+				}
+
+			}
+		}
 		
-		QVariant Caseitem = caseitem.data();
-		QMessageBox::information(this, "Case SelectName", Caseitem.toString());
-		TRACE(Caseitem);
+		/*QMessageBox::information(this, "Case SelectName", Caseitem.toString());*/
+		
 	}
 	return;
+}
+
+void CaseScriptConfigure::AddSelectCaseToExceList(const QString &SelectCaseItem)
+{
+	Q_FOREACH(QString item, m_CaseExecList)
+	{
+		if (item == SelectCaseItem)
+		{
+			return;
+		}
+	}
+	m_CaseExecList.append(SelectCaseItem);
+	this->m_CaseExecListModel->setStringList(m_CaseExecList);
+	
+
 }
 
 CaseScriptConfigure::~CaseScriptConfigure()
@@ -121,6 +166,10 @@ CaseScriptConfigure::~CaseScriptConfigure()
 		delete m_CaseTreeModel;
 	}
 	FinalizePyIter();
+}
+const QMap<QString, QString>& CaseScriptConfigure::GetCaseNameMapToPath() const
+{
+	return m_CaseNameMaptoFullyPath;
 }
 void CaseScriptConfigure::ParamInit()
 {
@@ -134,11 +183,14 @@ void CaseScriptConfigure::ParamInit()
 	this->ui.CaseFile_treeView->setDragEnabled(true);
 	this->ui.CaseFile_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
 	this->ui.CaseFile_treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
+	this->ui.Case_exce_listView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+	this->m_CaseExecListModel->setStringList(m_CaseExecList);
+	this->ui.Case_exce_listView->setModel(this->m_CaseExecListModel);
 	m_ignorePyDirNameList.append(".idea");
 	m_ignorePyDirNameList.append("__pycache__");
 
 }
-//TODO need to confrim the param
+//TODO: need to confrim the param
 bool CaseScriptConfigure::PyRun()
 {
 
@@ -165,6 +217,7 @@ void CaseScriptConfigure::ConnectSlots()
 				&& connect(this->ui.pushButton_reload, &QPushButton::clicked, this, &CaseScriptConfigure::ReLoadPyFilePath)
 				&& connect(this->ui.pushButton_LoadCaseList,&QPushButton::clicked,this,&CaseScriptConfigure::GetPyCasePathAndLaodCaseFile)
 				&& connect(this->ui.CaseFile_treeView,&QTreeView::doubleClicked,this,&CaseScriptConfigure::GetCaseListViewUserSelectItem)
+				&& connect(this, &CaseScriptConfigure::s_emitSelectCaseItemToExceList, this, &CaseScriptConfigure::AddSelectCaseToExceList)
 			
 			)
 		)

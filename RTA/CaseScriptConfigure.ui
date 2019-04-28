@@ -244,7 +244,7 @@ border-color:rgb(170, 170, 255);
             </layout>
            </item>
            <item>
-            <widget class="QListView" name="listView"/>
+            <widget class="QListView" name="Case_exce_listView"/>
            </item>
           </layout>
          </item>

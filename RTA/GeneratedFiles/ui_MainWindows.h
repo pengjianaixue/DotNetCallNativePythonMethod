@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindows.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.7
+** Created by: Qt User Interface Compiler version 5.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,11 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDockWidget>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
@@ -92,9 +90,9 @@ public:
     void setupUi(QMainWindow *MainWindows)
     {
         if (MainWindows->objectName().isEmpty())
-            MainWindows->setObjectName(QStringLiteral("MainWindows"));
+            MainWindows->setObjectName(QString::fromUtf8("MainWindows"));
         MainWindows->resize(1197, 863);
-        MainWindows->setStyleSheet(QLatin1String("QMainWindow::separator:horizontal {\n"
+        MainWindows->setStyleSheet(QString::fromUtf8("QMainWindow::separator:horizontal {\n"
 "    width: 3px;\n"
 "    margin-top: 3px;\n"
 "    margin-bottom: 3px;\n"
@@ -106,64 +104,64 @@ public:
 "    margin-right: 3px;\n"
 "}"));
         ScirptRun = new QAction(MainWindows);
-        ScirptRun->setObjectName(QStringLiteral("ScirptRun"));
+        ScirptRun->setObjectName(QString::fromUtf8("ScirptRun"));
         QIcon icon;
-        icon.addFile(QStringLiteral(":/StartForm/Resources/startui.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/StartForm/Resources/startui.png"), QSize(), QIcon::Normal, QIcon::Off);
         ScirptRun->setIcon(icon);
         ScriptConfigure = new QAction(MainWindows);
-        ScriptConfigure->setObjectName(QStringLiteral("ScriptConfigure"));
+        ScriptConfigure->setObjectName(QString::fromUtf8("ScriptConfigure"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/StartForm/Resources/config_script.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/StartForm/Resources/config_script.png"), QSize(), QIcon::Normal, QIcon::Off);
         ScriptConfigure->setIcon(icon1);
         TestPlan = new QAction(MainWindows);
-        TestPlan->setObjectName(QStringLiteral("TestPlan"));
+        TestPlan->setObjectName(QString::fromUtf8("TestPlan"));
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/StartForm/Resources/test plan.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/StartForm/Resources/test plan.png"), QSize(), QIcon::Normal, QIcon::Off);
         TestPlan->setIcon(icon2);
         Test_Instrument = new QAction(MainWindows);
-        Test_Instrument->setObjectName(QStringLiteral("Test_Instrument"));
+        Test_Instrument->setObjectName(QString::fromUtf8("Test_Instrument"));
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/StartForm/Resources/instrment.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8(":/StartForm/Resources/instrment.png"), QSize(), QIcon::Normal, QIcon::Off);
         Test_Instrument->setIcon(icon3);
         TestProduct = new QAction(MainWindows);
-        TestProduct->setObjectName(QStringLiteral("TestProduct"));
+        TestProduct->setObjectName(QString::fromUtf8("TestProduct"));
         QIcon icon4;
-        icon4.addFile(QStringLiteral(":/StartForm/Resources/rru.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/StartForm/Resources/rru.png"), QSize(), QIcon::Normal, QIcon::Off);
         TestProduct->setIcon(icon4);
         action_Script_Editor_Pycharm = new QAction(MainWindows);
-        action_Script_Editor_Pycharm->setObjectName(QStringLiteral("action_Script_Editor_Pycharm"));
+        action_Script_Editor_Pycharm->setObjectName(QString::fromUtf8("action_Script_Editor_Pycharm"));
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/StartForm/Resources/Pycharmicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8(":/StartForm/Resources/Pycharmicon.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Script_Editor_Pycharm->setIcon(icon5);
         action_SetPythonFileHome = new QAction(MainWindows);
-        action_SetPythonFileHome->setObjectName(QStringLiteral("action_SetPythonFileHome"));
+        action_SetPythonFileHome->setObjectName(QString::fromUtf8("action_SetPythonFileHome"));
         QIcon icon6;
-        icon6.addFile(QStringLiteral(":/StartForm/Resources/Path.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8(":/StartForm/Resources/Path.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_SetPythonFileHome->setIcon(icon6);
         actionNew_Project_File = new QAction(MainWindows);
-        actionNew_Project_File->setObjectName(QStringLiteral("actionNew_Project_File"));
+        actionNew_Project_File->setObjectName(QString::fromUtf8("actionNew_Project_File"));
         centralWidget = new QWidget(MainWindows);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_4 = new QGridLayout(centralWidget);
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         tabWidget_2 = new QTabWidget(centralWidget);
-        tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
+        tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
         tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
+        tab->setObjectName(QString::fromUtf8("tab"));
         tabWidget_2->addTab(tab, QString());
         tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tab_2->setObjectName(QString::fromUtf8("tab_2"));
         gridLayout = new QGridLayout(tab_2);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         frame = new QFrame(tab_2);
-        frame->setObjectName(QStringLiteral("frame"));
+        frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
 
@@ -178,17 +176,17 @@ public:
 
         MainWindows->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindows);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1197, 21));
-        menuBar->setStyleSheet(QStringLiteral(""));
+        menuBar->setStyleSheet(QString::fromUtf8(""));
         menuNew_Project_File = new QMenu(menuBar);
-        menuNew_Project_File->setObjectName(QStringLiteral("menuNew_Project_File"));
+        menuNew_Project_File->setObjectName(QString::fromUtf8("menuNew_Project_File"));
         menuOption = new QMenu(menuBar);
-        menuOption->setObjectName(QStringLiteral("menuOption"));
+        menuOption->setObjectName(QString::fromUtf8("menuOption"));
         MainWindows->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindows);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        mainToolBar->setStyleSheet(QLatin1String("QToolBar {\n"
+        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
+        mainToolBar->setStyleSheet(QString::fromUtf8("QToolBar {\n"
 "	\n"
 "	background-color: rgb(244, 255, 240);\n"
 "    border-bottom: 1px solid #19232D;\n"
@@ -201,11 +199,11 @@ public:
 "}"));
         MainWindows->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindows);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
+        statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindows->setStatusBar(statusBar);
         DW_ToolDock = new QDockWidget(MainWindows);
-        DW_ToolDock->setObjectName(QStringLiteral("DW_ToolDock"));
-        DW_ToolDock->setStyleSheet(QLatin1String("\n"
+        DW_ToolDock->setObjectName(QString::fromUtf8("DW_ToolDock"));
+        DW_ToolDock->setStyleSheet(QString::fromUtf8("\n"
 "QDockWidget::title {\n"
 "    padding: 3px;   /* better size for title bar */\n"
 "    border: none;\n"
@@ -223,15 +221,15 @@ public:
 "\n"
 ""));
         dockWidgetContents_2 = new QWidget();
-        dockWidgetContents_2->setObjectName(QStringLiteral("dockWidgetContents_2"));
+        dockWidgetContents_2->setObjectName(QString::fromUtf8("dockWidgetContents_2"));
         gridLayout_5 = new QGridLayout(dockWidgetContents_2);
         gridLayout_5->setSpacing(6);
         gridLayout_5->setContentsMargins(11, 11, 11, 11);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         toolBox = new QToolBox(dockWidgetContents_2);
-        toolBox->setObjectName(QStringLiteral("toolBox"));
+        toolBox->setObjectName(QString::fromUtf8("toolBox"));
         toolBox->setMinimumSize(QSize(100, 0));
-        toolBox->setStyleSheet(QLatin1String("QToolBox {\n"
+        toolBox->setStyleSheet(QString::fromUtf8("QToolBox {\n"
 "    padding: 0px;\n"
 "    border: 1px solid \n"
 "}\n"
@@ -281,50 +279,50 @@ public:
         toolBox->setLineWidth(5);
         toolBox->setMidLineWidth(3);
         TB_Routerpage = new QWidget();
-        TB_Routerpage->setObjectName(QStringLiteral("TB_Routerpage"));
+        TB_Routerpage->setObjectName(QString::fromUtf8("TB_Routerpage"));
         TB_Routerpage->setGeometry(QRect(0, 0, 98, 323));
         gridLayout_6 = new QGridLayout(TB_Routerpage);
         gridLayout_6->setSpacing(6);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
-        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
         pushButton_3 = new QPushButton(TB_Routerpage);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
 
         gridLayout_6->addWidget(pushButton_3, 0, 0, 1, 1);
 
         pushButton_5 = new QPushButton(TB_Routerpage);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
 
         gridLayout_6->addWidget(pushButton_5, 1, 0, 1, 1);
 
         pushButton_6 = new QPushButton(TB_Routerpage);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
 
         gridLayout_6->addWidget(pushButton_6, 2, 0, 1, 1);
 
         pushButton_7 = new QPushButton(TB_Routerpage);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
 
         gridLayout_6->addWidget(pushButton_7, 3, 0, 1, 1);
 
         pushButton_8 = new QPushButton(TB_Routerpage);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
 
         gridLayout_6->addWidget(pushButton_8, 4, 0, 1, 1);
 
-        toolBox->addItem(TB_Routerpage, QStringLiteral("Router Tool"));
+        toolBox->addItem(TB_Routerpage, QString::fromUtf8("Router Tool"));
         TB_ConfigurePage = new QWidget();
-        TB_ConfigurePage->setObjectName(QStringLiteral("TB_ConfigurePage"));
+        TB_ConfigurePage->setObjectName(QString::fromUtf8("TB_ConfigurePage"));
         TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 323));
-        toolBox->addItem(TB_ConfigurePage, QStringLiteral("Configure Tool"));
+        toolBox->addItem(TB_ConfigurePage, QString::fromUtf8("Configure Tool"));
 
         gridLayout_5->addWidget(toolBox, 0, 0, 1, 1);
 
         DW_ToolDock->setWidget(dockWidgetContents_2);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(1), DW_ToolDock);
         DW_historyinfor = new QDockWidget(MainWindows);
-        DW_historyinfor->setObjectName(QStringLiteral("DW_historyinfor"));
-        DW_historyinfor->setStyleSheet(QLatin1String("QDockWidget {\n"
+        DW_historyinfor->setObjectName(QString::fromUtf8("DW_historyinfor"));
+        DW_historyinfor->setStyleSheet(QString::fromUtf8("QDockWidget {\n"
 "    outline: 1px solid #f2fdee;\n"
 "    background-color: #19232D;\n"
 "    border: 1px solid #f2fdee;\n"
@@ -337,22 +335,22 @@ public:
 "    background-color: #f2fdee;\n"
 "}"));
         dockWidgetContents_4 = new QWidget();
-        dockWidgetContents_4->setObjectName(QStringLiteral("dockWidgetContents_4"));
+        dockWidgetContents_4->setObjectName(QString::fromUtf8("dockWidgetContents_4"));
         gridLayout_9 = new QGridLayout(dockWidgetContents_4);
         gridLayout_9->setSpacing(6);
         gridLayout_9->setContentsMargins(11, 11, 11, 11);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(6);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
 
         gridLayout_9->addLayout(gridLayout_8, 0, 0, 1, 1);
 
         DW_historyinfor->setWidget(dockWidgetContents_4);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(1), DW_historyinfor);
         DW_Proterty = new QDockWidget(MainWindows);
-        DW_Proterty->setObjectName(QStringLiteral("DW_Proterty"));
-        DW_Proterty->setStyleSheet(QLatin1String("QDockWidget {\n"
+        DW_Proterty->setObjectName(QString::fromUtf8("DW_Proterty"));
+        DW_Proterty->setStyleSheet(QString::fromUtf8("QDockWidget {\n"
 "    outline: 1px solid #32414B;\n"
 "    background-color: #19232D;\n"
 "    border: 1px solid #32414B;\n"
@@ -393,22 +391,22 @@ public:
 "    border: 1px solid #32414B;\n"
 "}"));
         dockWidgetContents_6 = new QWidget();
-        dockWidgetContents_6->setObjectName(QStringLiteral("dockWidgetContents_6"));
+        dockWidgetContents_6->setObjectName(QString::fromUtf8("dockWidgetContents_6"));
         gridLayout_11 = new QGridLayout(dockWidgetContents_6);
         gridLayout_11->setSpacing(6);
         gridLayout_11->setContentsMargins(11, 11, 11, 11);
-        gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
+        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setSpacing(6);
-        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+        gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
         LV_ProPerty = new QListView(dockWidgetContents_6);
-        LV_ProPerty->setObjectName(QStringLiteral("LV_ProPerty"));
+        LV_ProPerty->setObjectName(QString::fromUtf8("LV_ProPerty"));
         LV_ProPerty->setMinimumSize(QSize(80, 300));
 
         gridLayout_10->addWidget(LV_ProPerty, 1, 0, 1, 1);
 
         label = new QLabel(dockWidgetContents_6);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
@@ -422,8 +420,8 @@ public:
         DW_Proterty->setWidget(dockWidgetContents_6);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(2), DW_Proterty);
         DW_Opeartioninfodisp = new QDockWidget(MainWindows);
-        DW_Opeartioninfodisp->setObjectName(QStringLiteral("DW_Opeartioninfodisp"));
-        DW_Opeartioninfodisp->setStyleSheet(QLatin1String("QDockWidget {\n"
+        DW_Opeartioninfodisp->setObjectName(QString::fromUtf8("DW_Opeartioninfodisp"));
+        DW_Opeartioninfodisp->setStyleSheet(QString::fromUtf8("QDockWidget {\n"
 "    outline: 1px solid #32414B;\n"
 "    background-color: #19232D;\n"
 "    border: 1px solid #32414B;\n"
@@ -464,42 +462,42 @@ public:
 "    border: 1px solid #32414B;\n"
 "}"));
         dockWidgetContents_7 = new QWidget();
-        dockWidgetContents_7->setObjectName(QStringLiteral("dockWidgetContents_7"));
+        dockWidgetContents_7->setObjectName(QString::fromUtf8("dockWidgetContents_7"));
         gridLayout_13 = new QGridLayout(dockWidgetContents_7);
         gridLayout_13->setSpacing(6);
         gridLayout_13->setContentsMargins(11, 11, 11, 11);
-        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
         gridLayout_12 = new QGridLayout();
         gridLayout_12->setSpacing(6);
-        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         TW_OpeationDisp = new QTabWidget(dockWidgetContents_7);
-        TW_OpeationDisp->setObjectName(QStringLiteral("TW_OpeationDisp"));
+        TW_OpeationDisp->setObjectName(QString::fromUtf8("TW_OpeationDisp"));
         TW_OpeationDisp->setMinimumSize(QSize(0, 80));
-        TW_OpeationDisp->setStyleSheet(QStringLiteral(""));
+        TW_OpeationDisp->setStyleSheet(QString::fromUtf8(""));
         TW_OpeationDisp->setMovable(true);
         tw_opeartioninfo = new QWidget();
-        tw_opeartioninfo->setObjectName(QStringLiteral("tw_opeartioninfo"));
+        tw_opeartioninfo->setObjectName(QString::fromUtf8("tw_opeartioninfo"));
         tw_opeartioninfo->setFont(font);
-        tw_opeartioninfo->setStyleSheet(QStringLiteral("background-color: rgb(246, 255, 240);"));
+        tw_opeartioninfo->setStyleSheet(QString::fromUtf8("background-color: rgb(246, 255, 240);"));
         QIcon icon7;
-        icon7.addFile(QStringLiteral(":/StartForm/Resources/operation.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8(":/StartForm/Resources/operation.png"), QSize(), QIcon::Normal, QIcon::Off);
         TW_OpeationDisp->addTab(tw_opeartioninfo, icon7, QString());
         tw_errorinfo = new QWidget();
-        tw_errorinfo->setObjectName(QStringLiteral("tw_errorinfo"));
+        tw_errorinfo->setObjectName(QString::fromUtf8("tw_errorinfo"));
         tw_errorinfo->setFont(font);
-        tw_errorinfo->setStyleSheet(QStringLiteral("background-color: rgb(255, 246, 222);"));
+        tw_errorinfo->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 246, 222);"));
         QIcon icon8;
-        icon8.addFile(QStringLiteral(":/StartForm/Resources/Error.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8(":/StartForm/Resources/Error.png"), QSize(), QIcon::Normal, QIcon::Off);
         TW_OpeationDisp->addTab(tw_errorinfo, icon8, QString());
         tw_Terminal = new QWidget();
-        tw_Terminal->setObjectName(QStringLiteral("tw_Terminal"));
+        tw_Terminal->setObjectName(QString::fromUtf8("tw_Terminal"));
         gridLayout_2 = new QGridLayout(tw_Terminal);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         PTE_TerimnalDisplayArea = new QPlainTextEdit(tw_Terminal);
-        PTE_TerimnalDisplayArea->setObjectName(QStringLiteral("PTE_TerimnalDisplayArea"));
-        PTE_TerimnalDisplayArea->setStyleSheet(QLatin1String("background-color: rgb(65, 65, 65);\n"
+        PTE_TerimnalDisplayArea->setObjectName(QString::fromUtf8("PTE_TerimnalDisplayArea"));
+        PTE_TerimnalDisplayArea->setStyleSheet(QString::fromUtf8("background-color: rgb(65, 65, 65);\n"
 "font: 75 12pt \"Consolas\";\n"
 "color: rgb(255, 255, 255);\n"
 ""));
@@ -508,7 +506,7 @@ public:
         gridLayout_2->addWidget(PTE_TerimnalDisplayArea, 0, 0, 1, 1);
 
         QIcon icon9;
-        icon9.addFile(QStringLiteral(":/StartForm/Resources/terminal.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8(":/StartForm/Resources/terminal.png"), QSize(), QIcon::Normal, QIcon::Off);
         TW_OpeationDisp->addTab(tw_Terminal, icon9, QString());
 
         gridLayout_12->addWidget(TW_OpeationDisp, 0, 0, 1, 1);
@@ -544,45 +542,45 @@ public:
 
     void retranslateUi(QMainWindow *MainWindows)
     {
-        MainWindows->setWindowTitle(QApplication::translate("MainWindows", "RTA", Q_NULLPTR));
-        ScirptRun->setText(QApplication::translate("MainWindows", "ScirptRun", Q_NULLPTR));
+        MainWindows->setWindowTitle(QApplication::translate("MainWindows", "RTA", nullptr));
+        ScirptRun->setText(QApplication::translate("MainWindows", "ScirptRun", nullptr));
 #ifndef QT_NO_SHORTCUT
-        ScirptRun->setShortcut(QApplication::translate("MainWindows", "Ctrl+R", Q_NULLPTR));
+        ScirptRun->setShortcut(QApplication::translate("MainWindows", "Ctrl+R", nullptr));
 #endif // QT_NO_SHORTCUT
-        ScriptConfigure->setText(QApplication::translate("MainWindows", "ScriptConfigure", Q_NULLPTR));
+        ScriptConfigure->setText(QApplication::translate("MainWindows", "ScriptConfigure", nullptr));
 #ifndef QT_NO_SHORTCUT
-        ScriptConfigure->setShortcut(QApplication::translate("MainWindows", "Ctrl+F", Q_NULLPTR));
+        ScriptConfigure->setShortcut(QApplication::translate("MainWindows", "Ctrl+F", nullptr));
 #endif // QT_NO_SHORTCUT
-        TestPlan->setText(QApplication::translate("MainWindows", "TestPlan", Q_NULLPTR));
+        TestPlan->setText(QApplication::translate("MainWindows", "TestPlan", nullptr));
 #ifndef QT_NO_SHORTCUT
-        TestPlan->setShortcut(QApplication::translate("MainWindows", "Ctrl+P", Q_NULLPTR));
+        TestPlan->setShortcut(QApplication::translate("MainWindows", "Ctrl+P", nullptr));
 #endif // QT_NO_SHORTCUT
-        Test_Instrument->setText(QApplication::translate("MainWindows", "Test Instrument", Q_NULLPTR));
+        Test_Instrument->setText(QApplication::translate("MainWindows", "Test Instrument", nullptr));
 #ifndef QT_NO_SHORTCUT
-        Test_Instrument->setShortcut(QApplication::translate("MainWindows", "Ctrl+I", Q_NULLPTR));
+        Test_Instrument->setShortcut(QApplication::translate("MainWindows", "Ctrl+I", nullptr));
 #endif // QT_NO_SHORTCUT
-        TestProduct->setText(QApplication::translate("MainWindows", "Test Product", Q_NULLPTR));
-        action_Script_Editor_Pycharm->setText(QApplication::translate("MainWindows", "Script Editor(Pycharm)", Q_NULLPTR));
-        action_SetPythonFileHome->setText(QApplication::translate("MainWindows", "SetPythonFileHome", Q_NULLPTR));
+        TestProduct->setText(QApplication::translate("MainWindows", "Test Product", nullptr));
+        action_Script_Editor_Pycharm->setText(QApplication::translate("MainWindows", "Script Editor(Pycharm)", nullptr));
+        action_SetPythonFileHome->setText(QApplication::translate("MainWindows", "SetPythonFileHome", nullptr));
 #ifndef QT_NO_TOOLTIP
-        action_SetPythonFileHome->setToolTip(QApplication::translate("MainWindows", "select  the python  file path which you want to choose  ", Q_NULLPTR));
+        action_SetPythonFileHome->setToolTip(QApplication::translate("MainWindows", "select  the python  file path which you want to choose  ", nullptr));
 #endif // QT_NO_TOOLTIP
-        actionNew_Project_File->setText(QApplication::translate("MainWindows", "New Project File", Q_NULLPTR));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindows", "Tab 1", Q_NULLPTR));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Tab 2", Q_NULLPTR));
-        menuNew_Project_File->setTitle(QApplication::translate("MainWindows", "File", Q_NULLPTR));
-        menuOption->setTitle(QApplication::translate("MainWindows", "Setup", Q_NULLPTR));
+        actionNew_Project_File->setText(QApplication::translate("MainWindows", "New Project File", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindows", "Tab 1", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Tab 2", nullptr));
+        menuNew_Project_File->setTitle(QApplication::translate("MainWindows", "File", nullptr));
+        menuOption->setTitle(QApplication::translate("MainWindows", "Setup", nullptr));
         pushButton_3->setText(QString());
-        pushButton_5->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(TB_Routerpage), QApplication::translate("MainWindows", "Router Tool", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(TB_ConfigurePage), QApplication::translate("MainWindows", "Configure Tool", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindows", "Property", Q_NULLPTR));
-        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_opeartioninfo), QApplication::translate("MainWindows", "Opeartion Info", Q_NULLPTR));
-        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_errorinfo), QApplication::translate("MainWindows", "Error Info", Q_NULLPTR));
-        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_Terminal), QApplication::translate("MainWindows", "Terminal", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindows", "PushButton", nullptr));
+        pushButton_6->setText(QApplication::translate("MainWindows", "PushButton", nullptr));
+        pushButton_7->setText(QApplication::translate("MainWindows", "PushButton", nullptr));
+        pushButton_8->setText(QApplication::translate("MainWindows", "PushButton", nullptr));
+        toolBox->setItemText(toolBox->indexOf(TB_Routerpage), QApplication::translate("MainWindows", "Router Tool", nullptr));
+        toolBox->setItemText(toolBox->indexOf(TB_ConfigurePage), QApplication::translate("MainWindows", "Configure Tool", nullptr));
+        label->setText(QApplication::translate("MainWindows", "Property", nullptr));
+        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_opeartioninfo), QApplication::translate("MainWindows", "Opeartion Info", nullptr));
+        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_errorinfo), QApplication::translate("MainWindows", "Error Info", nullptr));
+        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_Terminal), QApplication::translate("MainWindows", "Terminal", nullptr));
     } // retranslateUi
 
 };

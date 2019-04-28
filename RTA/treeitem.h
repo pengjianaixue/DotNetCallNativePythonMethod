@@ -3,6 +3,7 @@
 #define TREEITEM_H
 #include <QList>
 #include <QVariant>
+#include <QStandardItemModel.h>
 class TreeItem
 {
 public:

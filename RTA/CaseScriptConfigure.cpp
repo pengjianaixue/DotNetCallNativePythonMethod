@@ -106,7 +106,9 @@ void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & case
 	//QModelIndex index = ui.CaseFile_treeView->currentIndex();
 	if (caseitem.isValid())
 	{
+		
 		QVariant Caseitem = caseitem.data();
+		QMessageBox::information(this, "Case SelectName", Caseitem.toString());
 		TRACE(Caseitem);
 	}
 	return;
@@ -130,6 +132,8 @@ void CaseScriptConfigure::ParamInit()
 	//ui.pushButton_LoadCaseList->setStyleSheet("QPushbutton:focus{border: 3px solid red;}");
 	this->ui.CaseFile_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
 	this->ui.CaseFile_treeView->setDragEnabled(true);
+	this->ui.CaseFile_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+	this->ui.CaseFile_treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	m_ignorePyDirNameList.append(".idea");
 	m_ignorePyDirNameList.append("__pycache__");
 
@@ -160,7 +164,7 @@ void CaseScriptConfigure::ConnectSlots()
 				&& connect(this->ui.pushButton_reset, &QPushButton::clicked, this, &CaseScriptConfigure::Reset) 
 				&& connect(this->ui.pushButton_reload, &QPushButton::clicked, this, &CaseScriptConfigure::ReLoadPyFilePath)
 				&& connect(this->ui.pushButton_LoadCaseList,&QPushButton::clicked,this,&CaseScriptConfigure::GetPyCasePathAndLaodCaseFile)
-				/*&& connect(this->ui.CaseFile_treeView,&QTreeView::doubleClicked,this,&CaseScriptConfigure::GetCaseListViewUserSelectItem)*/
+				&& connect(this->ui.CaseFile_treeView,&QTreeView::doubleClicked,this,&CaseScriptConfigure::GetCaseListViewUserSelectItem)
 			
 			)
 		)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "MainWindows.h"
+
 MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
 	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess()),
 	  m_QthreadPythonCaseprocess(nullptr)
 {
-
 
 	ui.setupUi(this);
 	m_TheCurrentPath = QDir::currentPath();

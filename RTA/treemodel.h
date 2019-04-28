@@ -30,9 +30,6 @@ public:
 	bool setModelData(const QCASEFILETREELIST &data, const QString &RootData);
 	bool ClearData();
 	//bool setItemData(const QModelIndex &index, const QMap<int, QVariant> &roles);
-	
-
-
 private:
 	void setupModelData(const QCASEFILETREELIST &CaseTree, TreeItem *parent);
 	//void setupModelData(const QStringList &lines, TreeItem *parent);

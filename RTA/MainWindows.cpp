@@ -87,7 +87,7 @@ bool MainWindows::openpycharmIDE()
 	}
 	if (m_pyeditorprocess->pid()!=nullptr && m_hPycharmProcessid == m_pyeditorprocess->pid()->dwProcessId)
 	{
-		QMessageBox::warning(this, "Warning", "the  python editor  pycharm have existing!");
+		QMessageBox::warning(this, "Warning", "the  python editor  pycharm have opened!");
 	}
 	QString pypath =   m_strPyCaseFileHomePath;
 	QString program = m_strPycharmBinPath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";

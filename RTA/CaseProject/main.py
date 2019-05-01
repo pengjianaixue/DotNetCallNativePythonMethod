@@ -1,7 +1,8 @@
 import sys
 import numpy as np
+
 import time
-from numba import jit
+# from numba import jit
 
 def main(x,y):
     print("**************project start run**************\r\n")

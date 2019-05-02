@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	QIcon icon;
 	icon.addFile(":/StartForm/Resources/R.ico");
 	a.setWindowIcon(icon);
-	mw.setWindowTitle("RAT");
+	mw.setWindowTitle("RTS");
 	mw.show();
 	return a.exec();
 }

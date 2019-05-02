@@ -86,7 +86,7 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 		{
 
 			temppair.second.append(CaseFileInfo.fileName().split(".").first());
-			//TODO  Just for Test 
+			//TODO  Test Code,need to delete 
 			std::string FileName = CaseFileInfo.fileName().split(".").first().toStdString();
 			std::string FilePath = (CaseFileInfo.path() + R"(/)"+ CaseFileInfo.fileName()).toStdString();
 			m_CaseNameMaptoFullyPath.insert(CaseFileInfo.fileName().split(".").first(), CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());

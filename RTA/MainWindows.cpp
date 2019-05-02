@@ -9,8 +9,7 @@ MainWindows::MainWindows(QWidget *parent)
 
 	ui.setupUi(this);
 	m_TheCurrentPath = QDir::currentPath();
-	//TODO 
-	//this absolutely path is only for  local test 
+	//TODO this absolutely path is only for  local test 
 	m_strInitXmlFilePath = m_TheCurrentPath + R"(\Initloadfile\InitParam.xml)"; 
 	m_hPycharmProcessid = 0;
 	InitOption();

@@ -8,6 +8,7 @@
 #include "treeitem.h"
 #include "ui_CaseScriptConfigure.h"
 #include "../CallPython/CallPython.h"
+#include <QPair>
 
 class CaseScriptConfigure : public QDialog
 {
@@ -16,7 +17,7 @@ class CaseScriptConfigure : public QDialog
 public:
 	CaseScriptConfigure(QWidget *parent = Q_NULLPTR);
 	~CaseScriptConfigure();
-	const QMap<QString, QString> &GetCaseNameMapToPath() const;
+	const QList<QPair<QString, QString>> &GetCaseExecuteList() const;
 	typedef QPair<QString, QStringList> QSTRINGLISTPAIR;
 private:
 	bool PyRun();
@@ -24,7 +25,10 @@ private:
 	void ParamInit();
 
 signals:
-	void s_emitSelectCaseItemToExceList(const QString &SelectCaseItem);
+	void s_emitExceListChanged();
+	void s_emitSelectCaseItemToExecList(const QString &SelectCaseItem);
+	
+
 public slots:
 	int  TestRun();
 	int  Reset();
@@ -51,5 +55,6 @@ private:
 	QMap<QString, QString>				m_CaseNameMaptoFullyPath; // the search map
 	QStringListModel					*m_CaseExecListModel;
 	QStringList							m_CaseExecList;
+	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
 	
 };

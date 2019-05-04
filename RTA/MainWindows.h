@@ -3,16 +3,18 @@
 #include <QMainWindow>
 #include <QDir>
 #include <QProcess>
+#include <concurrent_unordered_map.h>
+#include <thread>
+#include <QPair>
+#ifdef WIN32
+	#include <Windows.h>
+#endif // WIN32
 #include "CaseScriptConfigure.h"
 #include "ui_MainWindows.h"
 #include "CaseandEditorhome.h"
 #include "InitConfigLoader.h"
 #include "Trace.h"
-#include <concurrent_unordered_map.h>
-#include <thread>
-#ifdef WIN32
-	#include <Windows.h>
-#endif // WIN32
+#include "CPyProcess.h"
 //TODO 
 //This is  Py Terminal test only
 //#include "../CallPython/CallPython.h"
@@ -24,7 +26,7 @@ public:
 	MainWindows(QWidget *parent = Q_NULLPTR);
 	~MainWindows();
 	bool LoadInitXmlConfigure();
-	bool InitOption();
+	bool Init();
 protected:
 	void closeEvent(QCloseEvent* event);
 public slots:
@@ -36,28 +38,32 @@ public slots:
 	//This is  Py Terminal test only
 	bool RunPyFileInTerminal();
 	void DisplayToTerminal();
+	void GetExecuteCaseList();
 signals:
 	void Signal_emitpycasefilehomepath(const QString &pycasefilehomepath);
+	bool Signal_emitPyCaseRun();
+	bool Signal_emitPyCaseStop();
 private://ui vars
 	Ui::MainWindows ui;
 	CaseandEditorhome *PythonHomeSet;
 private:
 #ifdef WIN32
+
 	DWORD m_hPycharmProcessid;
 #else
 	long m_hPycharmProcesshandle;
 #endif // WIN32
 
-	CaseScriptConfigure		m_uirunscript;
-	QProcess				*m_pyeditorprocess;
-	QString					m_strPyCaseFileHomePath;
-	QString					m_strPycharmBinPath;
-	QString					m_strInitXmlFilePath;
-	QString					m_TheCurrentPath;
-	//This is  Py Terminal test only
-	QProcess				*m_RunPythonCaseprocess;
-	QThread                 *m_QthreadPythonCaseprocess;
-	 
+
+	CaseScriptConfigure					m_UICaseConfigure;
+	QProcess							*m_pyeditorprocess;
+	QString								m_strPyCaseFileHomePath;
+	QString								m_strPycharmBinPath;
+	QString								m_strInitXmlFilePath;
+	QString								m_TheCurrentPath;
+	CPyProcess							m_RunPythonCaseprocess;
+	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
+	QThread								m_CaseRunThread;
 private:
 	bool ConnectSlots();
 	

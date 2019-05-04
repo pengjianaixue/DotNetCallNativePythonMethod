@@ -3,8 +3,7 @@
 
 MainWindows::MainWindows(QWidget *parent)
 	: QMainWindow(parent), m_pyeditorprocess(new QProcess(this)),
-	  PythonHomeSet(new CaseandEditorhome(this)),m_RunPythonCaseprocess(new QProcess()),
-	  m_QthreadPythonCaseprocess(nullptr)
+	  PythonHomeSet(new CaseandEditorhome(this)), m_RunPythonCaseprocess(nullptr)
 {
 
 	ui.setupUi(this);
@@ -12,7 +11,7 @@ MainWindows::MainWindows(QWidget *parent)
 	//TODO this absolutely path is only for  local test 
 	m_strInitXmlFilePath = m_TheCurrentPath + R"(\Initloadfile\InitParam.xml)"; 
 	m_hPycharmProcessid = 0;
-	InitOption();
+	Init();
 	ConnectSlots();
 	LoadInitXmlConfigure();
 	if (!m_strPyCaseFileHomePath.isEmpty())
@@ -22,14 +21,18 @@ MainWindows::MainWindows(QWidget *parent)
 }
 bool MainWindows::openconfigform(int i)
 {
-	m_uirunscript.show();
+	m_UICaseConfigure.show();
 	return true;
 }
 MainWindows::~MainWindows()
 {
-	m_RunPythonCaseprocess->terminate();
-	delete m_RunPythonCaseprocess;
 	delete m_pyeditorprocess;
+	if (m_RunPythonCaseprocess.IsRuning())
+	{
+		emit Signal_emitPyCaseStop();
+	}
+	m_CaseRunThread.wait(100);
+	m_CaseRunThread.terminate();
 }
 bool MainWindows::LoadInitXmlConfigure()
 {
@@ -52,10 +55,15 @@ bool MainWindows::LoadInitXmlConfigure()
 	return true;
 }
 
-bool MainWindows::InitOption()
+bool MainWindows::Init()
 {
-	m_RunPythonCaseprocess->setProcessChannelMode(QProcess::MergedChannels);
+
+
+	this->tabifyDockWidget(this->ui.dockWidget_Terminal, this->ui.dockWidget_Opeartioninfodisp);
+	this->tabifyDockWidget(this->ui.dockWidget_Opeartioninfodisp,this->ui.dockWidget_ErrorInfo);
+	this->ui.dockWidget_Terminal->raise();
 	this->ui.PTE_TerimnalDisplayArea->setReadOnly(true);
+	m_CaseRunThread.start();
 	return true;
 }
 
@@ -119,6 +127,7 @@ bool MainWindows::Recvipycasefilehomepath(const QString & pycasefilehomepath)
 	if (!m_strPyCaseFileHomePath.isEmpty())
 	{
 		m_TheCurrentPath = m_strPyCaseFileHomePath;
+		emit Signal_emitpycasefilehomepath(m_strPyCaseFileHomePath);
 	}
 	return true;
 }
@@ -132,27 +141,49 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 
 bool MainWindows::RunPyFileInTerminal()
 {
+	if (m_RunPythonCaseprocess.IsRuning())
+	{
+		
+		emit Signal_emitPyCaseStop();
+	}
+	else
+	{
+		m_RunPythonCaseprocess.RegisterRunList(m_CaseExecListToFullPathList);
+		m_RunPythonCaseprocess.moveToThread(&m_CaseRunThread);
+		emit Signal_emitPyCaseRun();
 
-	this->ui.PTE_TerimnalDisplayArea->clear();
-	QString PyPath = m_TheCurrentPath + R"(/CaseProject/main.py)";
-	QString cmd = "python " + PyPath;
-	m_RunPythonCaseprocess->start(R"(python )" + PyPath);
-	m_RunPythonCaseprocess->waitForFinished();
+	}
 	return true;
 }
-
+//// Backup
+//void MainWindows::DisplayToTerminal(const QString &PyProcessRunInfor)
+//{
+//	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
+//	QString messagestring = QString::fromLocal8Bit(messagebyte);
+//#ifdef _DEBUG
+//	std::string smsg = messagestring.toStdString();
+//#endif // _DEBUG
+//	this->ui.PTE_TerimnalDisplayArea->appendPlainText(messagestring);
+//	this->ui.PTE_TerimnalDisplayArea->update();
+//	return;
+//}
 void MainWindows::DisplayToTerminal()
 {
-	QByteArray qbt = m_RunPythonCaseprocess->readAllStandardOutput();
-	QString msg = QString::fromLocal8Bit(qbt);
+	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
+	QString messagestring = QString::fromLocal8Bit(messagebyte);
 #ifdef _DEBUG
-	std::string smsg = msg.toStdString();
+	std::string smsg = messagestring.toStdString();
 #endif // _DEBUG
-	this->ui.PTE_TerimnalDisplayArea->appendPlainText(msg);
+	this->ui.PTE_TerimnalDisplayArea->appendPlainText(messagestring);
 	this->ui.PTE_TerimnalDisplayArea->update();
 	return;
 }
 
+
+void MainWindows::GetExecuteCaseList()
+{
+	m_CaseExecListToFullPathList =  this->m_UICaseConfigure.GetCaseExecuteList();
+}
 bool MainWindows::ConnectSlots()
 {
 
@@ -163,9 +194,15 @@ bool MainWindows::ConnectSlots()
 				&& connect(this->ui.action_Script_Editor_Pycharm, &QAction::triggered, this, &MainWindows::openpycharmIDE) 
 				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPythonFileHome, this, &MainWindows::Recvipycasefilehomepath) 
 				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) 
-				&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_uirunscript, &CaseScriptConfigure::SetPyFilePath)
-				&& connect(this->ui.ScirptRun, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal) 
-				&& connect(this->m_RunPythonCaseprocess, &QProcess::readyReadStandardOutput,this,&MainWindows::DisplayToTerminal)
+				&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_UICaseConfigure, &CaseScriptConfigure::SetPyFilePath)
+				&& connect(this->ui.Auto_Test, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal)
+				&& connect(&this->m_RunPythonCaseprocess.m_Process, &QProcess::readyReadStandardOutput,this,&MainWindows::DisplayToTerminal)
+				//&& connect(&this->m_RunPythonCaseprocess, &CPyProcess::s_ProcessOutPutinfo, this, &MainWindows::DisplayToTerminal)
+				&& connect(&this->m_UICaseConfigure, &CaseScriptConfigure::s_emitExceListChanged,this, &MainWindows::GetExecuteCaseList)
+				&& connect(this->ui.pushButton_clearTerminal, &QPushButton::clicked, this->ui.PTE_TerimnalDisplayArea, &QPlainTextEdit::clear)
+				&& connect(this, &MainWindows::Signal_emitPyCaseRun, &this->m_RunPythonCaseprocess, &CPyProcess::Start)
+				&& connect(this, &MainWindows::Signal_emitPyCaseStop, &this->m_RunPythonCaseprocess, &CPyProcess::Stop)
+				
 			)
 		)
 	{

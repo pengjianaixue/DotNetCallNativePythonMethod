@@ -11,43 +11,91 @@
 #endif // _WIN32
 
 
+//class CPyProcess : public QObject
+//{
+//
+//	Q_OBJECT
+//public:
+//	typedef enum
+//	{
+//		lower  = -1,
+//		normal =  0,
+//		higher =  1,
+//
+//	}THREADPRIORITY;
+//public:
+//	CPyProcess(QObject *parent);
+//	~CPyProcess();
+//signals:
+//	void s_Processfinished(int finishcode);
+//	void s_ProcessOutPutinfo(const QString &outinfo);
+//// interface
+//public:
+//	bool RegisterRunList(const QList<QPair<QString,QString>> &CaseList); //Only For Case 
+//	bool Start(THREADPRIORITY ThreadPriority = THREADPRIORITY::normal);
+//	bool Pause();
+//	bool Resume();
+//	bool Stop();
+//	bool IsRun() const;
+//private:
+//	void ThreadRunFunction();
+//	void ReadProcessOutputinfo();
+//private:
+//	QProcessEnvironment						m_ProcessEnvir; //retention 
+//	QProcess								m_Process;
+//	std::atomic<bool>						m_RunFlags;
+//	std::shared_ptr<std::thread>			m_pRunThread;
+//	//QString									m_PyFileName;
+//	QList<QPair<QString, QString>>			m_RegisterCaseList;
+//
+//	//Windows specific
+//#ifdef _WIN32
+//	HANDLE									m_ThreadHandle;
+//#endif // _WIN32
+//	
+//};
 class CPyProcess : public QObject
 {
+
 	Q_OBJECT
+public:
+	typedef enum
+	{
+		lower = -1,
+		normal = 0,
+		higher = 1,
 
-typedef enum
-{
-	lower  = -1,
-	normal =  0,
-	higher =  1,
-
-}THREADPRIORITY;
+	}THREADPRIORITY;
 public:
 	CPyProcess(QObject *parent);
 	~CPyProcess();
 signals:
 	void s_Processfinished(int finishcode);
 	void s_ProcessOutPutinfo(const QString &outinfo);
-// interface
-public:
-	bool Start(const QString &PyFileName, THREADPRIORITY ThreadPriority = THREADPRIORITY::normal);
+	// interface
+public slots:
+	bool RegisterRunList(const QList<QPair<QString, QString>> &CaseList); //Only For Case 
+	bool Start();
 	bool Pause();
 	bool Resume();
 	bool Stop();
-	bool IsRun() const;
+	bool IsRuning() const;
 private:
 	void ThreadRunFunction();
 	void ReadProcessOutputinfo();
 private:
 	QProcessEnvironment						m_ProcessEnvir; //retention 
-	QProcess								m_Process;
+	//QProcess								m_Process;
 	std::atomic<bool>						m_RunFlags;
 	std::shared_ptr<std::thread>			m_pRunThread;
-	QString									m_PyFileName;
+	//QString									m_PyFileName;
+	QList<QPair<QString, QString>>			m_RegisterCaseList;
 
 	//Windows specific
 #ifdef _WIN32
 	HANDLE									m_ThreadHandle;
 #endif // _WIN32
-	
+public:
+	QProcess								m_Process;
+
 };

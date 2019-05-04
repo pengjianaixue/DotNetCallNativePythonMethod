@@ -24,6 +24,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolBar>
@@ -35,7 +36,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindows
 {
 public:
-    QAction *ScirptRun;
+    QAction *Auto_Test;
     QAction *ScriptConfigure;
     QAction *TestPlan;
     QAction *Test_Instrument;
@@ -47,7 +48,7 @@ public:
     QGridLayout *gridLayout_4;
     QGridLayout *gridLayout_3;
     QTabWidget *tabWidget_2;
-    QWidget *tab;
+    QWidget *Home;
     QWidget *tab_2;
     QGridLayout *gridLayout;
     QFrame *frame;
@@ -68,32 +69,38 @@ public:
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
     QWidget *TB_ConfigurePage;
-    QDockWidget *DW_historyinfor;
-    QWidget *dockWidgetContents_4;
-    QGridLayout *gridLayout_9;
-    QGridLayout *gridLayout_8;
     QDockWidget *DW_Proterty;
     QWidget *dockWidgetContents_6;
     QGridLayout *gridLayout_11;
     QGridLayout *gridLayout_10;
     QListView *LV_ProPerty;
     QLabel *label;
-    QDockWidget *DW_Opeartioninfodisp;
+    QDockWidget *dockWidget_Opeartioninfodisp;
     QWidget *dockWidgetContents_7;
     QGridLayout *gridLayout_13;
     QGridLayout *gridLayout_12;
     QTabWidget *TW_OpeationDisp;
     QWidget *tw_opeartioninfo;
-    QWidget *tw_errorinfo;
-    QWidget *tw_Terminal;
+    QDockWidget *dockWidget_ErrorInfo;
+    QWidget *dockWidgetContents_5;
     QGridLayout *gridLayout_2;
+    QTabWidget *TW_OpeationDisp_ErrorInfo;
+    QWidget *tw_errorinfo_2;
+    QDockWidget *dockWidget_Terminal;
+    QWidget *dockWidgetContents_8;
+    QGridLayout *gridLayout_14;
+    QTabWidget *TW_OpeationDisp_2;
+    QWidget *tw_Terminal;
+    QGridLayout *gridLayout_7;
+    QSpacerItem *horizontalSpacer;
     QPlainTextEdit *PTE_TerimnalDisplayArea;
+    QPushButton *pushButton_clearTerminal;
 
     void setupUi(QMainWindow *MainWindows)
     {
         if (MainWindows->objectName().isEmpty())
             MainWindows->setObjectName(QStringLiteral("MainWindows"));
-        MainWindows->resize(1197, 863);
+        MainWindows->resize(1665, 1117);
         MainWindows->setStyleSheet(QLatin1String("QMainWindow::separator:horizontal {\n"
 "    width: 3px;\n"
 "    margin-top: 3px;\n"
@@ -105,11 +112,11 @@ public:
 "    margin-left: 3px;\n"
 "    margin-right: 3px;\n"
 "}"));
-        ScirptRun = new QAction(MainWindows);
-        ScirptRun->setObjectName(QStringLiteral("ScirptRun"));
+        Auto_Test = new QAction(MainWindows);
+        Auto_Test->setObjectName(QStringLiteral("Auto_Test"));
         QIcon icon;
-        icon.addFile(QStringLiteral(":/StartForm/Resources/startui.png"), QSize(), QIcon::Normal, QIcon::Off);
-        ScirptRun->setIcon(icon);
+        icon.addFile(QStringLiteral(":/StartForm/Resources/auto_test.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Auto_Test->setIcon(icon);
         ScriptConfigure = new QAction(MainWindows);
         ScriptConfigure->setObjectName(QStringLiteral("ScriptConfigure"));
         QIcon icon1;
@@ -133,7 +140,7 @@ public:
         action_Script_Editor_Pycharm = new QAction(MainWindows);
         action_Script_Editor_Pycharm->setObjectName(QStringLiteral("action_Script_Editor_Pycharm"));
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/StartForm/Resources/Pycharmicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/StartForm/Resources/ide-data.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Script_Editor_Pycharm->setIcon(icon5);
         action_SetPythonFileHome = new QAction(MainWindows);
         action_SetPythonFileHome->setObjectName(QStringLiteral("action_SetPythonFileHome"));
@@ -153,9 +160,9 @@ public:
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         tabWidget_2 = new QTabWidget(centralWidget);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget_2->addTab(tab, QString());
+        Home = new QWidget();
+        Home->setObjectName(QStringLiteral("Home"));
+        tabWidget_2->addTab(Home, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         gridLayout = new QGridLayout(tab_2);
@@ -179,7 +186,7 @@ public:
         MainWindows->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindows);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1197, 21));
+        menuBar->setGeometry(QRect(0, 0, 1665, 30));
         menuBar->setStyleSheet(QStringLiteral(""));
         menuNew_Project_File = new QMenu(menuBar);
         menuNew_Project_File->setObjectName(QStringLiteral("menuNew_Project_File"));
@@ -222,6 +229,7 @@ public:
 "\n"
 "\n"
 ""));
+        DW_ToolDock->setFeatures(QDockWidget::AllDockWidgetFeatures);
         dockWidgetContents_2 = new QWidget();
         dockWidgetContents_2->setObjectName(QStringLiteral("dockWidgetContents_2"));
         gridLayout_5 = new QGridLayout(dockWidgetContents_2);
@@ -282,7 +290,7 @@ public:
         toolBox->setMidLineWidth(3);
         TB_Routerpage = new QWidget();
         TB_Routerpage->setObjectName(QStringLiteral("TB_Routerpage"));
-        TB_Routerpage->setGeometry(QRect(0, 0, 98, 323));
+        TB_Routerpage->setGeometry(QRect(0, 0, 138, 426));
         gridLayout_6 = new QGridLayout(TB_Routerpage);
         gridLayout_6->setSpacing(6);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -315,41 +323,13 @@ public:
         toolBox->addItem(TB_Routerpage, QStringLiteral("Router Tool"));
         TB_ConfigurePage = new QWidget();
         TB_ConfigurePage->setObjectName(QStringLiteral("TB_ConfigurePage"));
-        TB_ConfigurePage->setGeometry(QRect(0, 0, 98, 323));
+        TB_ConfigurePage->setGeometry(QRect(0, 0, 138, 426));
         toolBox->addItem(TB_ConfigurePage, QStringLiteral("Configure Tool"));
 
         gridLayout_5->addWidget(toolBox, 0, 0, 1, 1);
 
         DW_ToolDock->setWidget(dockWidgetContents_2);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(1), DW_ToolDock);
-        DW_historyinfor = new QDockWidget(MainWindows);
-        DW_historyinfor->setObjectName(QStringLiteral("DW_historyinfor"));
-        DW_historyinfor->setStyleSheet(QLatin1String("QDockWidget {\n"
-"    outline: 1px solid #f2fdee;\n"
-"    background-color: #19232D;\n"
-"    border: 1px solid #f2fdee;\n"
-"    border-radius: 4px;\n"
-"}\n"
-"\n"
-"QDockWidget::title {\n"
-"    padding: 6px;   /* better size for title bar */\n"
-"    border: none;\n"
-"    background-color: #f2fdee;\n"
-"}"));
-        dockWidgetContents_4 = new QWidget();
-        dockWidgetContents_4->setObjectName(QStringLiteral("dockWidgetContents_4"));
-        gridLayout_9 = new QGridLayout(dockWidgetContents_4);
-        gridLayout_9->setSpacing(6);
-        gridLayout_9->setContentsMargins(11, 11, 11, 11);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
-        gridLayout_8 = new QGridLayout();
-        gridLayout_8->setSpacing(6);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-
-        gridLayout_9->addLayout(gridLayout_8, 0, 0, 1, 1);
-
-        DW_historyinfor->setWidget(dockWidgetContents_4);
-        MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(1), DW_historyinfor);
         DW_Proterty = new QDockWidget(MainWindows);
         DW_Proterty->setObjectName(QStringLiteral("DW_Proterty"));
         DW_Proterty->setStyleSheet(QLatin1String("QDockWidget {\n"
@@ -392,6 +372,7 @@ public:
 "QDockWidget::float-button:pressed {\n"
 "    border: 1px solid #32414B;\n"
 "}"));
+        DW_Proterty->setFeatures(QDockWidget::AllDockWidgetFeatures);
         dockWidgetContents_6 = new QWidget();
         dockWidgetContents_6->setObjectName(QStringLiteral("dockWidgetContents_6"));
         gridLayout_11 = new QGridLayout(dockWidgetContents_6);
@@ -421,9 +402,9 @@ public:
 
         DW_Proterty->setWidget(dockWidgetContents_6);
         MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(2), DW_Proterty);
-        DW_Opeartioninfodisp = new QDockWidget(MainWindows);
-        DW_Opeartioninfodisp->setObjectName(QStringLiteral("DW_Opeartioninfodisp"));
-        DW_Opeartioninfodisp->setStyleSheet(QLatin1String("QDockWidget {\n"
+        dockWidget_Opeartioninfodisp = new QDockWidget(MainWindows);
+        dockWidget_Opeartioninfodisp->setObjectName(QStringLiteral("dockWidget_Opeartioninfodisp"));
+        dockWidget_Opeartioninfodisp->setStyleSheet(QLatin1String("QDockWidget {\n"
 "    outline: 1px solid #32414B;\n"
 "    background-color: #19232D;\n"
 "    border: 1px solid #32414B;\n"
@@ -463,6 +444,8 @@ public:
 "QDockWidget::float-button:pressed {\n"
 "    border: 1px solid #32414B;\n"
 "}"));
+        dockWidget_Opeartioninfodisp->setFloating(false);
+        dockWidget_Opeartioninfodisp->setFeatures(QDockWidget::AllDockWidgetFeatures);
         dockWidgetContents_7 = new QWidget();
         dockWidgetContents_7->setObjectName(QStringLiteral("dockWidgetContents_7"));
         gridLayout_13 = new QGridLayout(dockWidgetContents_7);
@@ -484,19 +467,142 @@ public:
         QIcon icon7;
         icon7.addFile(QStringLiteral(":/StartForm/Resources/operation.png"), QSize(), QIcon::Normal, QIcon::Off);
         TW_OpeationDisp->addTab(tw_opeartioninfo, icon7, QString());
-        tw_errorinfo = new QWidget();
-        tw_errorinfo->setObjectName(QStringLiteral("tw_errorinfo"));
-        tw_errorinfo->setFont(font);
-        tw_errorinfo->setStyleSheet(QStringLiteral("background-color: rgb(255, 246, 222);"));
-        QIcon icon8;
-        icon8.addFile(QStringLiteral(":/StartForm/Resources/Error.png"), QSize(), QIcon::Normal, QIcon::Off);
-        TW_OpeationDisp->addTab(tw_errorinfo, icon8, QString());
-        tw_Terminal = new QWidget();
-        tw_Terminal->setObjectName(QStringLiteral("tw_Terminal"));
-        gridLayout_2 = new QGridLayout(tw_Terminal);
+
+        gridLayout_12->addWidget(TW_OpeationDisp, 0, 0, 1, 1);
+
+
+        gridLayout_13->addLayout(gridLayout_12, 0, 0, 1, 1);
+
+        dockWidget_Opeartioninfodisp->setWidget(dockWidgetContents_7);
+        MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(8), dockWidget_Opeartioninfodisp);
+        dockWidget_ErrorInfo = new QDockWidget(MainWindows);
+        dockWidget_ErrorInfo->setObjectName(QStringLiteral("dockWidget_ErrorInfo"));
+        dockWidget_ErrorInfo->setStyleSheet(QLatin1String("QDockWidget {\n"
+"    outline: 1px solid #32414B;\n"
+"    background-color: #19232D;\n"
+"    border: 1px solid #32414B;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"\n"
+"QDockWidget::title {\n"
+"    padding: 6px;   /* better size for title bar */\n"
+"    border: none;\n"
+"    background-color: #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button {\n"
+"    background-color: #32414B;\n"
+"    border-radius: 4px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button:hover {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button:pressed {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button {\n"
+"    background-color: #32414B;\n"
+"    border-radius: 4px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button:hover {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button:pressed {\n"
+"    border: 1px solid #32414B;\n"
+"}"));
+        dockWidgetContents_5 = new QWidget();
+        dockWidgetContents_5->setObjectName(QStringLiteral("dockWidgetContents_5"));
+        gridLayout_2 = new QGridLayout(dockWidgetContents_5);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        TW_OpeationDisp_ErrorInfo = new QTabWidget(dockWidgetContents_5);
+        TW_OpeationDisp_ErrorInfo->setObjectName(QStringLiteral("TW_OpeationDisp_ErrorInfo"));
+        TW_OpeationDisp_ErrorInfo->setMinimumSize(QSize(0, 80));
+        TW_OpeationDisp_ErrorInfo->setStyleSheet(QStringLiteral("background-color: rgb(65, 65, 65);"));
+        TW_OpeationDisp_ErrorInfo->setMovable(true);
+        tw_errorinfo_2 = new QWidget();
+        tw_errorinfo_2->setObjectName(QStringLiteral("tw_errorinfo_2"));
+        tw_errorinfo_2->setFont(font);
+        tw_errorinfo_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 246, 222);"));
+        QIcon icon8;
+        icon8.addFile(QStringLiteral(":/StartForm/Resources/Error.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TW_OpeationDisp_ErrorInfo->addTab(tw_errorinfo_2, icon8, QString());
+
+        gridLayout_2->addWidget(TW_OpeationDisp_ErrorInfo, 0, 0, 1, 1);
+
+        dockWidget_ErrorInfo->setWidget(dockWidgetContents_5);
+        MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(8), dockWidget_ErrorInfo);
+        dockWidget_Terminal = new QDockWidget(MainWindows);
+        dockWidget_Terminal->setObjectName(QStringLiteral("dockWidget_Terminal"));
+        dockWidget_Terminal->setStyleSheet(QLatin1String("QDockWidget {\n"
+"    outline: 1px solid #32414B;\n"
+"    background-color: #19232D;\n"
+"    border: 1px solid #32414B;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"\n"
+"QDockWidget::title {\n"
+"    padding: 6px;   /* better size for title bar */\n"
+"    border: none;\n"
+"    background-color: #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button {\n"
+"    background-color: #32414B;\n"
+"    border-radius: 4px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button:hover {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::close-button:pressed {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button {\n"
+"    background-color: #32414B;\n"
+"    border-radius: 4px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button:hover {\n"
+"    border: 1px solid #32414B;\n"
+"}\n"
+"\n"
+"QDockWidget::float-button:pressed {\n"
+"    border: 1px solid #32414B;\n"
+"}"));
+        dockWidgetContents_8 = new QWidget();
+        dockWidgetContents_8->setObjectName(QStringLiteral("dockWidgetContents_8"));
+        gridLayout_14 = new QGridLayout(dockWidgetContents_8);
+        gridLayout_14->setSpacing(6);
+        gridLayout_14->setContentsMargins(11, 11, 11, 11);
+        gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
+        TW_OpeationDisp_2 = new QTabWidget(dockWidgetContents_8);
+        TW_OpeationDisp_2->setObjectName(QStringLiteral("TW_OpeationDisp_2"));
+        TW_OpeationDisp_2->setMinimumSize(QSize(0, 80));
+        TW_OpeationDisp_2->setStyleSheet(QStringLiteral(""));
+        TW_OpeationDisp_2->setMovable(true);
+        tw_Terminal = new QWidget();
+        tw_Terminal->setObjectName(QStringLiteral("tw_Terminal"));
+        gridLayout_7 = new QGridLayout(tw_Terminal);
+        gridLayout_7->setSpacing(6);
+        gridLayout_7->setContentsMargins(11, 11, 11, 11);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        horizontalSpacer = new QSpacerItem(617, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer, 0, 0, 1, 1);
+
         PTE_TerimnalDisplayArea = new QPlainTextEdit(tw_Terminal);
         PTE_TerimnalDisplayArea->setObjectName(QStringLiteral("PTE_TerimnalDisplayArea"));
         PTE_TerimnalDisplayArea->setStyleSheet(QLatin1String("background-color: rgb(65, 65, 65);\n"
@@ -505,25 +611,30 @@ public:
 ""));
         PTE_TerimnalDisplayArea->setReadOnly(false);
 
-        gridLayout_2->addWidget(PTE_TerimnalDisplayArea, 0, 0, 1, 1);
+        gridLayout_7->addWidget(PTE_TerimnalDisplayArea, 1, 0, 1, 2);
 
+        pushButton_clearTerminal = new QPushButton(tw_Terminal);
+        pushButton_clearTerminal->setObjectName(QStringLiteral("pushButton_clearTerminal"));
         QIcon icon9;
-        icon9.addFile(QStringLiteral(":/StartForm/Resources/terminal.png"), QSize(), QIcon::Normal, QIcon::Off);
-        TW_OpeationDisp->addTab(tw_Terminal, icon9, QString());
+        icon9.addFile(QStringLiteral(":/StartForm/Resources/clean up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_clearTerminal->setIcon(icon9);
 
-        gridLayout_12->addWidget(TW_OpeationDisp, 0, 0, 1, 1);
+        gridLayout_7->addWidget(pushButton_clearTerminal, 0, 1, 1, 1);
 
+        QIcon icon10;
+        icon10.addFile(QStringLiteral(":/StartForm/Resources/terminal.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TW_OpeationDisp_2->addTab(tw_Terminal, icon10, QString());
 
-        gridLayout_13->addLayout(gridLayout_12, 0, 0, 1, 1);
+        gridLayout_14->addWidget(TW_OpeationDisp_2, 0, 0, 1, 1);
 
-        DW_Opeartioninfodisp->setWidget(dockWidgetContents_7);
-        MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(8), DW_Opeartioninfodisp);
+        dockWidget_Terminal->setWidget(dockWidgetContents_8);
+        MainWindows->addDockWidget(static_cast<Qt::DockWidgetArea>(8), dockWidget_Terminal);
 
         menuBar->addAction(menuNew_Project_File->menuAction());
         menuBar->addAction(menuOption->menuAction());
         menuNew_Project_File->addAction(actionNew_Project_File);
         menuOption->addAction(action_SetPythonFileHome);
-        mainToolBar->addAction(ScirptRun);
+        mainToolBar->addAction(Auto_Test);
         mainToolBar->addAction(ScriptConfigure);
         mainToolBar->addAction(TestPlan);
         mainToolBar->addSeparator();
@@ -534,9 +645,11 @@ public:
 
         retranslateUi(MainWindows);
 
-        tabWidget_2->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(1);
         toolBox->setCurrentIndex(0);
-        TW_OpeationDisp->setCurrentIndex(2);
+        TW_OpeationDisp->setCurrentIndex(0);
+        TW_OpeationDisp_ErrorInfo->setCurrentIndex(0);
+        TW_OpeationDisp_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindows);
@@ -545,9 +658,12 @@ public:
     void retranslateUi(QMainWindow *MainWindows)
     {
         MainWindows->setWindowTitle(QApplication::translate("MainWindows", "RTA", Q_NULLPTR));
-        ScirptRun->setText(QApplication::translate("MainWindows", "ScirptRun", Q_NULLPTR));
+        Auto_Test->setText(QApplication::translate("MainWindows", "Auto Test", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        Auto_Test->setToolTip(QApplication::translate("MainWindows", "Auto Test", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
 #ifndef QT_NO_SHORTCUT
-        ScirptRun->setShortcut(QApplication::translate("MainWindows", "Ctrl+R", Q_NULLPTR));
+        Auto_Test->setShortcut(QApplication::translate("MainWindows", "Ctrl+R", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
         ScriptConfigure->setText(QApplication::translate("MainWindows", "ScriptConfigure", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
@@ -568,10 +684,12 @@ public:
         action_SetPythonFileHome->setToolTip(QApplication::translate("MainWindows", "select  the python  file path which you want to choose  ", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         actionNew_Project_File->setText(QApplication::translate("MainWindows", "New Project File", Q_NULLPTR));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindows", "Tab 1", Q_NULLPTR));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Tab 2", Q_NULLPTR));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(Home), QApplication::translate("MainWindows", "Home", Q_NULLPTR));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindows", "Auto Test", Q_NULLPTR));
         menuNew_Project_File->setTitle(QApplication::translate("MainWindows", "File", Q_NULLPTR));
         menuOption->setTitle(QApplication::translate("MainWindows", "Setup", Q_NULLPTR));
+        mainToolBar->setWindowTitle(QApplication::translate("MainWindows", "Tool Bar", Q_NULLPTR));
+        DW_ToolDock->setWindowTitle(QApplication::translate("MainWindows", "Operation", Q_NULLPTR));
         pushButton_3->setText(QString());
         pushButton_5->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
@@ -579,10 +697,15 @@ public:
         pushButton_8->setText(QApplication::translate("MainWindows", "PushButton", Q_NULLPTR));
         toolBox->setItemText(toolBox->indexOf(TB_Routerpage), QApplication::translate("MainWindows", "Router Tool", Q_NULLPTR));
         toolBox->setItemText(toolBox->indexOf(TB_ConfigurePage), QApplication::translate("MainWindows", "Configure Tool", Q_NULLPTR));
+        DW_Proterty->setWindowTitle(QApplication::translate("MainWindows", "Property", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindows", "Property", Q_NULLPTR));
+        dockWidget_Opeartioninfodisp->setWindowTitle(QApplication::translate("MainWindows", "Operation  Information", Q_NULLPTR));
         TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_opeartioninfo), QApplication::translate("MainWindows", "Opeartion Info", Q_NULLPTR));
-        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_errorinfo), QApplication::translate("MainWindows", "Error Info", Q_NULLPTR));
-        TW_OpeationDisp->setTabText(TW_OpeationDisp->indexOf(tw_Terminal), QApplication::translate("MainWindows", "Terminal", Q_NULLPTR));
+        dockWidget_ErrorInfo->setWindowTitle(QApplication::translate("MainWindows", "Error Info", Q_NULLPTR));
+        TW_OpeationDisp_ErrorInfo->setTabText(TW_OpeationDisp_ErrorInfo->indexOf(tw_errorinfo_2), QApplication::translate("MainWindows", "Error Info", Q_NULLPTR));
+        dockWidget_Terminal->setWindowTitle(QApplication::translate("MainWindows", "Case Terminal", Q_NULLPTR));
+        pushButton_clearTerminal->setText(QString());
+        TW_OpeationDisp_2->setTabText(TW_OpeationDisp_2->indexOf(tw_Terminal), QApplication::translate("MainWindows", "Terminal", Q_NULLPTR));
     } // retranslateUi
 
 };

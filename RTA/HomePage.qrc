@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="/StartForm">
+    <file>Resources/auto_test.png</file>
+    <file>Resources/ide-data.png</file>
+    <file>Resources/Instrument-Settings.png</file>
+    <file>Resources/RTS.ico</file>
+    <file>Resources/clean up.png</file>
     <file>Resources/python.png</file>
     <file>Resources/Error.png</file>
     <file>Resources/operation.png</file>

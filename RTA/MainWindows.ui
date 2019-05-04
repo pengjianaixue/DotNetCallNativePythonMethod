@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1197</width>
-    <height>863</height>
+    <width>1665</width>
+    <height>1117</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,16 +33,16 @@ QMainWindow::separator:vertical {
       <item row="0" column="0">
        <widget class="QTabWidget" name="tabWidget_2">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
-        <widget class="QWidget" name="tab">
+        <widget class="QWidget" name="Home">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>Home</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_2">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>Auto Test</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
@@ -68,8 +68,8 @@ QMainWindow::separator:vertical {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1197</width>
-     <height>21</height>
+     <width>1665</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -91,6 +91,9 @@ QMainWindow::separator:vertical {
    <addaction name="menuOption"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>Tool Bar</string>
+   </property>
    <property name="styleSheet">
     <string notr="true">QToolBar {
 	
@@ -110,7 +113,7 @@ QToolBar QToolButton{
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="ScirptRun"/>
+   <addaction name="Auto_Test"/>
    <addaction name="ScriptConfigure"/>
    <addaction name="TestPlan"/>
    <addaction name="separator"/>
@@ -139,6 +142,12 @@ QDockWidget::separator {
 
 
 </string>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Operation</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
@@ -218,8 +227,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>98</width>
-          <height>323</height>
+          <width>138</width>
+          <height>426</height>
          </rect>
         </property>
         <attribute name="label">
@@ -268,8 +277,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>98</width>
-          <height>323</height>
+          <width>138</width>
+          <height>426</height>
          </rect>
         </property>
         <attribute name="label">
@@ -277,32 +286,6 @@ QToolBox QScrollArea QWidget QWidget {
         </attribute>
        </widget>
       </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="DW_historyinfor">
-   <property name="styleSheet">
-    <string notr="true">QDockWidget {
-    outline: 1px solid #f2fdee;
-    background-color: #19232D;
-    border: 1px solid #f2fdee;
-    border-radius: 4px;
-}
-
-QDockWidget::title {
-    padding: 6px;   /* better size for title bar */
-    border: none;
-    background-color: #f2fdee;
-}</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_4">
-    <layout class="QGridLayout" name="gridLayout_9">
-     <item row="0" column="0">
-      <layout class="QGridLayout" name="gridLayout_8"/>
      </item>
     </layout>
    </widget>
@@ -350,6 +333,12 @@ QDockWidget::float-button:pressed {
     border: 1px solid #32414B;
 }</string>
    </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Property</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
@@ -385,7 +374,7 @@ QDockWidget::float-button:pressed {
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="DW_Opeartioninfodisp">
+  <widget class="QDockWidget" name="dockWidget_Opeartioninfodisp">
    <property name="styleSheet">
     <string notr="true">QDockWidget {
     outline: 1px solid #32414B;
@@ -428,6 +417,15 @@ QDockWidget::float-button:pressed {
     border: 1px solid #32414B;
 }</string>
    </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Operation  Information</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
@@ -447,7 +445,7 @@ QDockWidget::float-button:pressed {
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="movable">
           <bool>true</bool>
@@ -470,48 +468,6 @@ QDockWidget::float-button:pressed {
            <string>Opeartion Info</string>
           </attribute>
          </widget>
-         <widget class="QWidget" name="tw_errorinfo">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 246, 222);</string>
-          </property>
-          <attribute name="icon">
-           <iconset resource="HomePage.qrc">
-            <normaloff>:/StartForm/Resources/Error.png</normaloff>:/StartForm/Resources/Error.png</iconset>
-          </attribute>
-          <attribute name="title">
-           <string>Error Info</string>
-          </attribute>
-         </widget>
-         <widget class="QWidget" name="tw_Terminal">
-          <attribute name="icon">
-           <iconset resource="HomePage.qrc">
-            <normaloff>:/StartForm/Resources/terminal.png</normaloff>:/StartForm/Resources/terminal.png</iconset>
-          </attribute>
-          <attribute name="title">
-           <string>Terminal</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="PTE_TerimnalDisplayArea">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(65, 65, 65);
-font: 75 12pt &quot;Consolas&quot;;
-color: rgb(255, 255, 255);
-</string>
-             </property>
-             <property name="readOnly">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
         </widget>
        </item>
       </layout>
@@ -519,13 +475,228 @@ color: rgb(255, 255, 255);
     </layout>
    </widget>
   </widget>
-  <action name="ScirptRun">
+  <widget class="QDockWidget" name="dockWidget_ErrorInfo">
+   <property name="styleSheet">
+    <string notr="true">QDockWidget {
+    outline: 1px solid #32414B;
+    background-color: #19232D;
+    border: 1px solid #32414B;
+    border-radius: 4px;
+}
+
+QDockWidget::title {
+    padding: 6px;   /* better size for title bar */
+    border: none;
+    background-color: #32414B;
+}
+
+QDockWidget::close-button {
+    background-color: #32414B;
+    border-radius: 4px;
+    border: none;
+}
+
+QDockWidget::close-button:hover {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::close-button:pressed {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::float-button {
+    background-color: #32414B;
+    border-radius: 4px;
+    border: none;
+}
+
+QDockWidget::float-button:hover {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::float-button:pressed {
+    border: 1px solid #32414B;
+}</string>
+   </property>
+   <property name="windowTitle">
+    <string>Error Info</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="TW_OpeationDisp_ErrorInfo">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(65, 65, 65);</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="movable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="tw_errorinfo_2">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 246, 222);</string>
+        </property>
+        <attribute name="icon">
+         <iconset resource="HomePage.qrc">
+          <normaloff>:/StartForm/Resources/Error.png</normaloff>:/StartForm/Resources/Error.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>Error Info</string>
+        </attribute>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_Terminal">
+   <property name="styleSheet">
+    <string notr="true">QDockWidget {
+    outline: 1px solid #32414B;
+    background-color: #19232D;
+    border: 1px solid #32414B;
+    border-radius: 4px;
+}
+
+QDockWidget::title {
+    padding: 6px;   /* better size for title bar */
+    border: none;
+    background-color: #32414B;
+}
+
+QDockWidget::close-button {
+    background-color: #32414B;
+    border-radius: 4px;
+    border: none;
+}
+
+QDockWidget::close-button:hover {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::close-button:pressed {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::float-button {
+    background-color: #32414B;
+    border-radius: 4px;
+    border: none;
+}
+
+QDockWidget::float-button:hover {
+    border: 1px solid #32414B;
+}
+
+QDockWidget::float-button:pressed {
+    border: 1px solid #32414B;
+}</string>
+   </property>
+   <property name="windowTitle">
+    <string>Case Terminal</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_8">
+    <layout class="QGridLayout" name="gridLayout_14">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="TW_OpeationDisp_2">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="movable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="tw_Terminal">
+        <attribute name="icon">
+         <iconset resource="HomePage.qrc">
+          <normaloff>:/StartForm/Resources/terminal.png</normaloff>:/StartForm/Resources/terminal.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>Terminal</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="0">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>617</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QPlainTextEdit" name="PTE_TerimnalDisplayArea">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(65, 65, 65);
+font: 75 12pt &quot;Consolas&quot;;
+color: rgb(255, 255, 255);
+</string>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="pushButton_clearTerminal">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="HomePage.qrc">
+             <normaloff>:/StartForm/Resources/clean up.png</normaloff>:/StartForm/Resources/clean up.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="Auto_Test">
    <property name="icon">
     <iconset resource="HomePage.qrc">
-     <normaloff>:/StartForm/Resources/startui.png</normaloff>:/StartForm/Resources/startui.png</iconset>
+     <normaloff>:/StartForm/Resources/auto_test.png</normaloff>:/StartForm/Resources/auto_test.png</iconset>
    </property>
    <property name="text">
-    <string>ScirptRun</string>
+    <string>Auto Test</string>
+   </property>
+   <property name="toolTip">
+    <string>Auto Test</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
@@ -579,7 +750,7 @@ color: rgb(255, 255, 255);
   <action name="action_Script_Editor_Pycharm">
    <property name="icon">
     <iconset resource="HomePage.qrc">
-     <normaloff>:/StartForm/Resources/Pycharmicon.png</normaloff>:/StartForm/Resources/Pycharmicon.png</iconset>
+     <normaloff>:/StartForm/Resources/ide-data.png</normaloff>:/StartForm/Resources/ide-data.png</iconset>
    </property>
    <property name="text">
     <string>Script Editor(Pycharm)</string>

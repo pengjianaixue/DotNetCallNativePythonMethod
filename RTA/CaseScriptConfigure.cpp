@@ -57,13 +57,13 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 	temppair.first = filepath.split(R"(/)").last();
 	Q_FOREACH(QFileInfo CaseFileInfo, CaseHomePath.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot))
 	{
-		 
+		
 		b_Dirpollflag = false;
 		TRACE(CaseFileInfo.path());
 		TRACE(CaseFileInfo.fileName());
 		if (CaseFileInfo.isDir())
 		{
-			if (CaseFileInfo.fileName().endsWith("lib"))
+			if (CaseFileInfo.fileName().toLower().endsWith("lib"))
 			{
 				continue;
 			}
@@ -90,6 +90,7 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 			std::string FileName = CaseFileInfo.fileName().split(".").first().toStdString();
 			std::string FilePath = (CaseFileInfo.path() + R"(/)"+ CaseFileInfo.fileName()).toStdString();
 			m_CaseNameMaptoFullyPath.insert(CaseFileInfo.fileName().split(".").first(), CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
+			
 		}
 	}
 	m_pycasetreeinfostruct.append(temppair);
@@ -101,7 +102,7 @@ bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
 
 	m_CaseTreeModel->ClearData();
 	LoadCaseFileListInfo(m_strpythonfilehome);
-	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct, "PythonCaseList");
+	m_CaseTreeModel->setModelData(m_pycasetreeinfostruct, "Python Case List");
 	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel);
 	return true;
 }
@@ -122,7 +123,7 @@ void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & case
 			{
 
 				QVariant Caseitem = caseitem.data();
-				emit s_emitSelectCaseItemToExceList(Caseitem.toString());
+				emit s_emitSelectCaseItemToExecList(Caseitem.toString());
 				TRACE(Caseitem);
 
 			}
@@ -131,8 +132,8 @@ void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & case
 				for (size_t i = 0; i < Selectitem->childCount(); i++)
 				{
 					QVariant Caseitem = Selectitem->child(i)->data(0);
-					emit s_emitSelectCaseItemToExceList(Caseitem.toString());
-
+					emit s_emitSelectCaseItemToExecList(Caseitem.toString());
+					
 				}
 
 			}
@@ -146,14 +147,28 @@ void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & case
 
 void CaseScriptConfigure::AddSelectCaseToExceList(const QString &SelectCaseItem)
 {
-	Q_FOREACH(QString item, m_CaseExecList)
+	Q_FOREACH(QString item, this->m_CaseExecList)
 	{
 		if (item == SelectCaseItem)
 		{
 			return;
 		}
 	}
-	m_CaseExecList.append(SelectCaseItem);
+	this->m_CaseExecList.append(SelectCaseItem);
+	//Add the full path to the execute list
+	Q_FOREACH(QString item, m_CaseExecList)
+	{
+		QPair<QString,QString> piaritem;
+		piaritem.first = item;
+		QMap<QString,QString>::iterator it = this->m_CaseNameMaptoFullyPath.find(item);
+		if (it!= this->m_CaseNameMaptoFullyPath.end())
+		{
+			piaritem.second = it.value();
+		}
+		this->m_CaseExecListToFullPathList.append(piaritem);
+		emit s_emitExceListChanged();
+		
+	}
 	this->m_CaseExecListModel->setStringList(m_CaseExecList);
 	
 
@@ -167,9 +182,9 @@ CaseScriptConfigure::~CaseScriptConfigure()
 	}
 	FinalizePyIter();
 }
-const QMap<QString, QString>& CaseScriptConfigure::GetCaseNameMapToPath() const
+const QList<QPair<QString, QString>>& CaseScriptConfigure::GetCaseExecuteList() const
 {
-	return m_CaseNameMaptoFullyPath;
+	return this->m_CaseExecListToFullPathList;
 }
 void CaseScriptConfigure::ParamInit()
 {
@@ -184,10 +199,11 @@ void CaseScriptConfigure::ParamInit()
 	this->ui.CaseFile_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
 	this->ui.CaseFile_treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	this->ui.Case_exce_listView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
-	this->m_CaseExecListModel->setStringList(m_CaseExecList);
+	this->m_CaseExecListModel->setStringList(this->m_CaseExecList);
 	this->ui.Case_exce_listView->setModel(this->m_CaseExecListModel);
 	m_ignorePyDirNameList.append(".idea");
 	m_ignorePyDirNameList.append("__pycache__");
+	m_ignorePyDirNameList.append("venv");
 
 }
 //TODO: need to confrim the param
@@ -200,10 +216,10 @@ bool CaseScriptConfigure::PyRun()
 	param.second = "117";
 	param1.first = "i";
 	param1.second = "18800000";
-	m_callpyparmlist.push_back(param);
-	m_callpyparmlist.push_back(param1);
-	m_strRunres = m_cpycaller.Runfunction(std::string("main"), std::string("main"), m_callpyparmlist);
-	ui.TB_RunInfodisp->append(QString(m_strRunres.c_str()));
+	this->m_callpyparmlist.push_back(param);
+	this->m_callpyparmlist.push_back(param1);
+	this->m_strRunres = m_cpycaller.Runfunction(std::string("main"), std::string("main"), this->m_callpyparmlist);
+	ui.TB_RunInfodisp->append(QString(this->m_strRunres.c_str()));
 	return true;
 }
 
@@ -217,7 +233,8 @@ void CaseScriptConfigure::ConnectSlots()
 				&& connect(this->ui.pushButton_reload, &QPushButton::clicked, this, &CaseScriptConfigure::ReLoadPyFilePath)
 				&& connect(this->ui.pushButton_LoadCaseList,&QPushButton::clicked,this,&CaseScriptConfigure::GetPyCasePathAndLaodCaseFile)
 				&& connect(this->ui.CaseFile_treeView,&QTreeView::doubleClicked,this,&CaseScriptConfigure::GetCaseListViewUserSelectItem)
-				&& connect(this, &CaseScriptConfigure::s_emitSelectCaseItemToExceList, this, &CaseScriptConfigure::AddSelectCaseToExceList)
+				&& connect(this, &CaseScriptConfigure::s_emitSelectCaseItemToExecList, this, &CaseScriptConfigure::AddSelectCaseToExceList)
+				&& connect(this->ui.pushButton_ok, &QPushButton::clicked, this, &CaseScriptConfigure::close)
 			
 			)
 		)

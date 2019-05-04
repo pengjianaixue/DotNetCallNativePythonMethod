@@ -15,7 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -79,7 +78,7 @@ public:
     QTextBrowser *TB_RunInfodisp;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
-    QDialogButtonBox *buttonBox;
+    QPushButton *pushButton_ok;
 
     void setupUi(QDialog *CaseScriptConfigure)
     {
@@ -408,16 +407,10 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        buttonBox = new QDialogButtonBox(CaseScriptConfigure);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        QSizePolicy sizePolicy7(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy7.setHorizontalStretch(0);
-        sizePolicy7.setVerticalStretch(0);
-        sizePolicy7.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
-        buttonBox->setSizePolicy(sizePolicy7);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        pushButton_ok = new QPushButton(CaseScriptConfigure);
+        pushButton_ok->setObjectName(QStringLiteral("pushButton_ok"));
 
-        horizontalLayout_2->addWidget(buttonBox);
+        horizontalLayout_2->addWidget(pushButton_ok);
 
 
         verticalLayout_5->addLayout(horizontalLayout_2);
@@ -455,6 +448,7 @@ public:
         pushButton_reload->setText(QString());
         label_infodisp->setText(QApplication::translate("CaseScriptConfigure", "Runing info ", Q_NULLPTR));
         pushButton_reset->setText(QString());
+        pushButton_ok->setText(QApplication::translate("CaseScriptConfigure", "OK", Q_NULLPTR));
     } // retranslateUi
 
 };

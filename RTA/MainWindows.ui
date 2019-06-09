@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1665</width>
-    <height>1117</height>
+    <width>1302</width>
+    <height>806</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@ QMainWindow::separator:vertical {
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
-       <widget class="QTabWidget" name="tabWidget_2">
+       <widget class="QTabWidget" name="tabWidget_main">
         <property name="currentIndex">
          <number>1</number>
         </property>
@@ -40,19 +40,24 @@ QMainWindow::separator:vertical {
           <string>Home</string>
          </attribute>
         </widget>
-        <widget class="QWidget" name="tab_2">
+        <widget class="QWidget" name="Auto_test">
          <attribute name="title">
           <string>Auto Test</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
-           <widget class="QFrame" name="frame">
+           <widget class="QFrame" name="Auto_test_frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QGridLayout" name="gridLayout_8">
+             <item row="0" column="0">
+              <widget class="QTreeView" name="Run_case_status_tree"/>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -68,8 +73,8 @@ QMainWindow::separator:vertical {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1665</width>
-     <height>30</height>
+     <width>1302</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -80,6 +85,7 @@ QMainWindow::separator:vertical {
      <string>File</string>
     </property>
     <addaction name="actionNew_Project_File"/>
+    <addaction name="actionOpen_Project"/>
    </widget>
    <widget class="QMenu" name="menuOption">
     <property name="title">
@@ -127,7 +133,7 @@ QToolBar QToolButton{
    <property name="styleSheet">
     <string notr="true">
 QDockWidget::title {
-    padding: 3px;   /* better size for title bar */
+    padding:6px 1px 1px;   /* better size for title bar */
     border: none;
     background-color: #f2fdee;
 }
@@ -227,8 +233,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>138</width>
-          <height>426</height>
+          <width>98</width>
+          <height>311</height>
          </rect>
         </property>
         <attribute name="label">
@@ -277,8 +283,8 @@ QToolBox QScrollArea QWidget QWidget {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>138</width>
-          <height>426</height>
+          <width>98</width>
+          <height>311</height>
          </rect>
         </property>
         <attribute name="label">
@@ -300,7 +306,7 @@ QToolBox QScrollArea QWidget QWidget {
 }
 
 QDockWidget::title {
-    padding: 6px;   /* better size for title bar */
+    padding:6px 1px 1px;   /* better size for title bar */
     border: none;
     background-color: #32414B;
 }
@@ -384,7 +390,7 @@ QDockWidget::float-button:pressed {
 }
 
 QDockWidget::title {
-    padding: 6px;   /* better size for title bar */
+    padding:7px 1px 1px;   /* better size for title bar */
     border: none;
     background-color: #32414B;
 }
@@ -485,7 +491,7 @@ QDockWidget::float-button:pressed {
 }
 
 QDockWidget::title {
-    padding: 6px;   /* better size for title bar */
+    padding:7px 1px 1px;   /* better size for title bar */
     border: none;
     background-color: #32414B;
 }
@@ -576,8 +582,8 @@ QDockWidget::float-button:pressed {
 }
 
 QDockWidget::title {
-    padding: 6px;   /* better size for title bar */
-    border: none;
+    padding:7px 1px 1px;   /* better size for title bar */
+	border:  none;
     background-color: #32414B;
 }
 
@@ -610,7 +616,7 @@ QDockWidget::float-button:pressed {
 }</string>
    </property>
    <property name="windowTitle">
-    <string>Case Terminal</string>
+    <string>Run Terminal</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -770,7 +776,12 @@ color: rgb(255, 255, 255);
   </action>
   <action name="actionNew_Project_File">
    <property name="text">
-    <string>New Project File</string>
+    <string>New Project</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="text">
+    <string>Open Project</string>
    </property>
   </action>
  </widget>

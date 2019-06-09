@@ -25,7 +25,7 @@ private:
 	void ParamInit();
 
 signals:
-	void s_emitExceListChanged();
+	void s_emitCaseExecListChanged();
 	void s_emitSelectCaseItemToExecList(const QString &SelectCaseItem);
 	
 

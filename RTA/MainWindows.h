@@ -14,7 +14,7 @@
 #include "CaseandEditorhome.h"
 #include "InitConfigLoader.h"
 #include "Trace.h"
-#include "CPyProcess.h"
+#include "PyScriptProcess.h"
 //TODO 
 //This is  Py Terminal test only
 //#include "../CallPython/CallPython.h"
@@ -61,9 +61,8 @@ private:
 	QString								m_strPycharmBinPath;
 	QString								m_strInitXmlFilePath;
 	QString								m_TheCurrentPath;
-	CPyProcess							m_RunPythonCaseprocess;
+	PyScriptProcess							*m_RunPythonCaseprocess;
 	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
-	QThread								m_CaseRunThread;
 private:
 	bool ConnectSlots();
 	

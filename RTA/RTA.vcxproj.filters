@@ -31,7 +31,7 @@
     <ClCompile Include="QCaseTreeView.cpp">
       <Filter>Ui Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CPyProcess.cpp">
+    <ClCompile Include="PyScriptProcess.cpp">
       <Filter>Python Run Process\Imple</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,7 +74,7 @@
     <QtMoc Include="QCaseTreeView.h">
       <Filter>Ui Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="CPyProcess.h">
+    <QtMoc Include="PyScriptProcess.h">
       <Filter>Python Run Process\headers</Filter>
     </QtMoc>
   </ItemGroup>

@@ -87,8 +87,10 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 
 			temppair.second.append(CaseFileInfo.fileName().split(".").first());
 			//TODO  Test Code,need to delete 
+#ifdef _DEBUG
 			std::string FileName = CaseFileInfo.fileName().split(".").first().toStdString();
-			std::string FilePath = (CaseFileInfo.path() + R"(/)"+ CaseFileInfo.fileName()).toStdString();
+			std::string FilePath = (CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName()).toStdString();
+#endif // _DEBUG
 			m_CaseNameMaptoFullyPath.insert(CaseFileInfo.fileName().split(".").first(), CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
 			
 		}
@@ -125,7 +127,6 @@ void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & case
 				QVariant Caseitem = caseitem.data();
 				emit s_emitSelectCaseItemToExecList(Caseitem.toString());
 				TRACE(Caseitem);
-
 			}
 			else
 			{
@@ -156,19 +157,16 @@ void CaseScriptConfigure::AddSelectCaseToExceList(const QString &SelectCaseItem)
 	}
 	this->m_CaseExecList.append(SelectCaseItem);
 	//Add the full path to the execute list
-	Q_FOREACH(QString item, m_CaseExecList)
+	QPair<QString, QString> piaritem;
+	piaritem.first = SelectCaseItem;
+	QMap<QString, QString>::iterator it = this->m_CaseNameMaptoFullyPath.find(SelectCaseItem);
+	if (it != this->m_CaseNameMaptoFullyPath.end())
 	{
-		QPair<QString,QString> piaritem;
-		piaritem.first = item;
-		QMap<QString,QString>::iterator it = this->m_CaseNameMaptoFullyPath.find(item);
-		if (it!= this->m_CaseNameMaptoFullyPath.end())
-		{
-			piaritem.second = it.value();
-		}
-		this->m_CaseExecListToFullPathList.append(piaritem);
-		emit s_emitExceListChanged();
-		
+		piaritem.second = it.value();
 	}
+	this->m_CaseExecListToFullPathList.append(piaritem);
+	emit s_emitCaseExecListChanged();
+
 	this->m_CaseExecListModel->setStringList(m_CaseExecList);
 	
 

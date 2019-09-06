@@ -55,7 +55,7 @@
 //#endif // _WIN32
 //	
 //};
-class CPyProcess : public QObject
+class PyScriptProcess : public QThread
 {
 
 	Q_OBJECT
@@ -68,15 +68,17 @@ public:
 
 	}THREADPRIORITY;
 public:
-	CPyProcess(QObject *parent);
-	~CPyProcess();
+	PyScriptProcess(QObject *parent);
+	~PyScriptProcess();
+	void run();
 signals:
 	void s_Processfinished(int finishcode);
 	void s_ProcessOutPutinfo(const QString &outinfo);
+	void s_readyReadStandardOutput();
 	// interface
 public slots:
 	bool RegisterRunList(const QList<QPair<QString, QString>> &CaseList); //Only For Case 
-	bool Start();
+	/*bool Start();*/
 	bool Pause();
 	bool Resume();
 	bool Stop();
@@ -92,12 +94,12 @@ private:
 	std::shared_ptr<std::thread>			m_pRunThread;
 	//QString									m_PyFileName;
 	QList<QPair<QString, QString>>			m_RegisterCaseList;
-	subProcessRunner						m_pyRunner;
+
 	//Windows specific
 #ifdef _WIN32
 	HANDLE									m_ThreadHandle;
 #endif // _WIN32
 public:
-	QProcess								m_Process;
+	QProcess								*m_Process;
 
 };

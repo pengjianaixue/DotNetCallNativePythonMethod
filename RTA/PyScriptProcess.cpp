@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "CPyProcess.h"
-
+#include "PyScriptProcess.h"
+#include <iostream>
 //CPyProcess::CPyProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr), m_RunFlags(false)
 //{
 //
-//	//this->m_Process.setProcessChannelMode(QProcess::MergedChannels);
+//	//this->m_Process->setProcessChannelMode(QProcess::MergedChannels);
 //	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
 //}
 //
@@ -95,8 +95,8 @@
 //	Q_FOREACH(Caseitem, this->m_RegisterCaseList)
 //	{
 //
-//		this->m_Process.start(R"(python )" + Caseitem.second);
-//		this->m_Process.waitForFinished();
+//		this->m_Process->start(R"(python )" + Caseitem.second);
+//		this->m_Process->waitForFinished();
 //	}
 //	this->m_RunFlags = false;
 //	emit s_Processfinished(0);
@@ -106,7 +106,7 @@
 //void CPyProcess::ReadProcessOutputinfo()
 //{	
 //
-//	QByteArray baStandardoutpt = m_Process.readAllStandardOutput();
+//	QByteArray baStandardoutpt = m_Process->readAllStandardOutput();
 //	QString msg = QString::fromLocal8Bit(baStandardoutpt);
 //#ifdef _DEBUG
 //	std::string smsg = msg.toStdString();
@@ -154,6 +154,7 @@ bool CPyProcess::Start()
 		
 	}
 	ProcessStop:
+		this->m_Process->terminate();
 		this->m_RunFlags = false;
 		emit s_Processfinished(0);
 		return true;

@@ -9,6 +9,7 @@
 #ifdef _WIN32
 #include <Windows.h>
 #endif // _WIN32
+#include "subProcessRunner.h"
 
 
 //class CPyProcess : public QObject
@@ -80,6 +81,7 @@ public slots:
 	bool Resume();
 	bool Stop();
 	bool IsRuning() const;
+	static bool subProcessRunnerCallbackfun(const std::string &pyrunprint,void *classponiter);
 private:
 	void ThreadRunFunction();
 	void ReadProcessOutputinfo();
@@ -90,7 +92,7 @@ private:
 	std::shared_ptr<std::thread>			m_pRunThread;
 	//QString									m_PyFileName;
 	QList<QPair<QString, QString>>			m_RegisterCaseList;
-
+	subProcessRunner						m_pyRunner;
 	//Windows specific
 #ifdef _WIN32
 	HANDLE									m_ThreadHandle;

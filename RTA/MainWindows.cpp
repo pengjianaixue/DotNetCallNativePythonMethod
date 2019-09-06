@@ -156,7 +156,18 @@ bool MainWindows::RunPyFileInTerminal()
 	return true;
 }
 //// Backup
-//void MainWindows::DisplayToTerminal(const QString &PyProcessRunInfor)
+void MainWindows::DisplayToTerminal(const QString &PyProcessRunInfor)
+{
+//	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
+//	QString messagestring = QString::fromLocal8Bit(messagebyte);
+//#ifdef _DEBUG
+//	std::string smsg = messagestring.toStdString();
+//#endif // _DEBUG
+	this->ui.PTE_TerimnalDisplayArea->appendPlainText(PyProcessRunInfor);
+	this->ui.PTE_TerimnalDisplayArea->update();
+	return;
+}
+//void MainWindows::DisplayToTerminal()
 //{
 //	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
 //	QString messagestring = QString::fromLocal8Bit(messagebyte);
@@ -167,17 +178,6 @@ bool MainWindows::RunPyFileInTerminal()
 //	this->ui.PTE_TerimnalDisplayArea->update();
 //	return;
 //}
-void MainWindows::DisplayToTerminal()
-{
-	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
-	QString messagestring = QString::fromLocal8Bit(messagebyte);
-#ifdef _DEBUG
-	std::string smsg = messagestring.toStdString();
-#endif // _DEBUG
-	this->ui.PTE_TerimnalDisplayArea->appendPlainText(messagestring);
-	this->ui.PTE_TerimnalDisplayArea->update();
-	return;
-}
 
 
 void MainWindows::GetExecuteCaseList()
@@ -196,8 +196,7 @@ bool MainWindows::ConnectSlots()
 				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) 
 				&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_UICaseConfigure, &CaseScriptConfigure::SetPyFilePath)
 				&& connect(this->ui.Auto_Test, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal)
-				&& connect(&this->m_RunPythonCaseprocess.m_Process, &QProcess::readyReadStandardOutput,this,&MainWindows::DisplayToTerminal)
-				//&& connect(&this->m_RunPythonCaseprocess, &CPyProcess::s_ProcessOutPutinfo, this, &MainWindows::DisplayToTerminal)
+				&& connect(&this->m_RunPythonCaseprocess, &CPyProcess::s_ProcessOutPutinfo, this, &MainWindows::DisplayToTerminal)
 				&& connect(&this->m_UICaseConfigure, &CaseScriptConfigure::s_emitExceListChanged,this, &MainWindows::GetExecuteCaseList)
 				&& connect(this->ui.pushButton_clearTerminal, &QPushButton::clicked, this->ui.PTE_TerimnalDisplayArea, &QPlainTextEdit::clear)
 				&& connect(this, &MainWindows::Signal_emitPyCaseRun, &this->m_RunPythonCaseprocess, &CPyProcess::Start)

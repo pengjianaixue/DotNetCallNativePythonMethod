@@ -11,6 +11,7 @@
 
 class CXmlConfigureFileOperation : public QObject
 {
+
 	Q_OBJECT
 public:
 	typedef enum Operationtype

@@ -8,7 +8,7 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 	
 	ui.setupUi(this);
 	ParamInit();
-	m_strpythonfilehome = QDir::currentPath() + R"(\CaseProject\)";
+	m_strpythonfilehome = QApplication::applicationFilePath() + QString(R"(\CaseProject\)");
 	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	ConnectSlots();
 

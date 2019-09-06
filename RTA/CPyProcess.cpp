@@ -114,11 +114,14 @@
 //	emit s_ProcessOutPutinfo(msg);
 //	return;
 //}
-CPyProcess::CPyProcess(QObject *parent) : QObject(parent), m_pRunThread(nullptr), m_ThreadHandle(nullptr), m_RunFlags(false)
+CPyProcess::CPyProcess(QObject *parent) 
+	: QObject(parent), m_pRunThread(nullptr), 
+	m_ThreadHandle(nullptr), m_RunFlags(false)
 {
 
-	//this->m_Process.setProcessChannelMode(QProcess::MergedChannels);
-	//connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
+	this->m_Process.setReadChannel(QProcess::StandardOutput);
+	this->m_pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
+	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
 }
 
 CPyProcess::~CPyProcess()
@@ -144,7 +147,9 @@ bool CPyProcess::Start()
 		{
 			goto ProcessStop;
 		}
-		this->m_Process.start(R"(python )" + Caseitem.second);
+		/*if(this->m_pyRunner.startRun(std::string(R"(python )") + R"(")" + Caseitem.second.toStdString() + R"(")"))
+			this->m_pyRunner.waitForFinish();*/
+		this->m_Process.start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
 		this->m_Process.waitForFinished();
 		
 	}
@@ -178,13 +183,19 @@ bool CPyProcess::IsRuning() const
 	return m_RunFlags;
 }
 
+bool CPyProcess::subProcessRunnerCallbackfun(const std::string &pyrunprint, void *classponiter)
+{
+	CPyProcess *classinstance = static_cast<CPyProcess*>(classponiter);
+	emit classinstance->s_ProcessOutPutinfo(QString(pyrunprint.c_str()));
+	return true;
+}
+
 
 void CPyProcess::ThreadRunFunction()
 {
 
 	//CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
 	return;
-
 }
 
 void CPyProcess::ReadProcessOutputinfo()

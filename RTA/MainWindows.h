@@ -37,7 +37,7 @@ public slots:
 	bool RecviPycharmhomepath(const QString &Pycharmhomepath);
 	//This is  Py Terminal test only
 	bool RunPyFileInTerminal();
-	void DisplayToTerminal();
+	void DisplayToTerminal(const QString &PyProcessRunInfor);
 	void GetExecuteCaseList();
 signals:
 	void Signal_emitpycasefilehomepath(const QString &pycasefilehomepath);

@@ -18,7 +18,7 @@ public:
 	CaseScriptConfigure(QWidget *parent = Q_NULLPTR);
 	~CaseScriptConfigure();
 	const QList<QPair<QString, QString>> &GetCaseExecuteList() const;
-	typedef QPair<QString, QStringList> QSTRINGLISTPAIR;
+	typedef QPair<QString, QList<QStandardItem*>> QITEMPAIR;
 private:
 	bool PyRun();
 	void ConnectSlots();
@@ -42,19 +42,19 @@ public slots:
 
 private:
 	Ui::CaseScriptConfigure ui;
-	std::string							m_strRunres;
-	CCallPython							m_cpycaller;
-	PYPARAMLIST							m_callpyparmlist;
-	QString								m_strpythonfilehome;
-	QSTRINGLISTPAIR						m_pycasefileanddirinfo;
-	QStringList							m_pycasefilenamelist;
-	QList<QSTRINGLISTPAIR>				m_pycasetreeinfostruct;
-	QList<QString>						m_ignorePyDirNameList;
-	//std::shared_ptr<TreeModel>			m_CaseTreeModel;
-	TreeModel							*m_CaseTreeModel;
-	QMap<QString, QString>				m_CaseNameMaptoFullyPath; // the search map
-	QStringListModel					*m_CaseExecListModel;
-	QStringList							m_CaseExecList;
-	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
+	std::string								m_strRunres;
+	CCallPython								m_cpycaller;
+	PYPARAMLIST								m_callpyparmlist;
+	QString									m_strpythonfilehome;
+	QITEMPAIR								m_pycasefileanddirinfo;
+	QStringList								m_pycasefilenamelist;
+	QList<QStandardItem *>					m_pycasetreeinfostruct;
+	//QList<QSTRINGLISTPAIR>					m_pycasetreeinfostruct;
+	QList<QString>							m_ignorePyDirNameList;
+	std::shared_ptr<QStandardItemModel>		m_CaseTreeModel;
+	QMap<QString, QString>					m_CaseNameMaptoFullyPath; // the search map
+	QStringListModel						*m_CaseExecListModel;
+	QStringList								m_CaseExecList;
+	QList<QPair<QString, QString>>			m_CaseExecListToFullPathList;
 	
 };

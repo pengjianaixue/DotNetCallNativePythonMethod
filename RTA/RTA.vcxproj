@@ -140,6 +140,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SubProcessRunner.cpp" />
     <ClCompile Include="treeitem.cpp" />
     <ClCompile Include="treemodel.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(VLDPATH);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtSerialPort</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtLocation;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSensors;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtSerialPort</IncludePath>
     </QtMoc>
+    <ClInclude Include="subProcessRunner.h" />
     <ClInclude Include="Trace.h" />
     <ClInclude Include="treeitem.h" />
     <QtMoc Include="treemodel.h" />

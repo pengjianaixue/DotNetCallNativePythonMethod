@@ -30,9 +30,10 @@ private:
 private:
 	string	m_strSubProgrammcmd;
 	bool    m_bisFinished				 = {true};
-	HANDLE  m_hStdInRead				 = {nullptr};			
+	HANDLE  m_hStdInRead				 = { nullptr };			
 	HANDLE  m_hStdOutWrite				 = { nullptr };			
-	HANDLE  m_hStdErrWrite				 = { nullptr };			
+	HANDLE  m_hStdErrWrite				 = { nullptr };		
+	SECURITY_DESCRIPTOR  m_sd			 = {};
 	STARTUPINFO m_siStartInfo			 = {};					
 	SECURITY_ATTRIBUTES		m_saAttr	 = {};
 	PROCESS_INFORMATION		m_piProcInfo = {};				

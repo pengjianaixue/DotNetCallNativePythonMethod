@@ -17,10 +17,11 @@ bool MainWindows::openconfigform(int i)
 MainWindows::~MainWindows()
 {
 	delete m_pyeditorprocess;
-	if (m_RunPythonCaseprocess->IsRuning())
+	if (m_RunPythonCaseprocess.IsRuning())
 	{
 		emit Signal_emitPyCaseStop();
 	}	
+	m_CaseRunThread.terminate();
 	//delete m_RunPythonCaseprocess;
 }
 bool MainWindows::LoadInitXmlConfigure()
@@ -51,12 +52,13 @@ bool MainWindows::Init()
 	//TODO this absolutely path is only for  local test 
 	m_strInitXmlFilePath = m_TheCurrentPath + R"(\Initloadfile\InitParam.xml)";
 	m_hPycharmProcessid = 0;
-	m_RunPythonCaseprocess = new PyScriptProcess(this);
 	this->tabifyDockWidget(this->ui.dockWidget_Terminal, this->ui.dockWidget_Opeartioninfodisp);
 	this->tabifyDockWidget(this->ui.dockWidget_Opeartioninfodisp,this->ui.dockWidget_ErrorInfo);
 	this->ui.dockWidget_Terminal->raise();
 	this->ui.PTE_TerimnalDisplayArea->setReadOnly(true);
 	ConnectSlots();
+	m_CaseRunThread.setPriority(QThread::Priority::HighPriority);
+	m_CaseRunThread.start();
 	LoadInitXmlConfigure();
 	if (!m_strPyCaseFileHomePath.isEmpty())
 	{
@@ -138,17 +140,25 @@ bool MainWindows::RecviPycharmhomepath(const QString & Pycharmhomepath)
 
 bool MainWindows::RunPyFileInTerminal()
 {
-	if (m_RunPythonCaseprocess->IsRuning())
+	if (m_RunPythonCaseprocess.IsRuning())
 	{
-		
-		/*emit Signal_emitPyCaseStop();*/
-		m_RunPythonCaseprocess->Stop();
+		 if(QMessageBox::StandardButton::Apply ==  QMessageBox::warning(this, "case run waring", "python case is running,whether you want to stop it", QMessageBox::StandardButton::Apply, QMessageBox::StandardButton::Cancel))
+		 {
+			 emit Signal_emitPyCaseStop();
+		 }
+		 else
+		 {
+			 QMessageBox::information(this, "case run information", "user have cancel run case requset");
+		 }
+		//m_RunPythonCaseprocess.Stop();
 	}
 	else
 	{
-		m_RunPythonCaseprocess->RegisterRunList(m_CaseExecListToFullPathList);
-		//m_RunPythonCaseprocess->moveToThread(&m_CaseRunThread);
-		m_RunPythonCaseprocess->start(QThread::Priority::HighPriority);
+		m_RunPythonCaseprocess.RegisterRunList(m_CaseExecListToFullPathList);
+		m_RunPythonCaseprocess.moveToThread(&m_CaseRunThread);
+		/*m_CaseRunThread.start();*/
+		emit Signal_emitPyCaseRun();
+		//m_RunPythonCaseprocess.Start();
 
 	}
 	return true;
@@ -156,34 +166,7 @@ bool MainWindows::RunPyFileInTerminal()
 //// Backup
 void MainWindows::DisplayToTerminal(const QString &PyProcessRunInfor)
 {
-//	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
-//	QString messagestring = QString::fromLocal8Bit(messagebyte);
-//#ifdef _DEBUG
-//	std::string smsg = messagestring.toStdString();
-//#endif // _DEBUG
 	this->ui.PTE_TerimnalDisplayArea->appendPlainText(PyProcessRunInfor);
-	this->ui.PTE_TerimnalDisplayArea->update();
-	return;
-}
-//void MainWindows::DisplayToTerminal()
-//{
-//	QByteArray messagebyte = this->m_RunPythonCaseprocess->m_Process.readAllStandardOutput();
-//	QString messagestring = QString::fromLocal8Bit(messagebyte);
-//#ifdef _DEBUG
-//	std::string smsg = messagestring.toStdString();
-//#endif // _DEBUG
-//	this->ui.PTE_TerimnalDisplayArea->appendPlainText(messagestring);
-//	this->ui.PTE_TerimnalDisplayArea->update();
-//	return;
-//}
-void MainWindows::DisplayToTerminal()
-{
-	QByteArray messagebyte = this->m_RunPythonCaseprocess.m_Process.readAllStandardOutput();
-	QString messagestring = QString::fromLocal8Bit(messagebyte);
-#ifdef _DEBUG
-	std::string smsg = messagestring.toStdString();
-#endif // _DEBUG
-	this->ui.PTE_TerimnalDisplayArea->appendPlainText(messagestring);
 	this->ui.PTE_TerimnalDisplayArea->update();
 	return;
 }
@@ -204,11 +187,11 @@ bool MainWindows::ConnectSlots()
 				&& connect(this->PythonHomeSet, &CaseandEditorhome::Signal_eimtPycharmHome, this, &MainWindows::RecviPycharmhomepath) 
 				&& connect(this, &MainWindows::Signal_emitpycasefilehomepath, &this->m_UICaseConfigure, &CaseScriptConfigure::SetPyFilePath)
 				&& connect(this->ui.Auto_Test, &QAction::triggered, this, &MainWindows::RunPyFileInTerminal)
-				&& connect(&this->m_RunPythonCaseprocess, &CPyProcess::s_ProcessOutPutinfo, this, &MainWindows::DisplayToTerminal)
-				&& connect(&this->m_UICaseConfigure, &CaseScriptConfigure::s_emitExceListChanged,this, &MainWindows::GetExecuteCaseList)
+				&& connect(&this->m_RunPythonCaseprocess, &PyScriptProcess::s_ProcessOutPutinfo, this, &MainWindows::DisplayToTerminal)
+				&& connect(&this->m_UICaseConfigure, &CaseScriptConfigure::s_emitCaseExecListChanged,this, &MainWindows::GetExecuteCaseList)
 				&& connect(this->ui.pushButton_clearTerminal, &QPushButton::clicked, this->ui.PTE_TerimnalDisplayArea, &QPlainTextEdit::clear)
-				&& connect(this, &MainWindows::Signal_emitPyCaseRun, &this->m_RunPythonCaseprocess, &CPyProcess::Start)
-				&& connect(this, &MainWindows::Signal_emitPyCaseStop, &this->m_RunPythonCaseprocess, &CPyProcess::Stop)
+				&& connect(this, &MainWindows::Signal_emitPyCaseRun, &this->m_RunPythonCaseprocess, &PyScriptProcess::Start)
+				&& connect(this, &MainWindows::Signal_emitPyCaseStop, &this->m_RunPythonCaseprocess, &PyScriptProcess::Stop)
 				
 			)
 		)

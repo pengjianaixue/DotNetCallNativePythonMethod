@@ -12,7 +12,7 @@
 #include "subProcessRunner.h"
 
 
-//class CPyProcess : public QObject
+//class PyScriptProcess : public QObject
 //{
 //
 //	Q_OBJECT
@@ -25,8 +25,8 @@
 //
 //	}THREADPRIORITY;
 //public:
-//	CPyProcess(QObject *parent);
-//	~CPyProcess();
+//	PyScriptProcess(QObject *parent);
+//	~PyScriptProcess();
 //signals:
 //	void s_Processfinished(int finishcode);
 //	void s_ProcessOutPutinfo(const QString &outinfo);
@@ -55,7 +55,7 @@
 //#endif // _WIN32
 //	
 //};
-class PyScriptProcess : public QThread
+class PyScriptProcess : public QObject
 {
 
 	Q_OBJECT
@@ -67,8 +67,7 @@ public:
 		higher = 1,
 
 	}THREADPRIORITY;
-public:
-	PyScriptProcess(QObject *parent);
+	PyScriptProcess(QObject *parent = nullptr);
 	~PyScriptProcess();
 	void run();
 signals:
@@ -78,7 +77,7 @@ signals:
 	// interface
 public slots:
 	bool RegisterRunList(const QList<QPair<QString, QString>> &CaseList); //Only For Case 
-	/*bool Start();*/
+	bool Start();
 	bool Pause();
 	bool Resume();
 	bool Stop();
@@ -94,12 +93,12 @@ private:
 	std::shared_ptr<std::thread>			m_pRunThread;
 	//QString									m_PyFileName;
 	QList<QPair<QString, QString>>			m_RegisterCaseList;
-
+	subProcessRunner						m_pyRunner;
 	//Windows specific
 #ifdef _WIN32
 	HANDLE									m_ThreadHandle;
 #endif // _WIN32
 public:
-	QProcess								*m_Process;
+	QProcess								*m_Process = {nullptr};
 
 };

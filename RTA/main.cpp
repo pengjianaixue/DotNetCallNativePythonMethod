@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	a.setWindowIcon(icon);
 	mw.setWindowTitle("RTS");
 	mw.show();
+
 	/*QFile f(":qdarkstyle/style.qss");
 	if (!f.exists())
 	{

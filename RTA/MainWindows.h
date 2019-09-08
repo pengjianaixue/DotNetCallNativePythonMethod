@@ -54,14 +54,14 @@ private:
 	long m_hPycharmProcesshandle;
 #endif // WIN32
 
-
+	QThread								m_CaseRunThread;
 	CaseScriptConfigure					m_UICaseConfigure;
 	QProcess							*m_pyeditorprocess;
 	QString								m_strPyCaseFileHomePath;
 	QString								m_strPycharmBinPath;
 	QString								m_strInitXmlFilePath;
 	QString								m_TheCurrentPath;
-	PyScriptProcess							*m_RunPythonCaseprocess;
+	PyScriptProcess						m_RunPythonCaseprocess;
 	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
 private:
 	bool ConnectSlots();

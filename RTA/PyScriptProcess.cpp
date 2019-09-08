@@ -1,27 +1,27 @@
 #include "stdafx.h"
 #include "PyScriptProcess.h"
 #include <iostream>
-//CPyProcess::CPyProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr), m_RunFlags(false)
+//PyScriptProcess::PyScriptProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr), m_RunFlags(false)
 //{
 //
 //	//this->m_Process->setProcessChannelMode(QProcess::MergedChannels);
-//	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
+//	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &PyScriptProcess::ReadProcessOutputinfo);
 //}
 //
-//CPyProcess::~CPyProcess()
+//PyScriptProcess::~PyScriptProcess()
 //{
 //	m_ThreadHandle = nullptr;
 //}
 //
-//bool CPyProcess::RegisterRunList(const QList<QPair<QString, QString>>& CaseList)
+//bool PyScriptProcess::RegisterRunList(const QList<QPair<QString, QString>>& CaseList)
 //{
 //	m_RegisterCaseList = CaseList;
 //	return true;
 //}
 //
-//bool CPyProcess::Start(THREADPRIORITY ThreadPriority)
+//bool PyScriptProcess::Start(THREADPRIORITY ThreadPriority)
 //{
-//	m_pRunThread = std::make_shared<std::thread>(&CPyProcess::ThreadRunFunction,this);
+//	m_pRunThread = std::make_shared<std::thread>(&PyScriptProcess::ThreadRunFunction,this);
 //	m_ThreadHandle = m_pRunThread->native_handle();
 //	if (m_ThreadHandle)
 //	{
@@ -31,7 +31,7 @@
 //	return true;
 //}
 //
-//bool CPyProcess::Pause()
+//bool PyScriptProcess::Pause()
 //{
 //	if (m_ThreadHandle)
 //	{
@@ -47,7 +47,7 @@
 //	}
 //}
 //
-//bool CPyProcess::Resume()
+//bool PyScriptProcess::Resume()
 //{
 //	if (m_ThreadHandle)
 //	{
@@ -63,7 +63,7 @@
 //	}
 //}
 //
-//bool CPyProcess::Stop()
+//bool PyScriptProcess::Stop()
 //{
 //	if (m_ThreadHandle)
 //	{
@@ -80,16 +80,16 @@
 //	}
 //}
 //
-//bool CPyProcess::IsRun() const
+//bool PyScriptProcess::IsRun() const
 //{
 //	return m_RunFlags;
 //}
 //
 //
-//void CPyProcess::ThreadRunFunction()
+//void PyScriptProcess::ThreadRunFunction()
 //{
 //
-//	//CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
+//	//PyScriptProcess *threadparam = static_cast<PyScriptProcess*>(Param);
 //	this->m_RunFlags = true;
 //	QPair<QString, QString> Caseitem;
 //	Q_FOREACH(Caseitem, this->m_RegisterCaseList)
@@ -103,7 +103,7 @@
 //
 //}
 //
-//void CPyProcess::ReadProcessOutputinfo()
+//void PyScriptProcess::ReadProcessOutputinfo()
 //{	
 //
 //	QByteArray baStandardoutpt = m_Process->readAllStandardOutput();
@@ -114,95 +114,113 @@
 //	emit s_ProcessOutPutinfo(msg);
 //	return;
 //}
-CPyProcess::CPyProcess(QObject *parent) 
-	: QObject(parent), m_pRunThread(nullptr), 
+PyScriptProcess::PyScriptProcess(QObject *parent)
+	: QObject(parent), m_pRunThread(nullptr),
 	m_ThreadHandle(nullptr), m_RunFlags(false)
 {
-
-	this->m_Process.setReadChannel(QProcess::StandardOutput);
-	this->m_pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
-	connect(&this->m_Process, &QProcess::readyReadStandardOutput, this, &CPyProcess::ReadProcessOutputinfo);
+	
+	//this->m_pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
+	
 }
 
-CPyProcess::~CPyProcess()
+PyScriptProcess::~PyScriptProcess()
 {
 	m_ThreadHandle = nullptr;
 }
 
-bool CPyProcess::RegisterRunList(const QList<QPair<QString, QString>>& CaseList)
+bool PyScriptProcess::RegisterRunList(const QList<QPair<QString, QString>>& CaseList)
 {
 	m_RegisterCaseList = CaseList;
 	return true;
 }
 
-bool CPyProcess::Start()
+bool PyScriptProcess::Start()
 {
 
-	
+	/*QProcess m_Process;
+	m_Process.setProcessChannelMode(QProcess::MergedChannels);
+	this->m_Process = &m_Process;
+	connect(&m_Process, &QProcess::readyReadStandardOutput,this, &PyScriptProcess::ReadProcessOutputinfo);*/
+	/*if (!this->m_Process)
+	{
+		this->m_Process = new QProcess;
+		this->m_Process->setReadChannel(QProcess::ProcessChannel::StandardOutput);
+		this->m_Process->setReadChannelMode(QProcess::ProcessChannelMode::ForwardedChannels);
+		connect(this->m_Process, &QProcess::readyReadStandardOutput, this, &PyScriptProcess::ReadProcessOutputinfo);
+	}*/
+	subProcessRunner	pyRunner;
+	pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
 	this->m_RunFlags = true;
 	QPair<QString, QString> Caseitem;
 	Q_FOREACH(Caseitem, this->m_RegisterCaseList)
-	{
+	{    
 		if (this->m_RunFlags == false)
 		{
 			goto ProcessStop;
-		}
-		/*if(this->m_pyRunner.startRun(std::string(R"(python )") + R"(")" + Caseitem.second.toStdString() + R"(")"))
-			this->m_pyRunner.waitForFinish();*/
-		this->m_Process.start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
-		this->m_Process.waitForFinished();
+		}  
+		if(pyRunner.startRun(std::string(R"(python )") + R"(")" + Caseitem.second.toStdString() + R"(")"))
+			pyRunner.waitForFinish();
+		/*m_Process.start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
+		m_Process.waitForFinished();*/
+		/*this->m_Process->start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
+		this->m_Process->waitForFinished();*/
 		
 	}
 	ProcessStop:
-		this->m_Process->terminate();
+		pyRunner.stop();
 		this->m_RunFlags = false;
 		emit s_Processfinished(0);
 		return true;
 }
 
-bool CPyProcess::Pause()
+bool PyScriptProcess::Pause()
 {
 
 	return true;
 }
 
-bool CPyProcess::Resume()
+bool PyScriptProcess::Resume()
 {
 	return true;
 }
 
-bool CPyProcess::Stop()
+bool PyScriptProcess::Stop()
 {
 
 	this->m_RunFlags = false;
-	this->m_Process.terminate();
+	if (this->m_Process)
+	{
+		this->m_Process->terminate();
+	}
+	
 	return true;
 }
 
-bool CPyProcess::IsRuning() const
+bool PyScriptProcess::IsRuning() const
 {
 	return m_RunFlags;
 }
 
-bool CPyProcess::subProcessRunnerCallbackfun(const std::string &pyrunprint, void *classponiter)
+bool PyScriptProcess::subProcessRunnerCallbackfun(const std::string &pyrunprint, void *classponiter)
 {
-	CPyProcess *classinstance = static_cast<CPyProcess*>(classponiter);
-	emit classinstance->s_ProcessOutPutinfo(QString(pyrunprint.c_str()));
+	PyScriptProcess *classinstance = static_cast<PyScriptProcess*>(classponiter);
+	qDebug() << pyrunprint.c_str();
+	//emit classinstance->s_ProcessOutPutinfo(QString(pyrunprint.c_str()));
 	return true;
 }
 
 
-void CPyProcess::ThreadRunFunction()
+void PyScriptProcess::ThreadRunFunction()
 {
 
-	//CPyProcess *threadparam = static_cast<CPyProcess*>(Param);
+	//PyScriptProcess *threadparam = static_cast<PyScriptProcess*>(Param);
 	return;
 }
 
-void CPyProcess::ReadProcessOutputinfo()
+void PyScriptProcess::ReadProcessOutputinfo()
 {
 
-	QByteArray baStandardoutpt = m_Process.readAllStandardOutput();
+	QByteArray baStandardoutpt = this->m_Process->readAllStandardOutput();
 	QString msg = QString::fromLocal8Bit(baStandardoutpt);
 #ifdef _DEBUG
 	std::string smsg = msg.toStdString();

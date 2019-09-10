@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "PyScriptProcess.h"
 #include <iostream>
+
+#pragma region BackupCode
 //PyScriptProcess::PyScriptProcess(QObject *parent): QObject(parent), m_pRunThread(nullptr),m_ThreadHandle(nullptr), m_RunFlags(false)
 //{
 //
@@ -114,6 +116,7 @@
 //	emit s_ProcessOutPutinfo(msg);
 //	return;
 //}
+#pragma endregion
 PyScriptProcess::PyScriptProcess(QObject *parent)
 	: QObject(parent), m_pRunThread(nullptr),
 	m_ThreadHandle(nullptr), m_RunFlags(false)
@@ -164,7 +167,6 @@ bool PyScriptProcess::Start()
 		m_Process.waitForFinished();*/
 		/*this->m_Process->start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
 		this->m_Process->waitForFinished();*/
-		
 	}
 	ProcessStop:
 		pyRunner.stop();

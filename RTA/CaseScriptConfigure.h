@@ -6,6 +6,7 @@
 #include "Trace.h"
 #include "treemodel.h"
 #include "treeitem.h"
+#include <memory>
 #include "ui_CaseScriptConfigure.h"
 #include "../CallPython/CallPython.h"
 #include <QPair>
@@ -22,7 +23,7 @@ public:
 private:
 	bool PyRun();
 	void ConnectSlots();
-	void ParamInit();
+	void formInit();
 
 signals:
 	void s_emitCaseExecListChanged();
@@ -53,7 +54,7 @@ private:
 	QList<QString>							m_ignorePyDirNameList;
 	std::shared_ptr<QStandardItemModel>		m_CaseTreeModel;
 	QMap<QString, QString>					m_CaseNameMaptoFullyPath; // the search map
-	QStringListModel						*m_CaseExecListModel;
+	std::shared_ptr<QStandardItemModel>		m_CaseExecListModel;
 	QStringList								m_CaseExecList;
 	QList<QPair<QString, QString>>			m_CaseExecListToFullPathList;
 	

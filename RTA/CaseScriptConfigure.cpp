@@ -200,7 +200,7 @@ bool CaseScriptConfigure::PyRun()
 {
 
 	//Call Python function 
-	PYPARAMPAIR param, param1;
+	pyCaller::PYPARAMPAIR param, param1;
 	param.first = "i";
 	param.second = "117";
 	param1.first = "i";

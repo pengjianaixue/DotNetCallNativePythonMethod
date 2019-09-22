@@ -47,15 +47,11 @@ bool MainWindows::LoadInitXmlConfigure()
 
 bool MainWindows::Init()
 {
-	ui.setupUi(this);
+	uiInit();
 	m_TheCurrentPath = QDir::currentPath();
 	//TODO this absolutely path is only for  local test 
 	m_strInitXmlFilePath = m_TheCurrentPath + R"(\Initloadfile\InitParam.xml)";
 	m_hPycharmProcessid = 0;
-	this->tabifyDockWidget(this->ui.dockWidget_Terminal, this->ui.dockWidget_Opeartioninfodisp);
-	this->tabifyDockWidget(this->ui.dockWidget_Opeartioninfodisp,this->ui.dockWidget_ErrorInfo);
-	this->ui.dockWidget_Terminal->raise();
-	this->ui.PTE_TerimnalDisplayArea->setReadOnly(true);
 	ConnectSlots();
 	m_CaseRunThread.setPriority(QThread::Priority::HighPriority);
 	m_CaseRunThread.start();
@@ -69,8 +65,15 @@ bool MainWindows::Init()
 
 void MainWindows::closeEvent(QCloseEvent * event)
 {
-	QMessageBox::StandardButton rb = QMessageBox::information(this,"exit info","Are you sure to close RAT ?",QMessageBox::StandardButton::Cancel, QMessageBox::StandardButton::Apply);
-	if (rb == QMessageBox::StandardButton::Cancel)
+
+	QMessageBox msgbox(this);
+	msgbox.setText(tr("Are you sure to close RTS ? "));
+	msgbox.setWindowTitle(tr("exit confirm"));
+	msgbox.setIcon(QMessageBox::Icon::Question);
+	QAbstractButton *applyButton =   msgbox.addButton("Apply", QMessageBox::ActionRole);
+	QAbstractButton *cancelButton =  msgbox.addButton("Cancel", QMessageBox::ActionRole);
+	msgbox.exec();
+	if (msgbox.clickedButton() == cancelButton) 
 	{
 		event->ignore();
 	}
@@ -96,7 +99,7 @@ bool MainWindows::openpycharmIDE()
 	{
 		QMessageBox::warning(this, "Warning", "the  python editor  pycharm have opened!");
 	}
-	QString pypath =   m_strPyCaseFileHomePath;
+	QString pypath =  m_strPyCaseFileHomePath ;
 	QString program = m_strPycharmBinPath + R"(/pycharm64.exe)"; //R"(D:/SoftwareInstall/JetBrains/PyCharm 2018.1.1/bin/pycharm64.exe)";
 	QFileInfo  pycasedir(program);
 	if (!pycasedir.isExecutable())
@@ -108,7 +111,11 @@ bool MainWindows::openpycharmIDE()
 	qDebug() << program << "\n" << arguments;
 	m_pyeditorprocess->start(program, arguments);
 	m_pyeditorprocess->waitForStarted();
-	m_hPycharmProcessid = m_pyeditorprocess->pid()->dwProcessId;
+	if (m_pyeditorprocess->pid())
+	{
+		m_hPycharmProcessid = m_pyeditorprocess->pid()->dwProcessId;
+		return false;
+	}
 	this->ui.action_Script_Editor_Pycharm->setChecked(true);
 	return true;
 }
@@ -201,4 +208,13 @@ bool MainWindows::ConnectSlots()
 
 	}
 	return true;
+}
+
+void MainWindows::uiInit()
+{
+	ui.setupUi(this);
+	this->tabifyDockWidget(this->ui.dockWidget_Terminal, this->ui.dockWidget_Opeartioninfodisp);
+	this->tabifyDockWidget(this->ui.dockWidget_Opeartioninfodisp, this->ui.dockWidget_ErrorInfo);
+	this->ui.dockWidget_Terminal->raise();
+	this->ui.PTE_TerimnalDisplayArea->setReadOnly(true);
 }

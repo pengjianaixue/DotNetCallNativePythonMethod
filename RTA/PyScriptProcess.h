@@ -88,10 +88,8 @@ private:
 	void ReadProcessOutputinfo();
 private:
 	QProcessEnvironment						m_ProcessEnvir; //retention 
-	//QProcess								m_Process;
 	std::atomic<bool>						m_RunFlags;
 	std::shared_ptr<std::thread>			m_pRunThread;
-	//QString									m_PyFileName;
 	QList<QPair<QString, QString>>			m_RegisterCaseList;
 	subProcessRunner						m_pyRunner;
 	//Windows specific
@@ -99,6 +97,6 @@ private:
 	HANDLE									m_ThreadHandle;
 #endif // _WIN32
 public:
-	QProcess								*m_Process = {nullptr};
+	QProcess								*m_process = { new QProcess };
 
 };

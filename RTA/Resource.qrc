@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/RTA/PyRunner">
+    <file>Resources/tree.png</file>
+    <file>Resources/stream list.png</file>
+    <file>Resources/testcase-group.png</file>
+    <file>Resources/test-case.png</file>
     <file>Resources/ExecList.png</file>
     <file>Resources/case-list.png</file>
     <file>Resources/testcase-group.png</file>
@@ -24,5 +28,6 @@
     <file>Resources/pause.png</file>
     <file>Resources/test-case-square-fill.png</file>
     <file>Resources/tree-node-right.png</file>
+    <file>Resources/testCase.png</file>
   </qresource>
 </RCC>

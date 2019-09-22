@@ -10,6 +10,9 @@ if __name__ ==  '__main__':
     time.sleep(1)
     print("Setup Carrier")
     time.sleep(5)
+    time.sleep(0.1)
     print("Release Carrier")
     print("Case run finish")
+    sys.byteorder
+    
     pass

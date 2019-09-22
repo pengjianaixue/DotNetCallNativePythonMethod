@@ -5,9 +5,11 @@
 #include <thread>
 #include <memory>
 #include <mutex>
+#include <QObject>
 using std::string;
-class subProcessRunner
+class subProcessRunner:public QObject
 {
+	Q_OBJECT
 public:
 	using READSTDOUTCALLBACKFUN = std::function<bool(const string&,void *)>;
 	subProcessRunner();

@@ -121,7 +121,7 @@ PyScriptProcess::PyScriptProcess(QObject *parent)
 	: QObject(parent), m_pRunThread(nullptr),
 	m_ThreadHandle(nullptr), m_RunFlags(false)
 {
-	
+	m_process->setParent(this);
 	//this->m_pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
 	
 }
@@ -161,12 +161,10 @@ bool PyScriptProcess::Start()
 		{
 			goto ProcessStop;
 		}  
-		if(pyRunner.startRun(std::string(R"(python )") + R"(")" + Caseitem.second.toStdString() + R"(")"))
-			pyRunner.waitForFinish();
-		/*m_Process.start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
-		m_Process.waitForFinished();*/
-		/*this->m_Process->start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
-		this->m_Process->waitForFinished();*/
+		/*if(pyRunner.startRun(std::string(R"(python )") + R"(")" + Caseitem.second.toStdString() + R"(")"))
+			pyRunner.waitForFinish();*/
+		this->m_process->start(QString(R"(python )") + R"(")" + Caseitem.second + R"(")");
+		this->m_process->waitForFinished();
 	}
 	ProcessStop:
 		pyRunner.stop();
@@ -190,9 +188,9 @@ bool PyScriptProcess::Stop()
 {
 
 	this->m_RunFlags = false;
-	if (this->m_Process)
+	if (this->m_process)
 	{
-		this->m_Process->terminate();
+		this->m_process->terminate();
 	}
 	
 	return true;
@@ -222,7 +220,7 @@ void PyScriptProcess::ThreadRunFunction()
 void PyScriptProcess::ReadProcessOutputinfo()
 {
 
-	QByteArray baStandardoutpt = this->m_Process->readAllStandardOutput();
+	QByteArray baStandardoutpt = this->m_process->readAllStandardOutput();
 	QString msg = QString::fromLocal8Bit(baStandardoutpt);
 #ifdef _DEBUG
 	std::string smsg = msg.toStdString();

@@ -8,7 +8,7 @@
 #include "treeitem.h"
 #include <memory>
 #include "ui_CaseScriptConfigure.h"
-#include "../CallPython/CallPython.h"
+#include "../PyCaller/pyCaller.h"
 #include <QPair>
 
 class CaseScriptConfigure : public QDialog
@@ -44,7 +44,7 @@ public slots:
 private:
 	Ui::CaseScriptConfigure ui;
 	std::string								m_strRunres;
-	CCallPython								m_cpycaller;
+	pyCaller								m_cpycaller;
 	PYPARAMLIST								m_callpyparmlist;
 	QString									m_strpythonfilehome;
 	QITEMPAIR								m_pycasefileanddirinfo;

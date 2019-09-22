@@ -7,6 +7,7 @@ import time
 def WirteLogToRTSTerminal(log=''):
     print(log)
     sys.stdout.flush()
+    # sys.set_asyncgen_hooks()
     pass
 
 if __name__ ==  '__main__':
@@ -16,5 +17,4 @@ if __name__ ==  '__main__':
     time.sleep(1)
     WirteLogToRTSTerminal("Release Carrier")
     WirteLogToRTSTerminal("******************* ACLR  Case  Finish*****************")
-
     pass

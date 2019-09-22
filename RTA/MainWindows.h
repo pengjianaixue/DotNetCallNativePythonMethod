@@ -28,7 +28,7 @@ public:
 	bool LoadInitXmlConfigure();
 	bool Init();
 protected:
-	void closeEvent(QCloseEvent* event);
+	void closeEvent(QCloseEvent* event) override;
 public slots:
 	bool openconfigform(int i);
 	bool openpycharmIDE();
@@ -65,6 +65,7 @@ private:
 	QList<QPair<QString, QString>>		m_CaseExecListToFullPathList;
 private:
 	bool ConnectSlots();
+	void uiInit();
 	
 
 };

@@ -37,6 +37,9 @@
     <ClCompile Include="SubProcessRunner.cpp">
       <Filter>Python Run Process\Imple</Filter>
     </ClCompile>
+    <ClCompile Include="treemodelwapper.cpp">
+      <Filter>CaseTreeModel\Imple</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource1.h">
@@ -53,9 +56,6 @@
     </ClInclude>
     <ClInclude Include="treeitem.h">
       <Filter>CaseTreeModel\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="subProcessRunner.h">
-      <Filter>Python Run Process\headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +82,12 @@
     </QtMoc>
     <QtMoc Include="PyScriptProcess.h">
       <Filter>Python Run Process\headers</Filter>
+    </QtMoc>
+    <QtMoc Include="subProcessRunner.h">
+      <Filter>Python Run Process\headers</Filter>
+    </QtMoc>
+    <QtMoc Include="treemodelwapper.h">
+      <Filter>CaseTreeModel\Headers</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

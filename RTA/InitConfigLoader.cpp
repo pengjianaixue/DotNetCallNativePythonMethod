@@ -1,46 +1,5 @@
 #include "stdafx.h"
 #include "InitConfigLoader.h"
-
-//CXmlConfigureFileOperation::CXmlConfigureFileOperation(QObject *parent)
-//	: QObject(parent), CConfigureBaseIf(InitFilePath)
-//{
-//
-//	m_enumclassmode = optype;
-//	if (m_enumclassmode == OPERATIONTYPE::READ)
-//	{
-//		QFileInfo InitXmlFile(*m_ConfigureXmlFile);
-//		m_bInitFileExistsFlags = InitXmlFile.exists();
-//		if (m_bInitFileExistsFlags)
-//		{
-//			m_pugiXmlReader = new pugi::xml_document;
-//			if (!m_pugiXmlReader->load_file(InitFilePath.toStdString().c_str(), pugi::parse_default, pugi::encoding_utf8))
-//			{
-//				QMessageBox::critical(nullptr, "File Load Error", "Load or create Init.Xml file failed!!!");
-//				m_bLoadFlag = false;
-//			}
-//		}
-//	}
-//	else if (m_enumclassmode == OPERATIONTYPE::WRITE)
-//	{
-//
-//		if (!m_ConfigureXmlFile->open(QIODevice::ReadWrite))
-//		{
-//			QMessageBox::critical(nullptr, "File Load Error", "Load or create Init.Xml file failed,can not record the configure!!!");
-//			m_bLoadFlag = false;
-//		}
-//		m_XmlWriter = new  QXmlStreamWriter(m_ConfigureXmlFile);
-//		if (m_bLoadFlag)
-//		{
-//			m_XmlWriter->setCodec("utf-8");
-//			m_XmlWriter->setAutoFormatting(true);
-//			m_XmlWriter->writeStartDocument();
-//			m_XmlWriter->writeStartElement("initialdata");
-//		}
-//	}
-//
-//}
-
-
 CXmlConfigureFileOperation::CXmlConfigureFileOperation(QObject *parent, const QString& InitFilePath,OPERATIONTYPE optype)
 	: QObject(parent), m_initXmlFile( new QFile(InitFilePath)),m_bLoadFlag(true), m_pugiXmlReader(nullptr)
 {	

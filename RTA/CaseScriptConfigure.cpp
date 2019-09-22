@@ -76,7 +76,7 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 		{
 
 			QStandardItem *pyFileItem = new QStandardItem;
-			pyFileItem->setIcon(QIcon(":/RTA/PyRunner/Resources/test-case-square-fill.png"));
+			pyFileItem->setIcon(QIcon(":/RTA/PyRunner/Resources/testCase.png"));
 			pyFileItem->setText(CaseFileInfo.fileName().split(".").first());
 			rowitem->setChild(rowcounter, pyFileItem);
 			rowcounter++;
@@ -177,6 +177,9 @@ void CaseScriptConfigure::formInit()
 {
 
 	//Set the Stretch rate
+	this->ui.frame_caseFile_tree->setStyleSheet("background-color: rgb(0, 170, 255);");
+	this->ui.frame_case_select_list->setStyleSheet("background-color: rgb(0, 170, 255);");
+	this->ui.frame_execute_group_list->setStyleSheet("background-color: rgb(0, 170, 255);");
 	this->ui.splitter_loadandinfor->setStretchFactor(0, 7);
 	this->ui.splitter_loadandinfor->setStretchFactor(1, 3);
 	this->ui.CaseFile_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
@@ -204,7 +207,7 @@ bool CaseScriptConfigure::PyRun()
 	param1.second = "18800000";
 	this->m_callpyparmlist.push_back(param);
 	this->m_callpyparmlist.push_back(param1);
-	this->m_strRunres = m_cpycaller.Runfunction(std::string("main"), std::string("main"), this->m_callpyparmlist);
+	this->m_strRunres = m_cpycaller.runPyFunction(std::string("main"), std::string("main"), this->m_callpyparmlist);
 	return true;
 }
 

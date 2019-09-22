@@ -1,14 +1,17 @@
 #include "stdafx.h"
-#include "CallPython.h"
+#include "pyCaller.h"
 #pragma execution_character_set("utf-8")
 void run()
 {
 	
-	CCallPython a;
+	pyCaller a;
 	a.SetPyPath(R"(C:/Users/eijpnae/Desktop)");//C++ Raw string synatx  the path add to python need the slash not the backslash
 	try
 	{	
-		a.RunPyfile(R"(C:/Users/eijpnae/Desktop/main.py)");
+		pyCaller::PYPARAMLIST test;
+		a.SetPyPath(R"(C:/Users/pengjian/Desktop)");
+		//std::string k = a.Runfunction(R"(Case-EVM)", "test", test);
+		a.runPyFile(R"(C:\Users\pengjian\Desktop\Case-EVM.py)");
 		/*PYPARAMLIST paramlist;
 		PYPARAMPAIR param,param1;
 		param.first = "i"; 

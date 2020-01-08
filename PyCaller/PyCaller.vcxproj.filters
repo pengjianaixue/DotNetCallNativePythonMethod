@@ -17,9 +17,6 @@
       <Filter>Heads</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h">
-      <Filter>Heads</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

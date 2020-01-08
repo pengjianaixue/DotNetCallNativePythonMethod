@@ -8,7 +8,6 @@ CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
 	ui.setupUi(this);
 	formInit();
 	m_strpythonfilehome = QApplication::applicationFilePath() + QString(R"(\CaseProject\)");
-	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	ConnectSlots();
 
 }
@@ -31,7 +30,6 @@ bool CaseScriptConfigure::SetPyFilePath(const QString &path)
 
 bool CaseScriptConfigure::ReLoadPyFilePath()
 {
-	m_cpycaller.SetPyPath(m_strpythonfilehome.toStdString());
 	return true;
 }
 bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
@@ -167,7 +165,7 @@ void CaseScriptConfigure::AddSelectCaseToExceList(const QString &SelectCaseItem)
 
 CaseScriptConfigure::~CaseScriptConfigure()
 {
-	FinalizePyIter();
+
 }
 const QList<QPair<QString, QString>>& CaseScriptConfigure::GetCaseExecuteList() const
 {
@@ -200,14 +198,6 @@ bool CaseScriptConfigure::PyRun()
 {
 
 	//Call Python function 
-	pyCaller::PYPARAMPAIR param, param1;
-	param.first = "i";
-	param.second = "117";
-	param1.first = "i";
-	param1.second = "18800000";
-	this->m_callpyparmlist.push_back(param);
-	this->m_callpyparmlist.push_back(param1);
-	this->m_strRunres = m_cpycaller.runPyFunction(std::string("main"), std::string("main"), this->m_callpyparmlist);
 	return true;
 }
 

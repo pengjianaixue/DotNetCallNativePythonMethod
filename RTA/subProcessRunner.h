@@ -5,25 +5,28 @@
 #include <thread>
 #include <memory>
 #include <mutex>
+#include <iostream>
 #include <QObject>
+#include <QDebug>
 using std::string;
-class subProcessRunner:public QObject
+class SubProcessRunner:public QObject
 {
 	Q_OBJECT
 public:
 	using READSTDOUTCALLBACKFUN = std::function<bool(const string&,void *)>;
-	subProcessRunner();
+	SubProcessRunner();
 	//API 
 	bool startRun(const string &subprogrammcmd);
 	bool isFinished()const;
-	int waitForFinish();
+	int  waitForFinish();
 	bool registerReadCallBackFuntion(READSTDOUTCALLBACKFUN callBackfunction);
 	bool pause();
 	bool resume();
 	bool stop();
 	string wirteCmdtoSubprogramm();
-	static void readPipeOverlappedCallbackfun(DWORD dwErrorCode,DWORD dwNumberOfBytesTransfered, LPOVERLAPPED lpOverlapped);
-	virtual ~subProcessRunner();
+	virtual ~SubProcessRunner();
+signals:
+	void signal_SendPyStdoutContents(const QString& StdoutContents);
 private:
 	void createSecurityAttributes(PSECURITY_ATTRIBUTES pSa);
 	bool initMemberVar();
@@ -33,8 +36,8 @@ private:
 private:
 	string	m_strSubProgrammcmd;
 	bool    m_bisFinished											= {true};
-	HANDLE  m_hStdInRead											= { nullptr };			
-	HANDLE  m_hStdOutWrite											= { nullptr };			
+	HANDLE  m_hReadChildStdOutRead											= { nullptr };			
+	HANDLE  m_hChildStdInWrite											= { nullptr };			
 	HANDLE  m_hStdErrWrite											= { nullptr };		
 	SECURITY_DESCRIPTOR  m_sd										= {};
 	STARTUPINFO m_siStartInfo										= {};					
@@ -50,7 +53,7 @@ private:
 
 struct OVERLAPPEDPIPEREAD: public OVERLAPPED
 {
-	subProcessRunner  *subProcessRunnerinstance;
+	SubProcessRunner  *subProcessRunnerinstance;
 
 	OVERLAPPEDPIPEREAD() :subProcessRunnerinstance(nullptr)
 	{

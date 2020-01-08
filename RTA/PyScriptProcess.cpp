@@ -151,7 +151,7 @@ bool PyScriptProcess::Start()
 		this->m_Process->setReadChannelMode(QProcess::ProcessChannelMode::ForwardedChannels);
 		connect(this->m_Process, &QProcess::readyReadStandardOutput, this, &PyScriptProcess::ReadProcessOutputinfo);
 	}*/
-	subProcessRunner	pyRunner;
+	SubProcessRunner	pyRunner;
 	pyRunner.registerReadCallBackFuntion(subProcessRunnerCallbackfun);
 	this->m_RunFlags = true;
 	QPair<QString, QString> Caseitem;

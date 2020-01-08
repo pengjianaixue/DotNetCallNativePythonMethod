@@ -91,7 +91,7 @@ private:
 	std::atomic<bool>						m_RunFlags;
 	std::shared_ptr<std::thread>			m_pRunThread;
 	QList<QPair<QString, QString>>			m_RegisterCaseList;
-	subProcessRunner						m_pyRunner;
+	SubProcessRunner						m_pyRunner;
 	//Windows specific
 #ifdef _WIN32
 	HANDLE									m_ThreadHandle;

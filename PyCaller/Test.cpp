@@ -11,14 +11,14 @@ void run()
 		PyCaller::PYPARAMLIST paramlist;
 		PyCaller::PYPARAMPAIR param, param1;
 		PyCaller::PyResult res = nullptr;
-		param.first = "i";
-		param.second = "117";
-		param1.first = "i";
-		param1.second = "118";
+		param.first = "d";
+		param.second = "117.58";
+		param1.first = "d";
+		param1.second = "118.56";
 		paramlist.push_back(param);
 		paramlist.push_back(param1);
-	 	unsigned int sumValue{0};
-		bool executeRes = a.runPyFunction(R"(main)", "calltest", paramlist, sumValue);
+	 	long double sumValue{0};
+		bool executeRes = a.runPyFunction(R"(main)", "calltest", 117.58,118.56, sumValue);
 		if (executeRes)
 		{
 			std::cout << sumValue << std::endl;

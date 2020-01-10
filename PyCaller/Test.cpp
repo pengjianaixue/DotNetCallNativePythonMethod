@@ -17,8 +17,8 @@ void run()
 		param1.second = "118.56";
 		paramlist.push_back(param);
 		paramlist.push_back(param1);
-	 	long double sumValue{0};
-		bool executeRes = a.runPyFunction(R"(main)", "calltest", 117.58,118.56, sumValue);
+	 	double sumValue{0};
+		bool executeRes = a.runPyFunction(R"(main)", "testFetch", 15.45,118.56,153.0,4,5,6,7, sumValue);
 		if (executeRes)
 		{
 			std::cout << sumValue << std::endl;

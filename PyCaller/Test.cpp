@@ -4,11 +4,11 @@
 void run()
 {
 	
-	PyCaller a(R"(C:/Users/eijpnae/Desktop)");
+	PyCaller a(R"(../)");
 	try
 	{			
 	 	double sumValue{0};
-		bool executeRes = a.runPyFunction(R"(main)", "testFetch", 15.45,118.56,153.0,4,5,6,7, sumValue);
+		bool executeRes = a.runPyFunction(R"(main)", "testFetch", 15,118.56,153.0,4,5,6,7, sumValue);
 		if (executeRes)
 		{
 			std::cout << sumValue << std::endl;

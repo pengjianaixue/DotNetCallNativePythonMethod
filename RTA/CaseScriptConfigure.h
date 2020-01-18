@@ -44,8 +44,6 @@ public slots:
 private:
 	Ui::CaseScriptConfigure ui;
 	std::string								m_strRunres;
-	pyCaller								m_cpycaller;
-	pyCaller::PYPARAMLIST					m_callpyparmlist;
 	QString									m_strpythonfilehome;
 	QITEMPAIR								m_pycasefileanddirinfo;
 	QStringList								m_pycasefilenamelist;

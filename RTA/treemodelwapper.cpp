@@ -3,7 +3,7 @@
 
 treemodelwapper::treemodelwapper(QObject *parent)
 	: QObject(parent), 
-	m_standardItemModel(std::make_shared<QStandardItemModel>(parent))
+	m_standardItemModel(new QStandardItemModel(this))
 {
 
 }

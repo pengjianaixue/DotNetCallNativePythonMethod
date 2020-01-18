@@ -9,7 +9,7 @@ class treemodelwapper : public QObject
 	Q_OBJECT
 	using NODEPAIR = std::pair<int, QStandardItemModel*>;
 public:
-	treemodelwapper(QObject *parent);
+	treemodelwapper(QObject *parent);      
 	~treemodelwapper();
 public slots:
 	bool appendTreeNodeChildItem(QStandardItem *parentNode, QStandardItem *childItem);
@@ -19,7 +19,7 @@ public slots:
 	QStandardItemModel*  getModel();
 	
 private:
-	std::shared_ptr<QStandardItemModel>		m_standardItemModel = {nullptr};
+	std::unique_ptr<QStandardItemModel>		m_standardItemModel{nullptr};
 	QList<int>							    m_nodeChildCounter  = { 0 };
 	std::map<QStandardItem*,int>			m_nodePostionRecordMap = {};
 };

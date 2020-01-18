@@ -177,9 +177,9 @@ void CaseScriptConfigure::formInit()
 {
 
 	//Set the Stretch rate
-	this->ui.frame_caseFile_tree->setStyleSheet("background-color: rgb(0, 170, 255);");
+	/*this->ui.frame_caseFile_tree->setStyleSheet("background-color: rgb(0, 170, 255);");
 	this->ui.frame_case_select_list->setStyleSheet("background-color: rgb(0, 170, 255);");
-	this->ui.frame_execute_group_list->setStyleSheet("background-color: rgb(0, 170, 255);");
+	this->ui.frame_execute_group_list->setStyleSheet("background-color: rgb(0, 170, 255);");*/
 	this->ui.splitter_loadandinfor->setStretchFactor(0, 7);
 	this->ui.splitter_loadandinfor->setStretchFactor(1, 3);
 	this->ui.CaseFile_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);

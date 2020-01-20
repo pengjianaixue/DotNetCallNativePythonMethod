@@ -3,13 +3,14 @@
 #include <QDialog>
 #include <QtXml\qxml.h>
 #include <qxmlstream.h>
+#include <QPair>
+#include <memory>
 #include "Trace.h"
 #include "treemodel.h"
 #include "treeitem.h"
-#include <memory>
 #include "ui_CaseScriptConfigure.h"
 #include "../PyCaller/pyCaller.h"
-#include <QPair>
+#include "treemodelwapper.h"
 
 class CaseScriptConfigure : public QDialog
 {
@@ -47,13 +48,14 @@ private:
 	QString									m_strpythonfilehome;
 	QITEMPAIR								m_pycasefileanddirinfo;
 	QStringList								m_pycasefilenamelist;
-	QList<QStandardItem *>					m_pycasetreeinfostruct;
+	QList<QStandardItem*>					m_pycasetreeinfostruct;
 	//QList<QSTRINGLISTPAIR>					m_pycasetreeinfostruct;
 	QList<QString>							m_ignorePyDirNameList;
-	std::shared_ptr<QStandardItemModel>		m_CaseTreeModel;
+	std::unique_ptr<QStandardItemModel>		m_CaseTreeModel;
 	QMap<QString, QString>					m_CaseNameMaptoFullyPath; // the search map
-	std::shared_ptr<QStandardItemModel>		m_CaseExecListModel;
+	std::unique_ptr<QStandardItemModel>		m_CaseExecListModel;
 	QStringList								m_CaseExecList;
 	QList<QPair<QString, QString>>			m_CaseExecListToFullPathList;
+	TreeModelWapper							m_caseTreeModelWapper;
 	
 };

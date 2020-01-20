@@ -1,25 +1,26 @@
 #include "stdafx.h"
-#include "treemodelwapper.h"
+#include "TreeModelWapper.h"
 
-treemodelwapper::treemodelwapper(QObject *parent)
+TreeModelWapper::TreeModelWapper(QObject *parent)
 	: QObject(parent), 
 	m_standardItemModel(new QStandardItemModel(this))
 {
 
 }
 
-treemodelwapper::~treemodelwapper()
+TreeModelWapper::~TreeModelWapper()
 {
 
 }
 
-bool treemodelwapper::insertTreeNodeChildItem(QStandardItem *parentNode, QStandardItem *childItem, int arow)
+bool TreeModelWapper::insertTreeNodeChildItem(QStandardItem *parentNode, QStandardItem *childItem, int row)
 {
 	if (!parentNode && !childItem)
 	{
 		return false;
 	}
-	parentNode->insertRow(arow,childItem);
+	m_currentNode = parentNode;
+	parentNode->insertRow(row,childItem);
 	if (m_nodePostionRecordMap.find(parentNode) == m_nodePostionRecordMap.end())
 	{
 		m_standardItemModel->appendRow(parentNode);
@@ -28,21 +29,39 @@ bool treemodelwapper::insertTreeNodeChildItem(QStandardItem *parentNode, QStanda
 	return false;
 }
 
-bool treemodelwapper::addTreeNode(QStandardItem *Node)
+bool TreeModelWapper::appendTreeNode(QStandardItem *node)
 {
+	if (node)
+	{
+		m_currentNode = node;
+		m_standardItemModel->appendRow(node);
+		m_nodePostionRecordMap.insert({ node ,m_standardItemModel->rowCount() });
+		return true;
+	}
 	return false;
 }
 
-bool treemodelwapper::setHorizontalHeaderLabels(const QStringList &labels)
+bool TreeModelWapper::currentNodeAppendChildItem(QStandardItem* childItem)
 {
+	if (childItem)
+	{
+		m_currentNode->appendRow(childItem);
+		return true;
+	}
 	return false;
 }
-bool treemodelwapper::appendTreeNodeChildItem(QStandardItem *parentNode, QStandardItem *childItem)
+
+void TreeModelWapper::setHorizontalHeaderLabels(const QStringList &labels)
+{
+	m_standardItemModel->setHorizontalHeaderLabels(labels);
+}
+bool TreeModelWapper::appendTreeNodeChildItem(QStandardItem *parentNode, QStandardItem *childItem)
 {
 	if (!parentNode && !childItem)
 	{
 		return false;
 	}
+	m_currentNode = parentNode;
 	parentNode->appendRow(childItem);
 	if (m_nodePostionRecordMap.find(parentNode) == m_nodePostionRecordMap.end())
 	{
@@ -52,7 +71,7 @@ bool treemodelwapper::appendTreeNodeChildItem(QStandardItem *parentNode, QStanda
 	//m_standardItemModel->findItems();
 
 }
-QStandardItemModel* treemodelwapper::getModel()
+QStandardItemModel* TreeModelWapper::getModel()
 {
 	return m_standardItemModel.get();
 }

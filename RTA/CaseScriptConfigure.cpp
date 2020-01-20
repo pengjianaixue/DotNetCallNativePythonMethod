@@ -2,7 +2,7 @@
 #include "CaseScriptConfigure.h"
 
 CaseScriptConfigure::CaseScriptConfigure(QWidget *parent)
-	: QDialog(parent), m_CaseTreeModel( std::make_shared<QStandardItemModel>())
+	: QDialog(parent), m_CaseTreeModel( std::make_unique<QStandardItemModel>())
 {
 	
 	ui.setupUi(this);
@@ -34,19 +34,20 @@ bool CaseScriptConfigure::ReLoadPyFilePath()
 }
 bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 {
-
+	
 	QString str_FilePathRecord;
-	bool   b_Dirpollflag;
-	QStandardItem *rowitem = new QStandardItem;
-	//rowitem->setIcon(QIcon(":/RTA/PyRunner/Resources/tree-node-right.png"));
-	rowitem->setText(filepath.split(R"(/)").last());
-	QDir CaseHomePath(filepath);
+	bool   dirPollflag;
+	QStandardItem *rowItem = new QStandardItem;
+	m_caseTreeModelWapper.appendTreeNode(rowItem);
+	//rowItem->setIcon(QIcon(":/RTA/PyRunner/Resources/tree-node-right.png"));
+	rowItem->setText(filepath.split(R"(/)").last());
+	QDir caseHomePath(filepath);
 	QFileInfo CaseFileInfo;
 	int rowcounter = 0;
-	Q_FOREACH(QFileInfo CaseFileInfo, CaseHomePath.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot))
+	Q_FOREACH(QFileInfo CaseFileInfo, caseHomePath.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot))
 	{
-
-		b_Dirpollflag = false;
+		
+		dirPollflag = false;
 		//TRACE(CaseFileInfo.path());
 		//TRACE(CaseFileInfo.fileName());
 		if (CaseFileInfo.isDir())
@@ -72,37 +73,30 @@ bool CaseScriptConfigure::LoadCaseFileListInfo(const QString &filepath)
 		}
 		else if (CaseFileInfo.isFile() && CaseFileInfo.fileName().endsWith(".py"))
 		{
-
 			QStandardItem *pyFileItem = new QStandardItem;
 			pyFileItem->setIcon(QIcon(":/RTA/PyRunner/Resources/testCase.png"));
 			pyFileItem->setText(CaseFileInfo.fileName().split(".").first());
-			rowitem->setChild(rowcounter, pyFileItem);
+			rowItem->setChild(rowcounter, pyFileItem);
 			rowcounter++;
 			m_CaseNameMaptoFullyPath.insert(CaseFileInfo.fileName().split(".").first(), CaseFileInfo.path() + R"(/)" + CaseFileInfo.fileName());
 
 		}
 	}
-	m_pycasetreeinfostruct.append(rowitem);
+	m_pycasetreeinfostruct.append(rowItem);
 	return true;
 }
 
 bool CaseScriptConfigure::GetPyCasePathAndLaodCaseFile()
 {
-
-
-	m_CaseTreeModel->clear();
+	m_caseTreeModelWapper.clearTree();
 	QStringList headerlable;
-	headerlable <<"Case Tree";
-	this->m_CaseTreeModel->setHorizontalHeaderLabels(headerlable);
+	headerlable <<"Case Catalog";
+	m_caseTreeModelWapper.setHorizontalHeaderLabels(headerlable);
 	m_pycasetreeinfostruct.clear();
 	LoadCaseFileListInfo(m_strpythonfilehome);
-	for (auto &item: m_pycasetreeinfostruct)
-	{
-		this->m_CaseTreeModel->appendRow(item);
-	}
 	return true;
 }
-void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex & caseitem)
+void CaseScriptConfigure::GetCaseListViewUserSelectItem(const QModelIndex& caseitem)
 {
 
 	QModelIndex index = ui.CaseFile_treeView->currentIndex();
@@ -185,7 +179,7 @@ void CaseScriptConfigure::formInit()
 	this->ui.CaseFile_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
 	this->ui.CaseFile_treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	this->ui.Case_exce_treeView->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
-	this->ui.CaseFile_treeView->setModel(m_CaseTreeModel.get());
+	this->ui.CaseFile_treeView->setModel(m_caseTreeModelWapper.getModel());
 	this->ui.Case_exce_treeView->setModel(this->m_CaseExecListModel.get());
 	m_ignorePyDirNameList.append(".idea");
 	m_ignorePyDirNameList.append("__pycache__");

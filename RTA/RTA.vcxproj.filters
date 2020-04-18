@@ -2,33 +2,28 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="UI File">
-      <UniqueIdentifier>{9e109ded-d17a-42a8-acbd-6506344542f8}</UniqueIdentifier>
+      <UniqueIdentifier>{5d38a2c0-04b9-4a3e-a952-5ecb5e202d52}</UniqueIdentifier>
     </Filter>
     <Filter Include="CaseViewModel">
-      <UniqueIdentifier>{fd3f177f-0084-4841-9975-71c09a231d27}</UniqueIdentifier>
+      <UniqueIdentifier>{b2ddc04e-e1ac-48b6-a3da-d1338d198962}</UniqueIdentifier>
     </Filter>
     <Filter Include="CaseScriptRunner">
-      <UniqueIdentifier>{f734702e-9740-42eb-8209-37a34811dcee}</UniqueIdentifier>
+      <UniqueIdentifier>{ac493b1c-fec8-441f-b127-0b1aa2f74e59}</UniqueIdentifier>
     </Filter>
     <Filter Include="UI">
-      <UniqueIdentifier>{802ade21-b24d-45f0-9981-6d77d47e790f}</UniqueIdentifier>
+      <UniqueIdentifier>{b5f547b7-7014-4fa9-89bf-aa85ecdc7773}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConfigurationManager">
-      <UniqueIdentifier>{06477418-2d3b-4aaa-9f7d-2f2d5e45b6da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PreCompile">
-      <UniqueIdentifier>{d557c7c8-c092-4db0-8ae1-0aab2b615061}</UniqueIdentifier>
+      <UniqueIdentifier>{b3ce727c-0db8-4a8c-92b8-d0b4347869e2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utility">
-      <UniqueIdentifier>{500dfaf6-83b0-4d73-9be7-95d4288fbac8}</UniqueIdentifier>
+      <UniqueIdentifier>{af201108-d64d-475f-ad98-5f1815e0603d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CaseFileInformation">
+      <UniqueIdentifier>{9532273b-3944-4445-8380-19e681389441}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources">
-      <UniqueIdentifier>{9783dd82-6885-468a-b51a-d4af7b796dff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-      <ParseFiles>true</ParseFiles>
+      <UniqueIdentifier>{f96921fe-0443-4684-a09e-b348d636f440}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -76,8 +71,6 @@
     <ClCompile Include="ConfigurationManager\InitConfigLoader.cpp">
       <Filter>ConfigurationManager</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaseViewModel\treeitem.h">
@@ -89,8 +82,9 @@
     <ClInclude Include="Utility\Trace.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h" />
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CaseFileInformation\CaseInformationStruct.h">
+      <Filter>CaseFileInformation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CaseViewModel\treemodelwapper.h">
@@ -101,6 +95,9 @@
     </QtMoc>
     <QtMoc Include="CaseViewModel\treemodel.h">
       <Filter>CaseViewModel</Filter>
+    </QtMoc>
+    <QtMoc Include="CaseScriptRunner\subProcessRunner.h">
+      <Filter>CaseScriptRunner</Filter>
     </QtMoc>
     <QtMoc Include="CaseScriptRunner\PyScriptProcess.h">
       <Filter>CaseScriptRunner</Filter>
@@ -117,23 +114,13 @@
     <QtMoc Include="ConfigurationManager\InitConfigLoader.h">
       <Filter>ConfigurationManager</Filter>
     </QtMoc>
-    <QtMoc Include="CaseScriptRunner\subProcessRunner.h">
-      <Filter>CaseScriptRunner</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\R.ico">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="RTA.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="HomePage.qrc" />
-    <QtRcc Include="Resource.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
 </Project>

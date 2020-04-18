@@ -6,8 +6,8 @@
 #include <QtCore\QXmlStreamReader>
 #include <QtCore\QXmlStreamWriter>
 #include <pugixml.hpp>
-#include <ConfigureBaseIf.h>
-#include "Trace.h"
+#include "../ConfigurationManager/ConfigureBaseIf.h"
+#include "../Utility/Trace.h"
 
 class CXmlConfigureFileOperation : public QObject
 {

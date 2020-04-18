@@ -1,183 +1,137 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CaseandEditorhome.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainWindows.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CaseScriptConfigure.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InitConfigLoader.cpp">
-      <Filter>Configure\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigureBaseIf.cpp">
-      <Filter>Configure\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="treeitem.cpp">
-      <Filter>CaseTreeModel\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="treemodel.cpp">
-      <Filter>CaseTreeModel\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="QCaseTreeView.cpp">
-      <Filter>Ui Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PyScriptProcess.cpp">
-      <Filter>Python Run Process\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="SubProcessRunner.cpp">
-      <Filter>Python Run Process\Imple</Filter>
-    </ClCompile>
-    <ClCompile Include="treemodelwapper.cpp">
-      <Filter>CaseTreeModel\Imple</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="resource1.h">
-      <Filter>Ui Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Ui Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Trace.h">
-      <Filter>Ui Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigureBaseIf.h">
-      <Filter>Configure\headers</Filter>
-    </ClInclude>
-    <ClInclude Include="treeitem.h">
-      <Filter>CaseTreeModel\Headers</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resources\R.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="CaseandEditorhome.h">
-      <Filter>Ui Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="MainWindows.h">
-      <Filter>Ui Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="CaseScriptConfigure.h">
-      <Filter>Ui Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="InitConfigLoader.h">
-      <Filter>Configure\headers</Filter>
-    </QtMoc>
-    <QtMoc Include="treemodel.h">
-      <Filter>CaseTreeModel\Headers</Filter>
-    </QtMoc>
-    <QtMoc Include="QCaseTreeView.h">
-      <Filter>Ui Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="PyScriptProcess.h">
-      <Filter>Python Run Process\headers</Filter>
-    </QtMoc>
-    <QtMoc Include="subProcessRunner.h">
-      <Filter>Python Run Process\headers</Filter>
-    </QtMoc>
-    <QtMoc Include="treemodelwapper.h">
-      <Filter>CaseTreeModel\Headers</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="Resource.qrc" />
-    <QtRcc Include="HomePage.qrc">
-      <Filter>Resource</Filter>
-    </QtRcc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="CaseandEditorhome.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="MainWindows.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="CaseScriptConfigure.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Resource">
-      <UniqueIdentifier>{aedf5574-d671-4059-a5ce-6a18de893174}</UniqueIdentifier>
+    <Filter Include="UI File">
+      <UniqueIdentifier>{9e109ded-d17a-42a8-acbd-6506344542f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-      <ParseFiles>true</ParseFiles>
+    <Filter Include="CaseViewModel">
+      <UniqueIdentifier>{fd3f177f-0084-4841-9975-71c09a231d27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Configure">
-      <UniqueIdentifier>{d7088b1e-4b51-43d3-8aeb-f9f552b04ef6}</UniqueIdentifier>
+    <Filter Include="CaseScriptRunner">
+      <UniqueIdentifier>{f734702e-9740-42eb-8209-37a34811dcee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Configure\headers">
-      <UniqueIdentifier>{a14a7cd9-b950-48e4-afa0-81c8f5fbbb1f}</UniqueIdentifier>
+    <Filter Include="UI">
+      <UniqueIdentifier>{802ade21-b24d-45f0-9981-6d77d47e790f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Configure\Imple">
-      <UniqueIdentifier>{7a22e3ef-c823-4ada-b765-1b9bfb0eec6f}</UniqueIdentifier>
+    <Filter Include="ConfigurationManager">
+      <UniqueIdentifier>{06477418-2d3b-4aaa-9f7d-2f2d5e45b6da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CaseTreeModel">
-      <UniqueIdentifier>{3fcb1480-8502-474c-8af9-bbe553557b95}</UniqueIdentifier>
+    <Filter Include="PreCompile">
+      <UniqueIdentifier>{d557c7c8-c092-4db0-8ae1-0aab2b615061}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CaseTreeModel\Headers">
-      <UniqueIdentifier>{2bf99545-b530-47e2-847b-445f5e33dd60}</UniqueIdentifier>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{500dfaf6-83b0-4d73-9be7-95d4288fbac8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CaseTreeModel\Imple">
-      <UniqueIdentifier>{c20f9b67-37cd-431f-950a-592c10a30cf5}</UniqueIdentifier>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{9783dd82-6885-468a-b51a-d4af7b796dff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ui Header Files">
+    <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
-    <Filter Include="Ui Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
-    <Filter Include="Python Run Process">
-      <UniqueIdentifier>{910e3e2a-1913-4f88-9d60-74c6c0569ef7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Python Run Process\headers">
-      <UniqueIdentifier>{cc73de3f-a492-4c09-a26f-10a1bc245501}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Python Run Process\Imple">
-      <UniqueIdentifier>{a147a0c2-f614-4a14-a3e8-cbb15e00581e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument Driver">
-      <UniqueIdentifier>{3c7f52f3-18f2-44a7-9db7-e170ce2d1dc0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument Driver\Communication Base Drivce">
-      <UniqueIdentifier>{41d6bb8e-19c0-4dfb-8779-2403eb5689a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument Driver\Instrument  Driver">
-      <UniqueIdentifier>{229513e7-ff01-41a2-a628-3d8d3e75c70c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument Driver\Instrument  Driver\VISA Driver">
-      <UniqueIdentifier>{0fbc8afd-5c8e-4572-9510-ca00d254b066}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument Driver\Instrument  Driver\IVI Driver">
-      <UniqueIdentifier>{6efe06f6-b049-42a9-813c-b619106b769f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RTA.rc">
-      <Filter>Resource</Filter>
-    </ResourceCompile>
+    <QtUic Include="UI File\CaseandEditorhome.ui">
+      <Filter>UI File</Filter>
+    </QtUic>
+    <QtUic Include="UI File\MainWindows.ui">
+      <Filter>UI File</Filter>
+    </QtUic>
+    <QtUic Include="UI File\CaseScriptConfigure.ui">
+      <Filter>UI File</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CaseViewModel\QCaseTreeView.cpp">
+      <Filter>CaseViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="CaseViewModel\treeitem.cpp">
+      <Filter>CaseViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="CaseViewModel\treemodel.cpp">
+      <Filter>CaseViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="CaseViewModel\treemodelwapper.cpp">
+      <Filter>CaseViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="CaseScriptRunner\SubProcessRunner.cpp">
+      <Filter>CaseScriptRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="CaseScriptRunner\PyScriptProcess.cpp">
+      <Filter>CaseScriptRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CaseandEditorhome.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\MainWindows.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CaseScriptConfigure.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationManager\ConfigureBaseIf.cpp">
+      <Filter>ConfigurationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationManager\InitConfigLoader.cpp">
+      <Filter>ConfigurationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CaseViewModel\treeitem.h">
+      <Filter>CaseViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigurationManager\ConfigureBaseIf.h">
+      <Filter>ConfigurationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Trace.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CaseViewModel\treemodelwapper.h">
+      <Filter>CaseViewModel</Filter>
+    </QtMoc>
+    <QtMoc Include="CaseViewModel\QCaseTreeView.h">
+      <Filter>CaseViewModel</Filter>
+    </QtMoc>
+    <QtMoc Include="CaseViewModel\treemodel.h">
+      <Filter>CaseViewModel</Filter>
+    </QtMoc>
+    <QtMoc Include="CaseScriptRunner\PyScriptProcess.h">
+      <Filter>CaseScriptRunner</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\MainWindows.h">
+      <Filter>UI</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\CaseandEditorhome.h">
+      <Filter>UI</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\CaseScriptConfigure.h">
+      <Filter>UI</Filter>
+    </QtMoc>
+    <QtMoc Include="ConfigurationManager\InitConfigLoader.h">
+      <Filter>ConfigurationManager</Filter>
+    </QtMoc>
+    <QtMoc Include="CaseScriptRunner\subProcessRunner.h">
+      <Filter>CaseScriptRunner</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\R.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RTA.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="HomePage.qrc" />
+    <QtRcc Include="Resource.qrc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

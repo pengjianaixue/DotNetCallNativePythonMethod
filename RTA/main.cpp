@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "MainWindows.h"
+#include "../UI/MainWindows.h"
 #include <QtWidgets/QApplication>
-//#include "vld.h"
+
 
 int main(int argc, char *argv[])
 {

@@ -1,7 +1,8 @@
 #pragma once
 #include <QtCore\QString>
 #include <QtCore\QFile>
-class CConfigureBaseIf
+
+class ConfigureBaseIf
 {
 
 public:
@@ -13,8 +14,8 @@ public:
 
 	}OPERATIONTYPE;
 public:
-	CConfigureBaseIf(const QString &Xmlpath);
-	virtual ~CConfigureBaseIf();
+	ConfigureBaseIf(const QString &Xmlpath);
+	virtual ~ConfigureBaseIf();
 protected:
 	QFile				*m_ConfigureXmlFile;
 	QString				 m_strXmlPath;

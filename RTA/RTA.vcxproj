@@ -77,7 +77,7 @@
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <IncludePath>.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(VLDPATH);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_SERIALPORT_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;%(PreprocessorDefinitions)</Define>
-      <ForceInclude>stdafx.h;../../%(Filename)%(Extension)</ForceInclude>
+      <ForceInclude>stdafx.h;../../%(RelativeDir)%(Filename)%(Extension)</ForceInclude>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
@@ -127,69 +127,72 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CaseandEditorhome.cpp" />
-    <ClCompile Include="ConfigureBaseIf.cpp" />
-    <ClCompile Include="PyScriptProcess.cpp" />
-    <ClCompile Include="InitConfigLoader.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWindows.cpp" />
-    <ClCompile Include="CaseScriptConfigure.cpp" />
-    <ClCompile Include="QCaseTreeView.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SubProcessRunner.cpp" />
-    <ClCompile Include="treeitem.cpp" />
-    <ClCompile Include="treemodel.cpp" />
-    <ClCompile Include="treemodelwapper.cpp" />
+    <ClCompile Include="UI\CaseandEditorhome.cpp" />
+    <ClCompile Include="CaseScriptRunner\SubProcessRunner.cpp" />
+    <ClCompile Include="ConfigurationManager\ConfigureBaseIf.cpp" />
+    <ClCompile Include="CaseScriptRunner\PyScriptProcess.cpp" />
+    <ClCompile Include="ConfigurationManager\InitConfigLoader.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="UI\MainWindows.cpp" />
+    <ClCompile Include="UI\CaseScriptConfigure.cpp" />
+    <ClCompile Include="CaseViewModel\QCaseTreeView.cpp" />
+    <ClCompile Include="CaseViewModel\treeitem.cpp" />
+    <ClCompile Include="CaseViewModel\treemodel.cpp" />
+    <ClCompile Include="CaseViewModel\treemodelwapper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConfigureBaseIf.h" />
-    <QtMoc Include="treemodelwapper.h">
+    <QtMoc Include="CaseScriptRunner\subProcessRunner.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;$(PYTHON_INCLUDE);.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(VLDPATH);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(PYTHON_INCLUDE);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras</IncludePath>
+    </QtMoc>
+    <ClInclude Include="ConfigurationManager\ConfigureBaseIf.h" />
+    <QtMoc Include="CaseViewModel\treemodelwapper.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
     </QtMoc>
-    <QtMoc Include="QCaseTreeView.h">
+    <QtMoc Include="CaseViewModel\QCaseTreeView.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
     </QtMoc>
-    <QtMoc Include="PyScriptProcess.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
-    </QtMoc>
-    <QtMoc Include="subProcessRunner.h" />
-    <ClInclude Include="Trace.h" />
-    <ClInclude Include="treeitem.h" />
-    <QtMoc Include="treemodel.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
-    </QtMoc>
-    <QtMoc Include="MainWindows.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
-    </QtMoc>
-    <QtMoc Include="CaseandEditorhome.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
-    </QtMoc>
-    <QtMoc Include="InitConfigLoader.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
-    </QtMoc>
-    <ClInclude Include="resource1.h" />
-    <QtMoc Include="CaseScriptConfigure.h">
+    <QtMoc Include="CaseScriptRunner\PyScriptProcess.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
     </QtMoc>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Utility\Trace.h" />
+    <ClInclude Include="CaseViewModel\treeitem.h" />
+    <QtMoc Include="CaseViewModel\treemodel.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtMoc Include="UI\MainWindows.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtMoc Include="UI\CaseandEditorhome.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtMoc Include="ConfigurationManager\InitConfigLoader.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <ClInclude Include="resource1.h" />
+    <QtMoc Include="UI\CaseScriptConfigure.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</Define>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</Define>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="CaseandEditorhome.ui" />
-    <QtUic Include="MainWindows.ui">
+    <QtUic Include="UI File\CaseandEditorhome.ui" />
+    <QtUic Include="UI File\MainWindows.ui">
       <SubType>Designer</SubType>
     </QtUic>
-    <QtUic Include="CaseScriptConfigure.ui" />
+    <QtUic Include="UI File\CaseScriptConfigure.ui" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RTA.rc" />

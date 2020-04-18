@@ -9,15 +9,14 @@
 #ifdef WIN32
 	#include <Windows.h>
 #endif // WIN32
+
 #include "CaseScriptConfigure.h"
 #include "ui_MainWindows.h"
-#include "CaseandEditorhome.h"
-#include "InitConfigLoader.h"
-#include "Trace.h"
-#include "PyScriptProcess.h"
-//TODO 
-//This is  Py Terminal test only
-//#include "../CallPython/CallPython.h"
+#include "../UI/CaseandEditorhome.h"
+#include "../ConfigurationManager/InitConfigLoader.h"
+#include "../Utility/Trace.h"
+#include "../CaseScriptRunner/PyScriptProcess.h"
+
 class MainWindows : public QMainWindow
 {
 	Q_OBJECT

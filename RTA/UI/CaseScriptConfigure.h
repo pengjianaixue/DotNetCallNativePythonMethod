@@ -5,12 +5,12 @@
 #include <qxmlstream.h>
 #include <QPair>
 #include <memory>
-#include "Trace.h"
-#include "treemodel.h"
-#include "treeitem.h"
+#include "../Utility/Trace.h"
+#include "../CaseViewModel/treemodel.h"
+#include "../CaseViewModel/treeitem.h"
 #include "ui_CaseScriptConfigure.h"
 #include "../PyCaller/pyCaller.h"
-#include "treemodelwapper.h"
+#include "../CaseViewModel/treemodelwapper.h"
 
 class CaseScriptConfigure : public QDialog
 {

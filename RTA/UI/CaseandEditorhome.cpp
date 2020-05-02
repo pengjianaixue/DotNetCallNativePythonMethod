@@ -42,7 +42,7 @@ bool CaseandEditorhome::connectslots()
 		)
 	{
 
-		throw(" connect signal and  slots faile in MainWindows ");
+		throw(" connect signal and  slots failed in MainWindows ");
 
 	}
 	return true;

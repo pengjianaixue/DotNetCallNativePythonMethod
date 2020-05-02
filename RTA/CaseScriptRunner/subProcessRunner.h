@@ -38,7 +38,7 @@ using std::string;
 	{
 		Q_OBJECT
 #else
-	class DYNAMICLIBEXPORT SubProcessRunner
+	class  SubProcessRunner
 	{
 #endif // QT_DLL
 public:
@@ -52,12 +52,16 @@ public:
 	bool pause();
 	bool resume();
 	bool stop();
+	//string wirteCmdtoSubprogramm();
 	virtual ~SubProcessRunner();
 #ifdef QT_CORE_LIB
 	signals :
 			void signal_SendSubProcessStdoutContents(const QString& StdoutContents);
 #endif
 private:
+	using ntSuspendProcessFunPrototype =  DWORD(WINAPI *)(HANDLE );
+	using ntResumeProcessFunPrototype =   DWORD(WINAPI *)(HANDLE );
+	
 	void createSecurityAttributes(PSECURITY_ATTRIBUTES pSa);
 	bool initMemberVar();
 	void createStartUpInfo(LPSTARTUPINFO lpStartUpInfo);
@@ -65,26 +69,28 @@ private:
 	void _isFinished();
 private:
 	string	m_strSubProgrammcmd;
-	volatile bool    m_bThreadQuit									= {true};
-	HANDLE  m_hReadChildStdOutRead									= { nullptr };			
-	HANDLE  m_hChildStdInWrite										= { nullptr };			
-	HANDLE  m_hStdErrWrite											= { nullptr };		
-	SECURITY_DESCRIPTOR  m_sd										= {};
-	STARTUPINFO m_siStartInfo										= {};					
-	SECURITY_ATTRIBUTES				m_saAttr						= {};
-	PROCESS_INFORMATION				m_piProcInfo					= { nullptr };
-	READSTDOUTCALLBACKFUN			m_readCallbackfun				= {nullptr};
-	std::shared_ptr<std::thread>	m_readSubProcessOutputThread	= { nullptr };
-	std::shared_ptr<std::thread>	m_processStatesNotifyThread		= { nullptr };
-	std::mutex						m_mutex							= {};
-	LPOVERLAPPED_COMPLETION_ROUTINE	m_readPipeOverlappedCallbackfun	= {nullptr};
-	char							m_readPipeBufffer[64]			= {};
-	HWND						    m_consoleWindowHanlde			= { nullptr };
-	FILE*							m_consolestdoutstream			= { nullptr };
-	HANDLE							m_threadTriggerEventHandle		= { ::CreateEvent(nullptr,FALSE,FALSE,TEXT(""))};
-	std::mutex						m_threadSwitchmutext			= {};
-	volatile bool					m_bTerminateFlag				= { false };
-	CRITICAL_SECTION				m_critical_section				= {};
+	volatile bool    m_bThreadQuit									 {true};
+	HANDLE  m_hReadChildStdOutRead									 { nullptr };			
+	HANDLE  m_hChildStdInWrite										 { nullptr };			
+	HANDLE  m_hStdErrWrite											 { nullptr };		
+	SECURITY_DESCRIPTOR  m_sd										 {};
+	STARTUPINFO m_siStartInfo										 {};					
+	SECURITY_ATTRIBUTES				m_saAttr						 {};
+	PROCESS_INFORMATION				m_piProcInfo					 { nullptr };
+	READSTDOUTCALLBACKFUN			m_readCallbackfun				 { nullptr };
+	std::shared_ptr<std::thread>	m_readSubProcessOutputThread	 { nullptr };
+	std::shared_ptr<std::thread>	m_processStatesNotifyThread		 { nullptr };
+	std::mutex						m_mutex							 {};
+	LPOVERLAPPED_COMPLETION_ROUTINE	m_readPipeOverlappedCallbackfun	 {nullptr};
+	char							m_readPipeBufffer[64]			 {};
+	HWND						    m_consoleWindowHanlde			 { nullptr };
+	FILE*							m_consolestdoutstream			 { nullptr };
+	HANDLE							m_threadTriggerEventHandle		 { ::CreateEvent(nullptr,FALSE,FALSE,TEXT(""))};
+	std::mutex						m_threadSwitchmutext			 {};
+	volatile bool					m_bTerminateFlag				 { false };
+	CRITICAL_SECTION				m_critical_section				 {};
+	ntSuspendProcessFunPrototype    m_ntSuspendProcessFun			 { nullptr };
+	ntResumeProcessFunPrototype     m_ntResumeProcessFun			 { nullptr };
 };	
 
 class CriticalSection_guard 

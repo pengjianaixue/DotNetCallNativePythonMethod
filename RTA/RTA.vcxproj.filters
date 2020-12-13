@@ -71,6 +71,8 @@
     <ClCompile Include="ConfigurationManager\InitConfigLoader.cpp">
       <Filter>ConfigurationManager</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaseViewModel\treeitem.h">
@@ -85,6 +87,8 @@
     <ClInclude Include="CaseFileInformation\CaseInformationStruct.h">
       <Filter>CaseFileInformation</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CaseViewModel\treemodelwapper.h">
@@ -120,7 +124,14 @@
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <ResourceCompile Include="RTA.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="HomePage.qrc" />
+    <QtRcc Include="Resource.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
